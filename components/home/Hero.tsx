@@ -12,7 +12,7 @@ const Hero = () => {
         loop
         className="absolute top-0 left-0 w-full h-full object-cover"
       >
-        <source src={"/demobgVideo.mp4"} type="video/mp4" />
+        <source src={"/heroVid.webm"} type="video/webm" />
         Your browser does not support the video tag.
       </video>
       <div className="absolute inset-0 flex items-center justify-start p-8">
@@ -25,7 +25,7 @@ const Hero = () => {
               <IoArrowDownOutline size={30} color="#fff" />
             </div>
           </div>
-          <h1  className="text-white text-start text-[3rem] 500px:text-[5rem] font-bold 1200px:leading-none">
+          <h1 className="text-white text-start text-[3rem] 500px:text-[5rem] font-bold 1200px:leading-none">
             Unlicking <br /> Digital Excellence
           </h1>
           <div className="flex items-center gap-2 flex-wrap">
