@@ -25,7 +25,7 @@ const Hero = () => {
               <IoArrowDownOutline size={30} color="#fff" />
             </div>
           </div>
-          <h1 className="text-white text-start text-[3rem] 500px:text-[5rem] font-bold 1200px:leading-none">
+          <h1  className="text-white text-start text-[3rem] 500px:text-[5rem] font-bold 1200px:leading-none">
             Unlicking <br /> Digital Excellence
           </h1>
           <div className="flex items-center gap-2 flex-wrap">
