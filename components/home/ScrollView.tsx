@@ -1,6 +1,6 @@
-"use client";
-import React, { useRef } from "react";
-import { useScroll, useTransform, motion } from "framer-motion";
+'use client';
+import React, { useRef } from 'react';
+import { useScroll, useTransform, motion } from 'framer-motion';
 
 export const ScrollView = ({
   users,
@@ -25,9 +25,9 @@ export const ScrollView = ({
       setIsMobile(window.innerWidth <= 768);
     };
     checkMobile();
-    window.addEventListener("resize", checkMobile);
+    window.addEventListener('resize', checkMobile);
     return () => {
-      window.removeEventListener("resize", checkMobile);
+      window.removeEventListener('resize', checkMobile);
     };
   }, []);
 
@@ -46,28 +46,28 @@ export const ScrollView = ({
     >
       <div
         className="absolute top-0 -left-4 w-72 h-72 bg-[#7571e6] rounded-full filter blur-3xl opacity-40 animate-blob "
-        style={{ animationDelay: "4s" }}
+        style={{ animationDelay: '4s' }}
       ></div>
       <div
         className="absolute left-20 w-72 h-72 bg-[#cccaf0] rounded-full filter blur-3xl opacity-40 animate-blob"
-        style={{ animationDelay: "2s" }}
+        style={{ animationDelay: '2s' }}
       ></div>
       <div
         className="absolute top-0 -right-4 w-48 h-48 bg-[#d5f188] rounded-full filter blur-3xl opacity-40 animate-blob "
-        style={{ animationDelay: "6s" }}
+        style={{ animationDelay: '6s' }}
       ></div>
       <div
         className="absolute right-0 -bottom-4 w-48 h-48 bg-[#afe8f0] rounded-full filter blur-3xl opacity-40 animate-blob"
-        style={{ animationDelay: "3s" }}
+        style={{ animationDelay: '3s' }}
       ></div>
       <div
         className="absolute top-1/2 left-1/2 w-48 h-48 bg-[#a9f7b6] rounded-full filter blur-3xl opacity-40 animate-blob"
-        style={{ animationDelay: "5s" }}
+        style={{ animationDelay: '5s' }}
       ></div>
       <div
         className="py-10 md:py-40 w-full relative"
         style={{
-          perspective: "1000px",
+          perspective: '1000px',
         }}
       >
         <Header translate={translate} titleComponent={titleComponent} />
@@ -117,7 +117,7 @@ export const Card = ({
         rotateX: rotate, // rotate in X-axis
         scale,
         boxShadow:
-          "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
+          '0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003',
       }}
       className="max-w-5xl -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-6 bg-[#222222] rounded-[30px] shadow-2xl"
     >
@@ -129,7 +129,7 @@ export const Card = ({
             style={{ translateY: translate }}
             whileHover={{
               boxShadow:
-                "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+                '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
             }}
           >
             <div className="absolute top-2 right-2 rounded-full text-xs font-bold bg-white px-2 py-1">

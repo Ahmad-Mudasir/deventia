@@ -10,7 +10,7 @@ const OurMissionAndVission = () => {
           <h1 className="font-bold text-2xl lg:text-4xl">Our mission</h1>
           <p className="text-lg text-[#ffffffc2] mt-4">
             To revolutionize the IT service industry by delivering cutting-edge
-            solutions tailored to our clients' unique needs. We strive to
+            solutions tailored to our clients&apos; unique needs. We strive to
             empower businesses with innovative technologies, exceptional
             service, and unwavering commitment to excellence.
           </p>
