@@ -21,12 +21,12 @@ const page = () => {
           Design Services
         </h1>
         <p className="text-lg text-[#ACACAC]">
-          Unleash your brand's potential with our tailored design solutions.
-          Dive into our portfolio for inspiration and learn how we can bring
-          your vision to life. <br /> <br /> Discover how our design expertise
-          can elevate your brand. Explore our portfolio and see the impact we've
-          made for clients like you. Learn more about our services and let's
-          collaborate.
+          Unleash your brand&apos;s potential with our tailored design
+          solutions. Dive into our portfolio for inspiration and learn how we
+          can bring your vision to life. <br /> <br /> Discover how our design
+          expertise can elevate your brand. Explore our portfolio and see the
+          impact we&apos;ve made for clients like you. Learn more about our
+          services and let&apos;s collaborate.
         </p>
       </div>
       <div className="p-[5%] flex gap-8 flex-col md:flex-row justify-center">

@@ -15,7 +15,7 @@ const ServicesByOurExpertise = () => {
           our team of experts is dedicated to providing tailored services
           designed to meet your unique business needs. From IT consulting to
           software development, web design, and digital marketing, we offer a
-          full suite of solutions to help you thrive in today's competitive
+          full suite of solutions to help you thrive in today&apos;s competitive
           landscape.
         </p>
         <br />

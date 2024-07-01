@@ -17,10 +17,11 @@ const MeetOurCoFounder = () => {
           brings a wealth of expertise to our team. With a background in
           software engineering, project management, software testing, design
           analysis, and QA engineering, he plays a pivotal role in driving our
-          company's success. Huzaifa not only oversees project execution but
-          also provides strategic direction, ensuring that our initiatives align
-          with our goals and objectives. His multifaceted skills and visionary
-          leadership are instrumental in shaping our company's future.
+          company&apos;s success. Huzaifa not only oversees project execution
+          but also provides strategic direction, ensuring that our initiatives
+          align with our goals and objectives. His multifaceted skills and
+          visionary leadership are instrumental in shaping our company&apos;s
+          future.
         </p>
         <button
           type="button"

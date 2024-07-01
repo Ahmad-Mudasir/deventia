@@ -10,7 +10,7 @@ const MeetOurTeam = () => {
         </h1>
         <p className="text-[#BBBBBB] text-lg">
           Meet Our Team: Experts dedicated to driving your success. Get
-          acquainted with the faces behind Deventia's innovative solutions.
+          acquainted with the faces behind Deventia&apos;s innovative solutions.
         </p>
       </div>
       <div className="mt-8 flex gap-8 flex-wrap">

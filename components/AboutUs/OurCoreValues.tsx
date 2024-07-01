@@ -4,9 +4,9 @@ const OurCoreValues = () => {
       <h1 className="font-medium text-2xl lg:text-4xl">OUR CORE VALUES</h1>
       <p className="text-base mt-4">
         At Deventia, integrity, innovation, and dedication are more than just
-        words—they're the pillars of our approach. We prioritize trust through
-        transparency, drive progress through bold creativity, and deliver
-        excellence with unwavering commitment.
+        words—they&apos;re the pillars of our approach. We prioritize trust
+        through transparency, drive progress through bold creativity, and
+        deliver excellence with unwavering commitment.
       </p>
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 mt-16">
         <div>

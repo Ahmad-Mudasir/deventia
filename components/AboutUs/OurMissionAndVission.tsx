@@ -28,8 +28,8 @@ const OurMissionAndVission = () => {
             At Deventia, our vision is to be the premier choice for businesses
             seeking transformative IT solutions. We aim to lead the industry
             through innovation, integrity, and unparalleled dedication to our
-            clients' success, driving sustainable growth and making a lasting
-            impact in the digital realm.
+            clients&apos; success, driving sustainable growth and making a
+            lasting impact in the digital realm.
           </p>
         </div>
         <Image
