@@ -1,10 +1,9 @@
-import { accordionData } from "@/data/data";
-import { euroStyle } from "@/utils/fonts";
-import Image from "next/image";
-import React from "react";
-import chooseUsImg from "@/public/chooseUsImg.png";
-import Link from "next/link";
-import { MdArrowOutward } from "react-icons/md";
+import { accordionData } from '@/data/data';
+import { euroStyle } from '@/utils/fonts';
+import Image from 'next/image';
+import React from 'react';
+import chooseUsImg from '@/public/chooseUsImg.png';
+import Link from 'next/link';
 const ChooseUs = () => {
   return (
     <div
@@ -13,23 +12,23 @@ const ChooseUs = () => {
       {/* ANIMATING DIVS  */}
       <div
         className="absolute top-0 -left-4 w-72 h-72 bg-[#7571e6] rounded-full filter blur-3xl opacity-40 animate-blob "
-        style={{ animationDelay: "4s" }}
+        style={{ animationDelay: '4s' }}
       ></div>
       <div
         className="absolute left-20 w-72 h-72 bg-[#cccaf0] rounded-full filter blur-3xl opacity-40 animate-blob"
-        style={{ animationDelay: "2s" }}
+        style={{ animationDelay: '2s' }}
       ></div>
       <div
         className="absolute top-0 -right-4 w-48 h-48 bg-[#c7e671] rounded-full filter blur-3xl opacity-40 animate-blob "
-        style={{ animationDelay: "6s" }}
+        style={{ animationDelay: '6s' }}
       ></div>
       <div
         className="absolute right-0 -bottom-4 w-48 h-48 bg-[#78e6f5] rounded-full filter blur-3xl opacity-40 animate-blob"
-        style={{ animationDelay: "3s" }}
+        style={{ animationDelay: '3s' }}
       ></div>
       <div
         className="absolute top-1/2 left-1/2 w-48 h-48 bg-[#90aaf0] rounded-full filter blur-3xl opacity-40 animate-blob"
-        style={{ animationDelay: "5s" }}
+        style={{ animationDelay: '5s' }}
       ></div>
       {/* CONTENT  */}
       <div className="md:px-8 px-4 py-8 md:py-16 md:w-1/2   flex flex-col items-start justify-center relative">
@@ -56,7 +55,7 @@ const ChooseUs = () => {
               <div className="w-8 h-8 p-4 bg-[#FFFFFF7D] text-black font-semibold flex items-center justify-center">
                 {index + 1}
               </div>
-              <p> {item.title}</p>{" "}
+              <p> {item.title}</p>{' '}
             </div>
             <div className="collapse-content">
               <p>{item.description}</p>
@@ -76,7 +75,7 @@ const ChooseUs = () => {
           match your specific goals.
         </p>
         <Link
-          href={"/"}
+          href={'/'}
           className="py-2 px-6 bg-transparent  text-[#7471E6] border border-[#7471E6] flex items-center gap-1 text-[1.2rem] self-start"
         >
           Start Project

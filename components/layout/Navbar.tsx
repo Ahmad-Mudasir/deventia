@@ -1,10 +1,10 @@
-import React from "react";
-import Image from "next/image";
-import logoImg from "@/assets/images/logoImg.gif";
-import Link from "next/link";
-import { MdOutlineArrowOutward } from "react-icons/md";
-import { RiMenu4Line } from "react-icons/ri";
-import { inter } from "@/utils/fonts";
+import React from 'react';
+import Image from 'next/image';
+import logoImg from '@/assets/images/logoImg.gif';
+import Link from 'next/link';
+import { MdOutlineArrowOutward } from 'react-icons/md';
+import { RiMenu4Line } from 'react-icons/ri';
+import { inter } from '@/utils/fonts';
 
 const Navbar = () => {
   return (
@@ -21,19 +21,19 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 bg-[#161616]"
           >
             <li className="text-white">
-              <Link href={"/"}>Home</Link>
+              <Link href={'/'}>Home</Link>
             </li>
             <li className="text-white">
-              <Link href={"/"}>Services</Link>
+              <Link href={'/'}>Services</Link>
             </li>
             <li className="text-white">
-              <Link href={"/"}>Carrers</Link>
+              <Link href={'/Careers'}>Careers</Link>
             </li>
             <li className="text-white">
-              <Link href={"/"}>Our Portfolio</Link>
+              <Link href={'/Our-Portfolio'}>Our Portfolio</Link>
             </li>
             <li className="text-white">
-              <Link href={"/"}>About Us</Link>
+              <Link href={'/'}>About Us</Link>
             </li>
           </ul>
         </div>
@@ -46,25 +46,25 @@ const Navbar = () => {
         />
       </div>
       <div className="navbar-end hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 items-center">
+        <ul className="flex gap-4 px-1 items-center">
           <li className="text-white">
-            <Link href={"/"}>Home</Link>
+            <Link href={'/'}>Home</Link>
           </li>
           <li className="text-white/70">
-            <Link href={"/"}>Services</Link>
+            <Link href={'/Services'}>Services</Link>
           </li>
           <li className="text-white/70">
-            <Link href={"/"}>Carrers</Link>
+            <Link href={'/Careers'}>Careers</Link>
           </li>
           <li className="text-white/70">
-            <Link href={"/"}>Our Portfolio</Link>
+            <Link href={'/Our-Portfolio'}>Our Portfolio</Link>
           </li>
           <li className="text-white/70">
-            <Link href={"/"}>About Us</Link>
+            <Link href={'/About-us'}>About Us</Link>
           </li>
 
           <Link
-            href={"/"}
+            href={'/Contact-us'}
             className="p-4 bg-[#7471E680] text-white/70 flex items-center gap-2"
           >
             Contact Us <MdOutlineArrowOutward size={25} />

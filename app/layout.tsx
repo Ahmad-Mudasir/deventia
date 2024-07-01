@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { interFont } from "@/utils/fonts";
+import type { Metadata } from 'next';
+import './globals.css';
+import { interFont, Aeonik } from '@/utils/fonts';
+import Head from 'next/head';
 
 export const metadata: Metadata = {
-  title: "DeventiaTech Limited",
-  description: "DeventiaTech Pvt Limited - Scripting Future Technologies",
+  title: 'DeventiaTech Limited',
+  description: 'DeventiaTech Pvt Limited - Scripting Future Technologies',
 };
 
 export default function RootLayout({
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={interFont.className}>{children}</body>
+      <Head>
+        <link rel="icon" href="/logoImg.ico" sizes="any" />
+      </Head>
+      <body className={`tracking-wider ${Aeonik.className}`}>{children}</body>
     </html>
   );
 }

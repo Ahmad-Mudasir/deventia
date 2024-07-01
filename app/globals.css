@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background: #141414;
+  color: white;
+}
+
+.careers-bg {
+  background: radial-gradient(50% 50% at 0% 20%, #7571e643 0%, #413f8000 100%), radial-gradient(50% 50% at 100% 20%, #7571e643 0%, #413f8000 100%);
+}
+
+.about-us-bg {
+  background: radial-gradient(50% 50% at 0% 50%, #7571e650 0%, #413f8000 100%);
+}
+
+.our-core-values-bg {
+  background: radial-gradient(70% 70% at 100% 50%, #7571e65f 0%, #413f8000 100%);
+}
+
+.co-founder-bg {
+  background: radial-gradient(50% 50% at 80% 60%, #7571e64f 0%, #413f8000 100%);
+}
+
+.our-team-bg {
+  background: radial-gradient(50% 50% at 0% 10%, #7571e679 0%, #413f8000 100%);
+}
+
+.services-bg {
+  background: radial-gradient(80% 80% at 10% 50%, #7571e63f 0%, #413f8010 100%);
+}
+
+.our-solution-bg {
+  background: radial-gradient(20% 50% at 100% 60%, #7571e65c 0%, #413f8010 100%);
+  z-index: 0;
+}
