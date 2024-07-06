@@ -24,11 +24,11 @@ const ServicesByOurExpertise = () => {
           experts are equipped to tackle any challenge and deliver results that
           exceed expectations.
         </p>
-        <p className="text-[#E6E6E6] flex gap-2 items-center text-lg mt-6">
+        <p className="text-[#E6E6E6] flex gap-2 text-lg mt-6">
           <FaRegSquareCheck className="text-[#8A88EC]" size={22} />
           Tailored solutions designed to meet your unique business needs
-        </p>{' '}
-        <p className="text-[#E6E6E6] flex gap-2 items-center text-lg mt-2">
+        </p>
+        <p className="text-[#E6E6E6] flex gap-2 text-lg mt-2">
           <FaRegSquareCheck className="text-[#8A88EC]" size={22} />
           Expertise across IT consulting, software development, web design, and
           digital marketing

@@ -19,16 +19,16 @@ const page = () => {
         description={
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices lorem non feugiat egestas amet.'
         }
-        projectURL={'https://www.google.com'}
+        projectURL={'/Our-Portfolio/Projects/RS-Global-Ties'}
         img={alpinedgeImg}
-        projectName={'AlpineEdge'}
+        projectName={'RS Global Ties'}
       />
       <OurProjects
         flexReverse={true}
         description={
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices lorem non feugiat egestas amet.'
         }
-        projectURL={'https://www.google.com'}
+        projectURL={'/Our-Portfolio/Projects/Private-CPA'}
         img={privateCPA}
         projectName={'Private CPA'}
       />
@@ -37,7 +37,7 @@ const page = () => {
         description={
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices lorem non feugiat egestas amet.'
         }
-        projectURL={'https://isaconsulting.com/'}
+        projectURL={'/Our-Portfolio/Projects/ISA'}
         img={ISA}
         projectName={'ISA Consulting'}
       />
@@ -46,7 +46,7 @@ const page = () => {
         description={
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices lorem non feugiat egestas amet.'
         }
-        projectURL={'https://www.google.com'}
+        projectURL={'/Our-Portfolio/Projects/Makewell.life'}
         img={patientDoctor}
         projectName={'Patient / Doctor'}
       />
@@ -55,7 +55,7 @@ const page = () => {
         description={
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices lorem non feugiat egestas amet.'
         }
-        projectURL={'https://www.google.com'}
+        projectURL={'/Our-Portfolio/Projects/origin.com'}
         img={origin}
         projectName={'origin.com'}
       />
@@ -64,7 +64,7 @@ const page = () => {
         description={
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices lorem non feugiat egestas amet.'
         }
-        projectURL={'https://www.google.com'}
+        projectURL={'/Our-Portfolio/Projects/Dadi-Rent-Boat'}
         img={DadiRentBoat}
         projectName={'Dadi Rent Boat'}
       />

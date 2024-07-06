@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const CareerCard = ({
   title,
@@ -12,7 +15,13 @@ const CareerCard = ({
   location: string;
 }) => {
   return (
-    <div className="border-[1px] border-[#5357689d] p-8 bg-gradient-to-b from-[rgba(117,113,230,0.21)] to-[rgba(65,63,128,0.21)] ">
+    <motion.div
+      variants={{
+        hidden: { opacity: 0 },
+        show: { opacity: 1 },
+      }}
+      className="border-[1px] border-[#5357689d] p-8 bg-gradient-to-b from-[rgba(117,113,230,0.21)] to-[rgba(65,63,128,0.21)] "
+    >
       <h2 className="font-bold text-2xl md:text-3xl mb-4">{title}</h2>
       <p className="text-base text-[#C0C0C0] border-b-[1.5px] border-dashed border-[#c0c0c07c] pb-8">
         {description}
@@ -27,7 +36,7 @@ const CareerCard = ({
           Detials
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 export default CareerCard;
