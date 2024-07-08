@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaRegSquareCheck } from 'react-icons/fa6';
 import { MdOutlineArrowOutward } from 'react-icons/md';
-import designService from '../../../assets/images/design-service.png';
+import designService from '../../../assets/images/design-service.webp';
 
 const ServicesByOurExpertise = () => {
   return (

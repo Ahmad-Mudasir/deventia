@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import logo from '../../../assets/images/ISA Logo.png';
 import Link from 'next/link';
 
 const ProjectDetials = ({
@@ -10,7 +9,7 @@ const ProjectDetials = ({
   projectLink: string;
 }) => {
   return (
-    <section className="p-[5%] flex gap-12 flex-col md:flex-row">
+    <section className="about-us-bg p-[5%] flex gap-12 flex-col md:flex-row">
       <p className="text-lg font-medium  w-full md:w-1/2">
         In the heart of the Austrian Alps, where the whispers of history echo
         through the mountain peaks, AlpineEdge finds its roots. For centuries,
@@ -21,7 +20,9 @@ const ProjectDetials = ({
         inspiration and resilience.
       </p>
       <div className="bg-[#282730] px-12 py-4 w-full md:w-[45%]">
-        <Image src={projectLogo} alt="logo" className="w-32 h-24" />
+        <div className="w-32 h-24 flex items-end">
+          <Image src={projectLogo} alt="logo" className="w-auto h-auto" />
+        </div>
         <div className="ml-32 ">
           <h6 className="font-semibold text-xl mb-1">Client</h6>
           <p className="text-base mb-4">Henry klassen</p>

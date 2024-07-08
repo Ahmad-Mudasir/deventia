@@ -36,7 +36,11 @@ const page = () => {
         projectLogo={isaLogo}
         projectLink="https://isaconsulting.com/"
       />
-      <DesktopVersion projectImg={isaDesk} projectLogo={isaLogo} />
+      <DesktopVersion
+        projectImg={isaDesk}
+        projectLogo={isaLogo}
+        title="Desktop Version"
+      />
       <WhatMyClientSay />
     </>
   );

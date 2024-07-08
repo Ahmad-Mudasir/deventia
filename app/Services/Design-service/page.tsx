@@ -1,4 +1,3 @@
-import ExpertiseCard from '@/components/Services/DesignService/ExpertiseCard';
 import Hero from '@/components/Services/DesignService/Hero';
 import OurDesignProcess from '@/components/Services/DesignService/OurDesignProcess';
 import OurSolutionApproach from '@/components/Services/DesignService/OurSolutionApproach';
@@ -10,6 +9,7 @@ import user from '../../../assets/images/team-Member.webp';
 import user2 from '../../../assets/images/mission.webp';
 import user3 from '../../../assets/images/coFounder.webp';
 import GetInTouch from '@/components/AboutUs/GetInTouch';
+import FlipCard from '@/components/Services/DesignService/FlipCard';
 
 const page = () => {
   return (
@@ -30,19 +30,23 @@ const page = () => {
         </p>
       </div>
       <div className="p-[5%] flex gap-8 flex-col md:flex-row justify-center">
-        <ExpertiseCard
+        <FlipCard
           title="Tailored Solutions"
           icon={<GiPuzzle size={50} className="text-[#8A88EC] mb-3 mt-1" />}
+          description="Your Brand, Your Vision - Our designs are customized to fit your unique needs, ensuring a perfect match for your brand identity."
         />
-        <ExpertiseCard
+        <FlipCard
           title="Creative Expertise"
           icon={<GiTribalGear size={50} className="text-[#8A88EC] mb-3 mt-1" />}
+          description="Ideas Transformed - With our skilled team, your concepts come to life with captivating visuals and innovative design."
         />
-        <ExpertiseCard
-          title="Client Success"
+        <FlipCard
           icon={<GiStarFlag size={50} className="text-[#8A88EC] mb-3 mt-1" />}
+          title="Client Success"
+          description="Real Results - Explore our portfolio for proof of our impact, from heightened brand recognition to increased engagement."
         />
       </div>
+
       <ServicesByOurExpertise />
       <div className="our-solution-bg">
         <OurSolutionApproach />

@@ -5,9 +5,10 @@ import ProjectDetials from '@/components/OurPortfolio/CaseStudy/ProjectDetials';
 import StyleGuide from '@/components/OurPortfolio/CaseStudy/StyleGuide';
 import TechnologiesUsed from '@/components/OurPortfolio/CaseStudy/TechnologiesUsed';
 import WhatMyClientSay from '@/components/OurPortfolio/CaseStudy/WhatMyClientSay';
-import isaLogo from '../../../../assets/images/dadi Logo.png';
-import isaDesk from '../../../../assets/images/dadi-desktop.png';
-import isaDesk1 from '../../../../assets/images/dadi-desktop1.png';
+import isaLogo from '../../../../assets/images/dadi Logo.webp';
+import isaDesk from '../../../../assets/images/dadi-desktop.webp';
+import isaDesk1 from '../../../../assets/images/dadi-desktop1.webp';
+import isaDesk2 from '../../../../assets/images/dadi-desktop2.webp';
 
 const page = () => {
   return (
@@ -36,7 +37,16 @@ const page = () => {
         projectLogo={isaLogo}
         projectLink="https://isaconsulting.com/"
       />
-      <DesktopVersion projectImg={isaDesk} projectLogo={isaLogo} />
+      <DesktopVersion
+        projectImg={isaDesk2}
+        projectLogo={isaLogo}
+        title="Deshboard Version"
+      />
+      <DesktopVersion
+        projectImg={isaDesk}
+        projectLogo={isaLogo}
+        title="Desktop Version"
+      />
       <WhatMyClientSay />
     </>
   );

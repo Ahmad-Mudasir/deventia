@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import designService2 from '../../../assets/images/design-service2.png';
+import designService2 from '../../../assets/images/design-service2.webp';
 import { FaRegSquareCheck } from 'react-icons/fa6';
 
 const OurSolutionApproach = () => {

@@ -21,7 +21,9 @@ const Hero = ({
       /> */}
       <div className="flex flex-col items-start justify-center gap-4 px-[5%] lg:pr-[3%]">
         <h2 className="text-white text-start text-2xl lg:text-5xl font-bold leading-tight flex items-end gap-4">
-          <Image src={projectLogo} alt="logo" className="w-[120px] h-[80px]" />
+          <span className="w-[120px] h-[80px] flex items-end justify-start">
+            <Image src={projectLogo} alt="logo" className="w-auto h-auto" />
+          </span>
           {projectName}
         </h2>
         <h1 className="text-white text-start text-2xl lg:text-5xl font-bold leading-tight">
@@ -40,11 +42,9 @@ const Hero = ({
         </div>
       </div>
 
-      <Image
-        src={projectImg}
-        alt="website"
-        className="w-full lg:w-[55%] mr-0 ml-auto h-auto"
-      />
+      <div className="w-full lg:w-[55%] flex items-center justify-start">
+        <Image src={projectImg} alt="website" className="w-auto h-auto" />
+      </div>
 
       {/* <div className="flex">
         <iframe

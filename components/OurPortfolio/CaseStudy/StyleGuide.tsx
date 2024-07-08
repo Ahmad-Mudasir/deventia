@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import isaLogo from '../../../assets/images/ISA Logo.png';
 
 const StyleGuide = ({
   projectLogo,
@@ -21,16 +20,15 @@ const StyleGuide = ({
   color4: string;
 }) => {
   return (
-    <section className="careers-bg px-[5%]">
+    <section className="style-guide-bg px-[5%] ">
       <div className="flex flex-col md:flex-row gap-6 justify-between">
         <h1 className="font-semibold text-2xl lg:text-5xl">
-          <span className="bg-gradient-to-tr from-[#0DBEFB] via-[#9DC6F2] to-[#74A2D1]  pb-0.5">
-            <span className="bg-[#141414]">Styl</span>
-          </span>
-          e Guide
+          <span className="gradient-border">Styl</span>e Guide
         </h1>
         <h2 className="text-white text-start text-2xl lg:text-4xl font-semibold leading-tight flex items-end gap-4">
-          <Image src={projectLogo} alt="logo" className="w-[80px] h-[50px]" />
+          <span className="w-[80px] h-[60px] flex items-end justify-start">
+            <Image src={projectLogo} alt="logo" className="w-auto h-auto" />
+          </span>
           {projectName}
         </h2>
       </div>
@@ -85,37 +83,39 @@ const StyleGuide = ({
           </div>
         </div>
         <table className="font-semibold text-lg text-center h-fit">
-          <tr>
-            <td></td>
-            <td className="border-2 border-[#3D3D3D] border-t-0 px-4 py-3">
-              Website Logo
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td className=" border-2 border-[#3D3D3D] border-l-0 px-1 -rotate-90">
-              180px
-            </td>
-            <td className="border-2 border-[#3D3D3D]">
-              <div className="project-logo-bg p-[1.2px] size-[215px] rounded-[40px]">
-                <div className="bg-[#2C2C2C] w-full h-full rounded-[40px] flex items-center justify-center">
-                  <Image
-                    src={projectLogo}
-                    alt="website logo"
-                    className="h-auto w-auto"
-                  />
+          <tbody>
+            <tr>
+              <td></td>
+              <td className="border-2 border-[#3D3D3D] border-t-0 px-4 py-3">
+                Website Logo
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td className=" border-2 border-[#3D3D3D] border-l-0 px-1 -rotate-90">
+                180px
+              </td>
+              <td className="border-2 border-[#3D3D3D]">
+                <div className="project-logo-bg p-[1.2px] size-[215px] rounded-[40px]">
+                  <div className="bg-[#2C2C2C] w-full h-full rounded-[40px] flex items-center justify-center">
+                    <Image
+                      src={projectLogo}
+                      alt="website logo"
+                      className="h-auto w-auto"
+                    />
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td className="border-2 border-[#3D3D3D] border-r-0 px-7 py-3"></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td className="border-2 border-[#3D3D3D] border-b-0 px- py-3">
-              180px
-            </td>
-            <td></td>
-          </tr>
+              </td>
+              <td className="border-2 border-[#3D3D3D] border-r-0 px-7 py-3"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td className="border-2 border-[#3D3D3D] border-b-0 px- py-3">
+                180px
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </section>

@@ -3,18 +3,20 @@ import Image from 'next/image';
 const DesktopVersion = ({
   projectLogo,
   projectImg,
+  title,
 }: {
   projectLogo: any;
   projectImg: any;
+  title: string;
 }) => {
   return (
     <section className="p-[5%]">
-      <Image src={projectLogo} alt="logo" className="w-32 h-24" />
+      <div className="w-32 h-24 flex items-end mb-4 justify-start">
+        <Image src={projectLogo} alt="logo" className="w-auto h-auto" />
+      </div>
       <h1 className="font-semibold text-2xl lg:text-5xl mb-12">
-        <span className="bg-gradient-to-tr from-[#0DBEFB] via-[#9DC6F2] to-[#74A2D1]  pb-0.5">
-          <span className="bg-[#141414]">Des</span>
-        </span>
-        ktop Version
+        <span className="gradient-border">{title?.slice(0, 3)}</span>
+        {title?.slice(3, title?.length)}
       </h1>
 
       <Image

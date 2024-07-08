@@ -11,9 +11,7 @@ const AboutProject = ({
   return (
     <section className=" bg-gradient-to-b from-[#6460ce0a] to-[#2424260f] px-[5%]">
       <h1 className="font-semibold text-2xl lg:text-5xl">
-        <span className="bg-gradient-to-tr from-[#0DBEFB] via-[#9DC6F2] to-[#74A2D1]  pb-0.5">
-          <span className="bg-[#141414]">Abo</span>
-        </span>
+        <span className="gradient-border">Abo</span>
         ut
       </h1>
 
