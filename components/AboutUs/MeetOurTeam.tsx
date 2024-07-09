@@ -15,28 +15,44 @@ const MeetOurTeam = () => {
       </div>
       <div className="mt-8 flex gap-8 flex-wrap">
         <div>
-          <Image src={teamMember} alt="team-Member" className="w-[280px]" />
+          <Image
+            src={teamMember}
+            alt="team-Member"
+            className="w-36 lg:w-[280px]"
+          />
           <h4 className="font-bold text-xl">John Deo</h4>
           <p className="text-base font-medium mt-1">
             UX/UI Designer at Deventia
           </p>
         </div>
         <div>
-          <Image src={teamMember} alt="team-Member" className="w-[280px]" />
+          <Image
+            src={teamMember}
+            alt="team-Member"
+            className="w-36 lg:w-[280px]"
+          />
           <h4 className="font-bold text-xl">John Deo</h4>
           <p className="text-base font-medium mt-1">
             UX/UI Designer at Deventia
           </p>
         </div>
         <div>
-          <Image src={teamMember} alt="team-Member" className="w-[280px]" />
+          <Image
+            src={teamMember}
+            alt="team-Member"
+            className="w-36 lg:w-[280px]"
+          />
           <h4 className="font-bold text-xl">John Deo</h4>
           <p className="text-base font-medium mt-1">
             UX/UI Designer at Deventia
           </p>
         </div>
         <div>
-          <Image src={teamMember} alt="team-Member" className="w-[280px]" />
+          <Image
+            src={teamMember}
+            alt="team-Member"
+            className="w-36 lg:w-[280px]"
+          />
           <h4 className="font-bold text-xl">John Deo</h4>
           <p className="text-base font-medium mt-1">
             UX/UI Designer at Deventia

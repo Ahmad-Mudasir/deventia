@@ -20,10 +20,10 @@ const ProjectDetials = ({
         inspiration and resilience.
       </p>
       <div className="bg-[#282730] px-12 py-4 w-full md:w-[45%]">
-        <div className="w-32 h-24 flex items-end">
+        <div className="w-20 md:w-32 h-12 md:h-24 flex items-end">
           <Image src={projectLogo} alt="logo" className="w-auto h-auto" />
         </div>
-        <div className="ml-32 ">
+        <div className="ml-24 md:ml-32 ">
           <h6 className="font-semibold text-xl mb-1">Client</h6>
           <p className="text-base mb-4">Henry klassen</p>
           <h6 className="font-semibold text-xl mb-1">Deliverables</h6>

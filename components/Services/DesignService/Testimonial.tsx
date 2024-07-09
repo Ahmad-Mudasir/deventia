@@ -8,7 +8,7 @@ const Testimonial = ({
   img: any;
 }) => {
   return (
-    <div className="border-2 border-[#ADA0FF] px-6 py-4 rounded">
+    <div className="border-2 border-[#ADA0FF] px-6 py-4 rounded hover:-translate-y-5 duration-500 ease-linear">
       <div className="rounded-full bg-[#7471E6] flex justify-center items-center size-[68px]">
         <Image
           src={img}

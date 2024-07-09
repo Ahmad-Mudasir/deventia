@@ -26,7 +26,7 @@ const CareerCard = ({
       <p className="text-base text-[#C0C0C0] border-b-[1.5px] border-dashed border-[#c0c0c07c] pb-8">
         {description}
       </p>
-      <div className="flex gap-4 items-center mt-6">
+      <div className="flex flex-wrap gap-4 items-center mt-6">
         <h3 className="font-bold text-xl md:text-2xl">{jobType}</h3>
         <p className="text-base text-[#A7A7A7] mr-auto">{location}</p>
         <Link

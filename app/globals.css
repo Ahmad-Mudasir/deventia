@@ -60,46 +60,6 @@ body {
   border-image: linear-gradient(to right, #0DBEFB, #9DC6F2, #74A2D1) 1;
 }
 
-/* 
-.iphone-case {
-  --border-radius-outer: 2rem;
-  --outer-padding: 0.5rem;
-  --case-color: #000000;
-  --border-radius-inner: calc(var(--border-radius-outer) - var(--outer-padding));
-  box-shadow: 0px 0px 0px 2px #ffffff43;
-  background-color: var(--case-color);
-  border-radius: var(--border-radius-outer);
-  padding: var(--outer-padding);
-  aspect-ratio: 1/2;
-  position: relative;
-  margin-inline: auto;
-}
-
-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  overflow: hidden !important;
-}
-
-.iphone-case::-webkit-scrollbar {
-  width: 12px;
-}
-
-.iphone-case::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-.iphone-case::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
-}
-
-.iphone-case::-webkit-scrollbar-thumb:hover {
-  background: #555;
-} */
-
-
 .flip-box {
   background-color: transparent;
   width: 280px;

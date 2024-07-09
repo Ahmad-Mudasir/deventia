@@ -21,7 +21,11 @@ const Navbar = () => {
     >
       <div className="navbar-start  ">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="pl-2 lg:hidden">
+          <div
+            tabIndex={0}
+            role="button"
+            className="pl-2 lg:hidden flex justify-end"
+          >
             <RiMenu4Line size={25} color="#fff" />
           </div>
           <ul
@@ -29,22 +33,52 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 bg-[#161616]"
           >
             <li
-              className={`${isActive('home') ? 'text-white' : 'text-red-400'}`}
+              className={`p-3 ${
+                isActive('/Services') ||
+                isActive('/Careers') ||
+                isActive('/Our-Portfolio') ||
+                isActive('/About-us')
+                  ? 'text-white'
+                  : 'bg-[#7471E680]'
+              }`}
             >
               <Link href={'/'}>Home</Link>
             </li>
-            <li className="text-white">
+            <li
+              className={`p-3 ${
+                isActive('/Services') ? 'bg-[#7471E680]' : 'text-white'
+              }`}
+            >
               <Link href={'/Services'}>Services</Link>
             </li>
-            <li className="text-white">
+            <li
+              className={`p-3 ${
+                isActive('/Careers') ? 'bg-[#7471E680]' : 'text-white'
+              }`}
+            >
               <Link href={'/Careers'}>Careers</Link>
             </li>
-            <li className="text-white">
+            <li
+              className={`p-3 ${
+                isActive('/Our-Portfolio') ? 'bg-[#7471E680]' : 'text-white'
+              }`}
+            >
               <Link href={'/Our-Portfolio'}>Our Portfolio</Link>
             </li>
-            <li className="text-white">
+            <li
+              className={`p-3 ${
+                isActive('/About-us') ? 'bg-[#7471E680]' : 'text-white'
+              }`}
+            >
               <Link href={'/About-us'}>About Us</Link>
             </li>
+
+            <Link
+              href={'/Contact-us'}
+              className="p-3 bg-[#7471E680] text-white/70 flex items-center gap-2"
+            >
+              Contact Us <MdOutlineArrowOutward size={25} />
+            </Link>
           </ul>
         </div>
         <Image

@@ -17,7 +17,7 @@ const CareerFillters = () => {
       </p>
       <div className="flex items-center flex-col md:flex-row justify-between gap-4 my-12">
         <h3 className="mr-auto">Showing 34 Jobs</h3>
-        <div className="flex items-center justify-between mr-0 ml-auto gap-8">
+        <div className="flex flex-wrap items-center justify-between mr-0 ml-auto gap-8">
           <label className="flex items-center gap-2 cursor-pointer">
             <input
               type="checkbox"

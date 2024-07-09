@@ -21,12 +21,12 @@ const StyleGuide = ({
 }) => {
   return (
     <section className="style-guide-bg px-[5%] ">
-      <div className="flex flex-col md:flex-row gap-6 justify-between">
+      <div className="flex flex-col md:flex-row gap-12 md:justify-between">
         <h1 className="font-semibold text-2xl lg:text-5xl">
           <span className="gradient-border">Styl</span>e Guide
         </h1>
         <h2 className="text-white text-start text-2xl lg:text-4xl font-semibold leading-tight flex items-end gap-4">
-          <span className="w-[80px] h-[60px] flex items-end justify-start">
+          <span className="w-14 md:w-[80px] h-10 md:h-[60px] flex items-end justify-start">
             <Image src={projectLogo} alt="logo" className="w-auto h-auto" />
           </span>
           {projectName}
@@ -55,28 +55,28 @@ const StyleGuide = ({
       <h2 className="font-semibold text-xl md:text-4xl mt-12">
         Colour Schemes
       </h2>
-      <div className="flex flex-wrap justify-between gap-28">
-        <div className="mt-28 ml-28 font-medium text-base">
+      <div className="flex flex-wrap justify-center md:justify-between gap-28">
+        <div className="mt-28 md:ml-28 font-medium text-base">
           <div
             style={{ background: color1 }}
-            className={`relative size-[240px] rounded-full flex items-center justify-center`}
+            className={`relative size-[150px] lg:size-[240px] rounded-full flex items-center justify-center`}
           >
             {color1}
             <div
               style={{ background: color2 }}
-              className={`absolute -top-[80px] size-[160px] rounded-full flex items-center justify-center`}
+              className={`absolute -top-14 md:-top-[80px] size-[110px] lg:size-[160px] rounded-full flex items-center justify-center`}
             >
               {color2}
             </div>
             <div
               style={{ background: color3 }}
-              className={`absolute bottom-0 -left-[80px] size-[160px] rounded-full flex items-center justify-center`}
+              className={`absolute -bottom-6 md:bottom-0 -left-14 md:-left-[80px] size-[110px] lg:size-[160px] rounded-full flex items-center justify-center`}
             >
               {color3}
             </div>
             <div
               style={{ background: color4 }}
-              className={`absolute bottom-0 -right-[80px] size-[160px] rounded-full flex items-center justify-center text-black`}
+              className={`absolute -bottom-6 md:bottom-0 -right-14 md:-right-[80px] size-[110px] lg:size-[160px] rounded-full flex items-center justify-center text-black`}
             >
               {color4}
             </div>
@@ -96,7 +96,7 @@ const StyleGuide = ({
                 180px
               </td>
               <td className="border-2 border-[#3D3D3D]">
-                <div className="project-logo-bg p-[1.2px] size-[215px] rounded-[40px]">
+                <div className="project-logo-bg p-[1.2px] size-[160px] lg:size-[215px] rounded-[40px]">
                   <div className="bg-[#2C2C2C] w-full h-full rounded-[40px] flex items-center justify-center">
                     <Image
                       src={projectLogo}
