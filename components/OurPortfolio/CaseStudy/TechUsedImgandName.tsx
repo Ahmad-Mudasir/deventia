@@ -18,7 +18,7 @@ const TechUsedImgandName = ({
   return (
     <div
       style={{ top: top, left: left, right: right, bottom: bottom }}
-      className={`flex gap-2 items-center bg-[#282730] px-4 py-2 md:absolute w-fit`}
+      className={`flex gap-2 items-center bg-[#282730] px-4 py-2 lg:absolute w-fit`}
     >
       <Image src={techImg} alt={techImg.src} className="size-[40px]" />
       <h5>{techName}</h5>

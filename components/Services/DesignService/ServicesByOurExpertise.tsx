@@ -7,7 +7,7 @@ import designService from '../../../assets/images/design-service.webp';
 const ServicesByOurExpertise = () => {
   return (
     <section className="services-bg flex flex-col md:flex-row pr-0 bg-[#ffffff07] mx-[5%]">
-      <div className="py-8 px-12">
+      <div className="py-8 px-4 lg:px-12">
         <h1 className="text-2xl lg:text-4xl text-[#ECECEC] font-bold w-full mb-6">
           Services By Our Experts
         </h1>

@@ -5,9 +5,9 @@ import ProjectDetials from '@/components/OurPortfolio/CaseStudy/ProjectDetials';
 import StyleGuide from '@/components/OurPortfolio/CaseStudy/StyleGuide';
 import TechnologiesUsed from '@/components/OurPortfolio/CaseStudy/TechnologiesUsed';
 import WhatMyClientSay from '@/components/OurPortfolio/CaseStudy/WhatMyClientSay';
-import isaLogo from '../../../../assets/images/RS-global-logo.png';
-import isaDesk from '../../../../assets/images/RS-desktop.png';
-import isaDesk1 from '../../../../assets/images/RS-desktop1.png';
+import isaLogo from '../../../../assets/images/RS-global-logo.webp';
+import isaDesk from '../../../../assets/images/RS-desktop.webp';
+import isaDesk1 from '../../../../assets/images/RS-desktop1.webp';
 
 const page = () => {
   return (

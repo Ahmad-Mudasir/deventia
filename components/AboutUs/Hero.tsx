@@ -25,7 +25,7 @@ const Hero = () => {
           </div>
           <h1 className="text-white text-start text-[3rem] md:text-[5rem] font-bold leading-tight">
             Uncovering Our Evolution <br className="hidden lg:block" />
-            Uncovering Our Evolution{' '}
+            and Principles
           </h1>
           <div className="flex items-center gap-2 flex-wrap">
             <Link

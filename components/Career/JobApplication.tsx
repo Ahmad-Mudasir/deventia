@@ -1,6 +1,17 @@
+'use client';
+
 import { FaFile, FaFileUpload } from 'react-icons/fa';
+import SubmitApplicationPopup from './SubmitApplicationPopup';
+import { useState } from 'react';
 
 const JobApplication = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    setShowPopup(true);
+  };
+
   return (
     <form className="bg-[#7571e618] p-8 w-full grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12">
       <h1 className="font-bold text-lg md:text-xl mb-8 col-span-1 md:col-span-3">
@@ -115,11 +126,16 @@ const JobApplication = () => {
       </div>
 
       <button
+        onClick={(e) => {
+          handleSubmit(e);
+        }}
         type="submit"
         className="bg-[#6366F1] px-12 py-3 font-semibold text-balance w-fit block mx-auto col-span-1 md:col-span-3"
       >
         Submit
       </button>
+
+      {showPopup && <SubmitApplicationPopup setShowPopup={setShowPopup} />}
     </form>
   );
 };
