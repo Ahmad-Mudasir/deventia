@@ -6,7 +6,7 @@ import StyleGuide from '@/components/OurPortfolio/CaseStudy/StyleGuide';
 import TechnologiesUsed from '@/components/OurPortfolio/CaseStudy/TechnologiesUsed';
 import WhatMyClientSay from '@/components/OurPortfolio/CaseStudy/WhatMyClientSay';
 import isaLogo from '../../../../assets/images/makewell Logo.webp';
-import isaDesk from '../../../../assets/images/makewell-mobile.png';
+import isaDesk from '../../../../assets/images/makewell-mobile.webp';
 import isaDesk1 from '../../../../assets/images/makewell-desktop1.webp';
 import isaDesk2 from '../../../../assets/images/makewell-desktop.webp';
 
