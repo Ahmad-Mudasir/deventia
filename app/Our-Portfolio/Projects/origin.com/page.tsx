@@ -5,9 +5,9 @@ import ProjectDetials from '@/components/OurPortfolio/CaseStudy/ProjectDetials';
 import StyleGuide from '@/components/OurPortfolio/CaseStudy/StyleGuide';
 import TechnologiesUsed from '@/components/OurPortfolio/CaseStudy/TechnologiesUsed';
 import WhatMyClientSay from '@/components/OurPortfolio/CaseStudy/WhatMyClientSay';
-import isaLogo from '../../../../assets/images/origin Logo.png';
-import isaDesk from '../../../../assets/images/origin-desktop.png';
-import isaDesk1 from '../../../../assets/images/origin-desktop1.png';
+import isaLogo from '../../../../assets/images/origin Logo.webp';
+import isaDesk from '../../../../assets/images/origin-desktop.webp';
+import isaDesk1 from '../../../../assets/images/origin-desktop1.webp';
 
 const page = () => {
   return (
