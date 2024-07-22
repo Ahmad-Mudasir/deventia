@@ -9,7 +9,7 @@ import { FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="p-[5%] bg-[#161616] z-20 relative">
+    <footer className="p-[5%] bg-[#161616] z-10 relative">
       <div className="absolute bottom-0 left-0 footer-bg-img"></div>
       <div className="grid grid-cols-2 md:grid-cols-4 w-full">
         <div>
@@ -17,22 +17,40 @@ const Footer = () => {
             Navigation
           </h4>
           <div className="flex flex-col">
-            <Link className="text-lg font-medium" href="/">
+            <Link
+              className="text-lg font-medium hover:underline hover:text-[#7471E6]"
+              href="/"
+            >
               Home
             </Link>
-            <Link className="text-lg font-medium" href="/Services">
+            <Link
+              className="text-lg font-medium hover:underline hover:text-[#7471E6]"
+              href="/Services"
+            >
               Services
             </Link>
-            <Link className="text-lg font-medium" href="About Us">
+            <Link
+              className="text-lg font-medium hover:underline hover:text-[#7471E6]"
+              href="About-us"
+            >
               About Us
             </Link>
-            <Link className="text-lg font-medium" href="/Our-Portfolio">
+            <Link
+              className="text-lg font-medium hover:underline hover:text-[#7471E6]"
+              href="/Our-Portfolio"
+            >
               Our Portfolio
             </Link>
-            <Link className="text-lg font-medium" href="/Careers">
+            <Link
+              className="text-lg font-medium hover:underline hover:text-[#7471E6]"
+              href="/Careers"
+            >
               Careers
             </Link>
-            <Link className="text-lg font-medium" href="Contacts">
+            <Link
+              className="text-lg font-medium hover:underline hover:text-[#7471E6]"
+              href="Contact-us"
+            >
               Contacts
             </Link>
           </div>
@@ -42,11 +60,11 @@ const Footer = () => {
             Contact us
           </h4>
           <a
-            className="text-lg font-medium"
+            className="text-lg font-medium hover:underline hover:text-[#7471E6]"
             rel="stylesheet"
-            href="tel:+9240-9331148"
+            href="tel:+92316-5910564"
           >
-            +9240-9331148
+            +92316-5910564
           </a>
           <h4 className="font-semibold text-xl text-white/35 my-4 md:mt-20">
             Follow us
@@ -56,23 +74,23 @@ const Footer = () => {
               href="https://www.google.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 border-2 border-white/25 rounded-full"
+              className="p-2 border-2 border-white/25 hover:border-[#7471E6] rounded-full hover:scale-125 transition-all duration-700 ease-in-out hover:text-[#7471E6]"
             >
               <FaSquareFacebook />
             </a>
             <a
-              href="https://www.google.com"
+              href="https://www.linkedin.com/company/deventia-tech-pvt-ltd/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 border-2 border-white/25 rounded-full"
+              className="p-2 border-2 border-white/25 hover:border-[#7471E6] rounded-full hover:scale-125 transition-all duration-700 ease-in-out hover:text-[#7471E6]"
             >
               <FaLinkedin />
             </a>
             <a
-              href="https://www.google.com"
+              href="https://www.instagram.com/deventiatechlimited?igsh=NWhhdmFpczVzeHBm&utm_source=qr"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 border-2 border-white/25 rounded-full"
+              className="p-2 border-2 border-white/25 hover:border-[#7471E6] rounded-full hover:scale-125 transition-all duration-700 ease-in-out hover:text-[#7471E6]"
             >
               <FaInstagram />
             </a>
@@ -80,7 +98,7 @@ const Footer = () => {
               href="https://www.google.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 border-2 border-white/25 rounded-full"
+              className="p-2 border-2 border-white/25 hover:border-[#7471E6] rounded-full hover:scale-125 transition-all duration-700 ease-in-out hover:text-[#7471E6]"
             >
               <LuSlack />
             </a>
@@ -98,18 +116,21 @@ const Footer = () => {
           </a>
         </div>
         <div className="">
-          <a href="mailto:deventialimited@gmail.com" className="block mt-12">
+          <a
+            href="mailto:deventialimited@gmail.com"
+            className="block mt-12 hover:underline hover:text-[#7471E6]"
+          >
             deventialimited@gmail.com
           </a>
           <h4 className="font-semibold text-xl text-white/35 my-4 md:mt-20">
-            Contact us
+            Let’s chat
           </h4>
           <div className="flex gap-2">
             <a
-              href="https://www.google.com"
+              href="https://wa.me/+923165910564"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 border-2 border-white/25 rounded-full"
+              className="p-2 border-2 border-white/25 hover:border-[#7471E6] rounded-full hover:scale-125 transition-all duration-700 ease-in-out hover:text-[#7471E6]"
             >
               <FaWhatsapp />
             </a>
@@ -117,7 +138,7 @@ const Footer = () => {
               href="https://www.google.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 border-2 border-white/25 rounded-full"
+              className="p-2 border-2 border-white/25 hover:border-[#7471E6] rounded-full hover:scale-125 transition-all duration-700 ease-in-out hover:text-[#7471E6]"
             >
               <FaTelegramPlane />
             </a>

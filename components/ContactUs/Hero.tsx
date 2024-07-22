@@ -39,22 +39,20 @@ const Hero = () => {
           <h3 className="font-bold text-xl text-[#1B2534]">Call Us</h3>
           <div>
             <a
-              href="tel:(+44) 3333 660 173"
-              target="_blank"
+              href="tel:+923165910564"
               rel="noopener noreferrer"
               className="text-base text-[#797979]"
             >
-              UK: (+44) 3333 660 173
+              PK: +92316-5910564
             </a>
-            <br />
+            {/* <br />
             <a
               href="tel:(+1) 929 946 7607"
-              target="_blank"
               rel="noopener noreferrer"
               className="text-base text-[#797979]"
             >
               US: (+1) 929 946 7607
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

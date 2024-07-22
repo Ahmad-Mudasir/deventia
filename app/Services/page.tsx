@@ -46,7 +46,7 @@ const page = () => {
             </p>
           </>
         }
-        exploreLink={'/'}
+        exploreLink={'/Services/Plan'}
         img={services1}
       />
       <ServicesCard
