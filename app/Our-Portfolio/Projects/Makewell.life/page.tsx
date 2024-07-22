@@ -19,7 +19,7 @@ const page = () => {
         projectImg={isaDesk}
       />
       <AboutProject
-        aboutProject="Welcome to AlpineEdge, where the Austrian Alps meet the excitement of trading. Founded in 2024, our platform blends tradition with innovation, offering unique virtual trading evaluation programs. Harness your skills, customize your experience, and unlock your potential. Join us to explore the intersection of nature and finance and reach new heights of success."
+        aboutProject="Efficiently streamline patient management with integrated tools for scheduling appointments and managing medical records, ensuring seamless coordination. Easily manage your schedule and conduct patient consultations in real-time, optimizing workflow and enhancing patient care with streamlined administrative processes."
         projectImg={isaDesk1}
       />
       <StyleGuide
@@ -34,8 +34,11 @@ const page = () => {
       />
       <TechnologiesUsed />
       <ProjectDetials
+        description="Makewell.Life provides integrated tools that streamline patient management by facilitating appointment scheduling and medical record management, ensuring efficient coordination. Their platform enables real-time scheduling and patient consultations, optimizing workflow and enhancing overall patient care through streamlined administrative processes."
         projectLogo={isaLogo}
         projectLink="https://isaconsulting.com/"
+        projectName="Makewell.Life"
+        deliverables="Website & App"
       />
       <DesktopVersion
         projectImg={isaDesk}

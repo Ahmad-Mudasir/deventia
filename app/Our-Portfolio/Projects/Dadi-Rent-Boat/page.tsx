@@ -19,7 +19,7 @@ const page = () => {
         projectImg={isaDesk}
       />
       <AboutProject
-        aboutProject="Welcome to AlpineEdge, where the Austrian Alps meet the excitement of trading. Founded in 2024, our platform blends tradition with innovation, offering unique virtual trading evaluation programs. Harness your skills, customize your experience, and unlock your potential. Join us to explore the intersection of nature and finance and reach new heights of success."
+        aboutProject="Boat and dinghy rentals offer a diverse fleet for recreational activities such as fishing, sightseeing, and water sports. Operating from marinas and coastal areas, these services provide flexible rental periods and essential safety equipment. Despite challenges in maintenance and compliance, they cater to a growing market of tourists and outdoor enthusiasts seeking memorable aquatic experiences without owning a vessel themselves."
         projectImg={isaDesk1}
       />
       <StyleGuide
@@ -34,20 +34,23 @@ const page = () => {
       />
       <TechnologiesUsed />
       <ProjectDetials
+        description="Dadi Rent Boat offers a variety of boats for recreational use, including motorboats and yachts, perfect for fishing, sightseeing, and leisure cruises. Located conveniently near marinas and coastal areas, we provide flexible rental options and ensure safety with comprehensive equipment. Enjoy hassle-free boating adventures with Dadi Rent Boat!"
         projectLogo={isaLogo}
         projectLink="https://isaconsulting.com/"
+        projectName="Dadi Rent Boat"
+        deliverables="Website"
       />
       <DesktopVersion
         projectImg={isaDesk2}
         projectLogo={isaLogo}
-        title="Deshboard Version"
+        title="Dashboard Version"
       />
       <DesktopVersion
         projectImg={isaDesk}
         projectLogo={isaLogo}
         title="Desktop Version"
       />
-      <WhatMyClientSay />
+      {/* <WhatMyClientSay /> */}
     </>
   );
 };

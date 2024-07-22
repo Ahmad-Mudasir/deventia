@@ -18,7 +18,7 @@ const page = () => {
         projectImg={isaDesk}
       />
       <AboutProject
-        aboutProject="Welcome to AlpineEdge, where the Austrian Alps meet the excitement of trading. Founded in 2024, our platform blends tradition with innovation, offering unique virtual trading evaluation programs. Harness your skills, customize your experience, and unlock your potential. Join us to explore the intersection of nature and finance and reach new heights of success."
+        aboutProject="Welcome to Orgin.com, where you can hire expert website designers for any job. Whether you need a sleek new website, a redesign, or specialized design features, our talented designers are ready to bring your vision to life with top-quality work and professional expertise."
         projectImg={isaDesk1}
       />
       <StyleGuide
@@ -33,15 +33,18 @@ const page = () => {
       />
       <TechnologiesUsed />
       <ProjectDetials
+        description="Orgin.com offers a comprehensive platform for hiring skilled website designers capable of delivering exceptional results tailored to diverse needs, including new websites, redesigns, and specialized design features. Their team of talented designers combines expertise with a commitment to bringing clients' visions to life through top-quality craftsmanship and professional service."
         projectLogo={isaLogo}
         projectLink="https://isaconsulting.com/"
+        projectName="Orgin.com"
+        deliverables="Website"
       />
       <DesktopVersion
         projectImg={isaDesk}
         projectLogo={isaLogo}
         title="Desktop Version"
       />
-      <WhatMyClientSay />
+      {/* <WhatMyClientSay /> */}
     </>
   );
 };

@@ -1,10 +1,10 @@
-"use client";
-import { useMotionValue } from "framer-motion";
-import React, { useState, useEffect } from "react";
-import { useMotionTemplate, motion } from "framer-motion";
-import { cn } from "@/utils/cn";
-import Link from "next/link";
-import { MdArrowOutward } from "react-icons/md";
+'use client';
+import { useMotionValue } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { useMotionTemplate, motion } from 'framer-motion';
+import { cn } from '@/utils/cn';
+import Link from 'next/link';
+import { MdArrowOutward } from 'react-icons/md';
 
 export const HoverCard = ({
   text,
@@ -17,12 +17,12 @@ export const HoverCard = ({
   className?: string;
   title?: string;
   description?: string;
-  link?: string;
+  link: string;
 }) => {
   let mouseX = useMotionValue(0);
   let mouseY = useMotionValue(0);
 
-  const [randomString, setRandomString] = useState("");
+  const [randomString, setRandomString] = useState('');
 
   useEffect(() => {
     let str = generateRandomString(1500);
@@ -41,7 +41,7 @@ export const HoverCard = ({
   return (
     <div
       className={cn(
-        "p-0.5 md:border-l-2 md:border-white  bg-transparent   flex items-center justify-center w-full h-full relative",
+        'p-0.5 md:border-l-2 md:border-white  bg-transparent flex items-center justify-center w-full h-full relative',
         className
       )}
     >
@@ -55,18 +55,18 @@ export const HoverCard = ({
           randomString={randomString}
         />
         <div className="relative z-10 h-full flex items-center justify-center">
-          <div className="relative p-4 h-full  rounded-full flex items-center justify-center text-white text-4xl  flex-col gap-4">
-            <h1 className="text-[2rem] text-white w-full font-semibold">
+          <div className="relative p-4 h-full  rounded-full flex items-center justify-center text-white text-4xl flex-col gap-4">
+            <h1 className="text-[2rem] text-white w-full font-medium tracking-widest">
               {title}
             </h1>
-            <p className="w-full !text-[16px] md:w-2/3 self-start text-white/80 leading-none">
+            <p className="w-full !text-[18px] md:w-4/5 self-start text-white/90 leading-[1.2rem] tracking-[0.1rem]">
               {description}
             </p>
             <Link
-              href={"/"}
-              className="p-2 bg-transparent  text-[#7471E6] border border-[#7471E6] flex items-center gap-1 text-[14px] self-start"
+              href={link}
+              className="p-2 bg-transparent  text-[#7471E6] hover:text-white hover:bg-[#7471E6] border border-[#7471E6] flex items-center gap-1 text-[16px] self-start font-semibold leading-[1.2rem] tracking-[0.1rem]"
             >
-              <p> Learn More</p> <MdArrowOutward size={25} color="#7471E6" />
+              <p> Learn More</p> <MdArrowOutward size={25} />
             </Link>
           </div>
         </div>
@@ -99,9 +99,9 @@ export function CardPattern({ mouseX, mouseY, randomString }: any) {
 }
 
 const characters =
-  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 export const generateRandomString = (length: number) => {
-  let result = "";
+  let result = '';
   for (let i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * characters.length));
   }

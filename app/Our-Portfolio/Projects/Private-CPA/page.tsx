@@ -20,7 +20,7 @@ const page = () => {
         projectImg={isaDesk}
       />
       <AboutProject
-        aboutProject="Welcome to AlpineEdge, where the Austrian Alps meet the excitement of trading. Founded in 2024, our platform blends tradition with innovation, offering unique virtual trading evaluation programs. Harness your skills, customize your experience, and unlock your potential. Join us to explore the intersection of nature and finance and reach new heights of success."
+        aboutProject="Welcome to Charm Ads, where every click ignites success. Are you looking to boost your team's alignment and efficiency? Charm Ads is the tool you need. It streamlines collaboration, ensuring the swift delivery of top-notch results. With customizable workflows tailored to your specific needs, Charm Ads helps align your team and boost productivity, making your path to success smoother and faster. Embrace the power of Charm Ads and watch your team's performance soar."
         projectImg={isaDesk1}
       />
       <StyleGuide
@@ -35,8 +35,11 @@ const page = () => {
       />
       <TechnologiesUsed />
       <ProjectDetials
+        description="Private CPA leverages Charm Ads to enhance team alignment and efficiency by streamlining collaboration and customizing workflows, ensuring rapid delivery of high-quality outcomes. With its tailored tools, Private CPA empowers teams to boost productivity and achieve success efficiently, making it a pivotal asset for maximizing performance and achieving organizational goals."
         projectLogo={isaLogo}
         projectLink="https://isaconsulting.com/"
+        projectName="Private CPA"
+        deliverables="Website"
       />
       <DesktopVersion
         projectImg={light}
@@ -48,7 +51,7 @@ const page = () => {
         projectLogo={isaLogo}
         title="Dark Mode"
       />
-      <WhatMyClientSay />
+      {/* <WhatMyClientSay /> */}
     </>
   );
 };

@@ -18,7 +18,7 @@ const page = () => {
         projectImg={isaDesk}
       />
       <AboutProject
-        aboutProject="Welcome to AlpineEdge, where the Austrian Alps meet the excitement of trading. Founded in 2024, our platform blends tradition with innovation, offering unique virtual trading evaluation programs. Harness your skills, customize your experience, and unlock your potential. Join us to explore the intersection of nature and finance and reach new heights of success."
+        aboutProject="ISA is your bridge to success in staffing and employment. ISA posts job openings, selects candidates, updates their CVs, and creates professional profiles for them. Essentially, ISA hires people and provides staff to various companies and agencies for different projects. They act as a link between job seekers and employers, ensuring that the right candidates are matched with the right job opportunities."
         projectImg={isaDesk1}
       />
       <StyleGuide
@@ -33,15 +33,18 @@ const page = () => {
       />
       <TechnologiesUsed />
       <ProjectDetials
+        description="ISA offers a specialized platform where business applicants can track their progress, manage applications, and access personalized insights, ensuring smooth navigation and informed decision-making throughout their professional journey."
         projectLogo={isaLogo}
         projectLink="https://isaconsulting.com/"
+        projectName="ISA Consulting"
+        deliverables="Website"
       />
       <DesktopVersion
         projectImg={isaDesk}
         projectLogo={isaLogo}
         title="Desktop Version"
       />
-      <WhatMyClientSay />
+      {/* <WhatMyClientSay /> */}
     </>
   );
 };

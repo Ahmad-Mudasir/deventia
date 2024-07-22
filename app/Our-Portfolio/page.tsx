@@ -17,7 +17,7 @@ const page = () => {
       <OurProjects
         flexReverse={false}
         description={
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices lorem non feugiat egestas amet.'
+          'RS Global Ties is a dynamic platform where boundaries fade and opportunities thrive, connecting people and businesses worldwide.'
         }
         projectURL={'/Our-Portfolio/Projects/RS-Global-Ties'}
         img={alpinedgeImg}
@@ -26,7 +26,7 @@ const page = () => {
       <OurProjects
         flexReverse={true}
         description={
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices lorem non feugiat egestas amet.'
+          'Igniting success with streamlined collaboration and customizable workflows for enhanced team alignment and productivity.'
         }
         projectURL={'/Our-Portfolio/Projects/Private-CPA'}
         img={privateCPA}
@@ -35,7 +35,7 @@ const page = () => {
       <OurProjects
         flexReverse={false}
         description={
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices lorem non feugiat egestas amet.'
+          'Empowering Careers, Connecting Talent reflects ISAs dedication to fostering professional growth by bridging the gap between job seekers and employers, creating connections that lead to fulfilling careers and successful business outcomes.'
         }
         projectURL={'/Our-Portfolio/Projects/ISA'}
         img={ISA}
@@ -44,7 +44,7 @@ const page = () => {
       <OurProjects
         flexReverse={true}
         description={
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices lorem non feugiat egestas amet.'
+          'Streamline patient management with integrated tools for appointments and medical records effortlessly manage your schedule and patient consultations in real-time.'
         }
         projectURL={'/Our-Portfolio/Projects/Makewell.life'}
         img={patientDoctor}
@@ -53,7 +53,7 @@ const page = () => {
       <OurProjects
         flexReverse={false}
         description={
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices lorem non feugiat egestas amet.'
+          'your go-to platform for hiring expert website designers for any job. Whether it is creating a new site or enhancing an existing one, our talented designers deliver top-quality work tailored to your needs.'
         }
         projectURL={'/Our-Portfolio/Projects/origin.com'}
         img={origin}
@@ -62,7 +62,7 @@ const page = () => {
       <OurProjects
         flexReverse={true}
         description={
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices lorem non feugiat egestas amet.'
+          'Discover unforgettable adventures with our boat and dinghy rentals. Whether you crave serene cruises, thrilling water sports, or tranquil fishing trips, our fleet offers the perfect vessel for you to explore local waters at your own pace.'
         }
         projectURL={'/Our-Portfolio/Projects/Dadi-Rent-Boat'}
         img={DadiRentBoat}

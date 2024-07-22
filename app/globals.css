@@ -138,3 +138,12 @@ body {
   transform-origin: left;
   transition: all 700ms;
 }
+
+.footer-bg-img {
+  background: url("../assets/images/footer-img.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0% 100%;
+  width: 50%;
+  height: 50%;
+}

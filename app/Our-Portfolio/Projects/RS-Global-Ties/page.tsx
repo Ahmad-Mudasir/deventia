@@ -18,7 +18,7 @@ const page = () => {
         projectImg={isaDesk}
       />
       <AboutProject
-        aboutProject="Welcome to AlpineEdge, where the Austrian Alps meet the excitement of trading. Founded in 2024, our platform blends tradition with innovation, offering unique virtual trading evaluation programs. Harness your skills, customize your experience, and unlock your potential. Join us to explore the intersection of nature and finance and reach new heights of success."
+        aboutProject="Welcome to RS Global Ties, a vibrant platform facilitating global connectivity where individuals, businesses, and communities converge. Our mission is to transcend geographical and cultural barriers by fostering a robust network that promotes collaboration and growth opportunities worldwide, ensuring inclusivity and mutual understanding in a diverse global landscape."
         projectImg={isaDesk1}
       />
       <StyleGuide
@@ -33,15 +33,18 @@ const page = () => {
       />
       <TechnologiesUsed />
       <ProjectDetials
+        description="RS Global Ties is a dynamic platform dedicated to connecting people and businesses globally, transcending geographical boundaries to foster collaboration and growth. It aims to create a cohesive network that bridges cultural differences, offering opportunities for innovation and partnership on an international scale."
         projectLogo={isaLogo}
         projectLink="https://isaconsulting.com/"
+        projectName="RS Global Ties"
+        deliverables="Website"
       />
       <DesktopVersion
         projectImg={isaDesk}
         projectLogo={isaLogo}
         title="Desktop Version"
       />
-      <WhatMyClientSay />
+      {/* <WhatMyClientSay /> */}
     </>
   );
 };
