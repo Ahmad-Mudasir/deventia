@@ -1,3 +1,5 @@
+'use client';
+
 import AboutCompany from '@/components/Career/AboutCompany';
 import JobDescription from '@/components/Career/JobDescription';
 import JobApplication from '@/components/Career/JobApplication';
@@ -9,6 +11,10 @@ import { MdOutlineArrowOutward } from 'react-icons/md';
 import heroBgImg from '../../../assets/images/career-hero-bg-img.webp';
 
 const page = () => {
+  const handleScroll = () => {
+    window.scrollBy({ top: window.innerHeight, left: 0, behavior: 'smooth' });
+  };
+
   return (
     <>
       <div className="relative bg-[#161616] h-screen">
@@ -24,25 +30,32 @@ const page = () => {
                 Be a part of something bigger – <br /> your journey to success
                 starts here.
               </h3>
-              <div className="p-2 border border-white flex items-center justify-center">
-                <IoArrowDownOutline size={30} color="#fff" />
+              <div
+                onClick={handleScroll}
+                className=" border border-white flex items-center justify-center cursor-pointer"
+              >
+                <IoArrowDownOutline
+                  size={40}
+                  color="#fff"
+                  className="hover:animate-bounce transition-all duration-700 ease-in-out p-2"
+                />
               </div>
             </div>
             <h1 className="text-white text-start text-[3rem] md:text-[5rem] font-bold leading-tight">
               Elevate Your Career
               <br className="hidden lg:block" /> Path With Us
             </h1>
-            <div className="flex items-center gap-2 flex-wrap">
-              <Link
-                href={'/'}
-                className="p-4 bg-[#7471E6] text-white flex items-center gap-2"
-              >
+            <Link
+              href={'/Contact-us'}
+              className="flex items-center gap-2 flex-wrap hover:bg-[#7471E6] hover:scale-110 transition-all duration-700 ease-in-out"
+            >
+              <p className="p-4 bg-[#7471E6] text-white flex items-center gap-2">
                 Let&apos;s Connect
-              </Link>
+              </p>
               <div className="p-4 bg-[#7471E6] flex items-center justify-center">
                 <MdOutlineArrowOutward size={25} color="#fff" />
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

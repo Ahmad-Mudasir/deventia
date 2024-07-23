@@ -33,17 +33,18 @@ const ServicesByOurExpertise = () => {
           Expertise across IT consulting, software development, web design, and
           digital marketing
         </p>
-        <div className="flex items-center gap-2 flex-wrap mt-8">
-          <Link
-            href="/"
-            className="p-4 bg-[#7571e68c] text-white flex items-center gap-2"
-          >
+
+        <Link
+          href={'/Contact-us'}
+          className="flex items-center gap-2 flex-wrap hover:bg-[#7471E6] hover:scale-110 transition-all duration-700 ease-in-out w-fit mt-8"
+        >
+          <p className="p-4 bg-[#7571e68c] text-white flex items-center gap-2">
             Book a call
-          </Link>
+          </p>
           <div className="p-4 bg-[#7571e68c] flex items-center justify-center">
             <MdOutlineArrowOutward size={25} color="#fff" />
           </div>
-        </div>
+        </Link>
       </div>
       <Image
         src={designService}

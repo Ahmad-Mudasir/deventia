@@ -25,17 +25,17 @@ const ServicesCard = ({
       <div className="w-full">
         <h1 className="font-bold text-xl md:text-3xl mb-4">{title}</h1>
         {Checkboxes}
-        <div className="flex items-center gap-2 flex-wrap mt-8">
-          <Link
-            href={exploreLink}
-            className="p-4 bg-[#7571e68c] text-white flex items-center gap-2"
-          >
-            Explore More
-          </Link>
+        <Link
+          href={exploreLink}
+          className="flex items-center gap-2 flex-wrap hover:bg-[#7471E6] hover:scale-110 transition-all duration-700 ease-in-out w-fit mt-8"
+        >
+          <p className="p-4 bg-[#7571e68c] text-white flex items-center gap-2">
+            Learn more
+          </p>
           <div className="p-4 bg-[#7571e68c] flex items-center justify-center">
             <MdOutlineArrowOutward size={25} color="#fff" />
           </div>
-        </div>
+        </Link>
       </div>
       <Image
         src={img}
