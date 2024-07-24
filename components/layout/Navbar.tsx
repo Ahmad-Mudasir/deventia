@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`navbar bg-[#7571e67c] fixed top-0 bg-opacity-5 backdrop-filter backdrop-blur-sm shadow-sm z-20 !p-0 w-full ${inter.className} !font-[400]`}
+      className={`navbar bg-[#7571e67c] fixed top-0 bg-opacity-5 backdrop-filter backdrop-blur-sm shadow-sm z-20 !p-0 w-full max-w-[1750px] ${inter.className} !font-[400]`}
     >
       <div className="navbar-start  ">
         <div className="dropdown">

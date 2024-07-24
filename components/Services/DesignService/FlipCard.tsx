@@ -11,7 +11,7 @@ const FlipCard = ({
 }) => {
   return (
     <div className="flip-box">
-      <div className="flip-box-inner ">
+      <div className="flip-box-inner">
         <div className="flip-box-front flex flex-col p-4 pb-20 border-[1.5px] border-b-4 border-[#8A88EC] max-w-[350px]">
           <GoArrowUpRight size={30} className="ml-auto mr-[80px]" />
           <div className="w-20">{icon}</div>
