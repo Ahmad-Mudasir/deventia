@@ -50,7 +50,7 @@ function PerfomanceMetrics() {
   const [selectedMonth, setSelectedMonth] = useState('All'); // State for selected month filter
 
   // Handle month change event
-  const handleMonthChange = (event: any) => {
+  const handleMonthChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedMonth(event.target.value);
   };
 
