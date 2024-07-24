@@ -5,14 +5,14 @@ import { IoIosCheckboxOutline } from "react-icons/io";
 function DevelopmentSupport() {
   return (
     <div className="grid grid-cols-12 h-[480px] w-auto px-16 py-4">
-      <div className="left p-5 col-span-6">
+      <div className="p-5 col-span-6">
         <Image
           src={developmentSupportimg}
           alt="banner"
           className="object-cover h-[400px] w-full"
         />
       </div>
-      <div className="right col-span-6 h-full pl-16 flex flex-col gap-6">
+      <div className="col-span-6 h-full pl-16 flex flex-col gap-6">
         <div className="heading text-4xl my-3 font-bold">
           <h1>Development Support</h1>
         </div>

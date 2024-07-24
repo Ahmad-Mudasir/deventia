@@ -5,7 +5,7 @@ import Image from 'next/image';
 function FullStackDevelopment() {
   return (
     <div className="grid grid-cols-12 h-[480px] px-20 py-4">
-      <div className="left col-span-7 h-full pr-24 flex flex-col gap-6">
+      <div className="col-span-7 h-full pr-24 flex flex-col gap-6">
         <div className="heading text-[40px] font-bold">
           <h1>Welcome to Full </h1> <h1>Stack Development</h1>
         </div>
@@ -27,7 +27,7 @@ function FullStackDevelopment() {
           </div>
         </div>
       </div>
-      <div className="right p-5 col-span-5">
+      <div className="p-5 col-span-5">
         <Image
           src={fullStackimg}
           alt="Landscape picture"

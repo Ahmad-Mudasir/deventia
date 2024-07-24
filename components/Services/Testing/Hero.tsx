@@ -37,7 +37,7 @@ const Hero = () => {
             </div>
           </div>
           <h1 className="text-white text-start text-[3rem] 500px:text-[5rem] font-bold leading-tight">
-            Innovative Strategies
+            Our Testing Services
           </h1>
           <Link
             href={'/Contact-us'}
