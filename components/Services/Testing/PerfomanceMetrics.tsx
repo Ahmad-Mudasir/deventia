@@ -1,68 +1,62 @@
-"use client";
-import React, { useState } from "react";
-import { AreaChart, Card } from "@tremor/react";
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import Button from '@mui/material/Button';
+'use client';
+import React, { useState } from 'react';
+import { AreaChart, Card } from '@tremor/react';
+
 function PerfomanceMetrics() {
   // Define chartData before using it
   const chartData = [
     {
-      date: "Jan 23",
+      date: 'Jan 23',
       Impressions: 289,
     },
     {
-      date: "Feb 23",
+      date: 'Feb 23',
       Impressions: 320,
     },
     {
-      date: "Mar 23",
+      date: 'Mar 23',
       Impressions: 30,
     },
     {
-      date: "Apr 23",
+      date: 'Apr 23',
       Impressions: 240,
     },
     {
-      date: "May 23",
+      date: 'May 23',
       Impressions: 10,
     },
     {
-      date: "Jun 23",
+      date: 'Jun 23',
       Impressions: 90,
     },
     {
-      date: "Jul 23",
+      date: 'Jul 23',
       Impressions: 670,
     },
     {
-      date: "Aug 23",
+      date: 'Aug 23',
       Impressions: 100,
     },
     {
-      date: "Sep 23",
+      date: 'Sep 23',
       Impressions: 190,
     },
     {
-      date: "Oct 23",
+      date: 'Oct 23',
       Impressions: 130,
     },
   ];
 
-  
-  const [hoveredItem, setHoveredItem] = useState(null);
-  const [selectedMonth, setSelectedMonth] = useState("All"); // State for selected month filter
+  const [selectedMonth, setSelectedMonth] = useState('All'); // State for selected month filter
 
   // Handle month change event
-  const handleMonthChange = (event) => {
+  const handleMonthChange = (event: any) => {
     setSelectedMonth(event.target.value);
   };
 
   // Filter data based on selected month
   const filteredData =
-    selectedMonth === "All"
+    selectedMonth === 'All'
       ? chartData
       : chartData.filter((item) => item.date.startsWith(selectedMonth));
 
@@ -110,9 +104,15 @@ function PerfomanceMetrics() {
                 onChange={handleMonthChange}
                 value={selectedMonth}
               >
-                <option value="All" className="text-black">All Months</option>
-                <option value="Jan" className="text-black">January</option>
-                <option value="Feb" className="text-black">February</option>
+                <option value="All" className="text-black">
+                  All Months
+                </option>
+                <option value="Jan" className="text-black">
+                  January
+                </option>
+                <option value="Feb" className="text-black">
+                  February
+                </option>
               </select>
             </div>
           </div>
@@ -120,15 +120,15 @@ function PerfomanceMetrics() {
             <AreaChart
               data={filteredData}
               index="date"
-              categories={["Impressions"]}
-              colors={["indigo"]}
+              categories={['Impressions']}
+              colors={['indigo']}
               yAxisWidth={50}
-              gridLines="horizontal"
-              padding={20}
-              barSpacing={30}
-              legend
-              legendPosition="bottom"
-              curve
+              // gridLines="horizontal"
+              // padding={20}
+              // barSpacing={30}
+              // legend
+              // legendPosition="bottom"
+              // curve
             />
           </div>
         </Card>
