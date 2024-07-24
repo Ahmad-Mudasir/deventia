@@ -7,10 +7,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
+    <div className="max-w-[1750px] mx-auto">
       <Navbar />
       {children}
       <Footer />
-    </>
+    </div>
   );
 }

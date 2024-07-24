@@ -15,15 +15,15 @@ function FullStackDevelopment() {
             tailored services designed to meet your unique business needs. From
             backend and frontend development to database management and API
             integration, we offer a comprehensive suite of solutions to help you
-            thrive in today&aposs competitive landscape.
+            thrive in today&apos;s competitive landscape.
           </div>
           <div className="container2 text-md">
             MERN stack development refers to using four key technologies for
             building web applications: MongoDB (a NoSQL database), Express.js (a
             backend web framework), React (a frontend library for building user
             interfaces), and Node.js (a runtime environment for executing
-            JavaScript code outside the browser). It&aposs quite popular for its
-            flexibility and efficiency in developing full-stack applications
+            JavaScript code outside the browser). It&apos;s quite popular for
+            its flexibility and efficiency in developing full-stack applications
           </div>
         </div>
       </div>
