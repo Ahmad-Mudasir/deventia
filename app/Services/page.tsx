@@ -140,7 +140,7 @@ const page = () => {
             </p>
           </>
         }
-        exploreLink={'/'}
+        exploreLink={'/Services/Testing'}
         img={services4}
       />
       <GetInTouch />
