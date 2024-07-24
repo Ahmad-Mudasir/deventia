@@ -1,10 +1,10 @@
-import { servicesData } from "@/data/data";
-import { euroStyle, genos } from "@/utils/fonts";
-import React from "react";
-import { HoverCard } from "../ui/hovercards";
-import Link from "next/link";
-import { MdArrowOutward } from "react-icons/md";
-import Image from "next/image";
+import { servicesData } from '@/data/data';
+import { euroStyle, genos } from '@/utils/fonts';
+import React from 'react';
+import { HoverCard } from '../ui/hovercards';
+import Link from 'next/link';
+import { MdArrowOutward } from 'react-icons/md';
+import Image from 'next/image';
 
 const WhoWeAre = () => {
   return (
@@ -28,33 +28,33 @@ const WhoWeAre = () => {
           WE ARE A LEADING SOFTWARE HOUSE.
         </h1>
         <p className="text-white text-lg">
-          We’re a team of strategic mdigital marketing working globally with
+          We’re a team of strategic digital marketing working globally with
           largest brands, We believe that progress only happens when you refused
           to play things safe. We combine ideas and behaviors, and insights with
           design, technological data to produce brand experiences that customers
           love our services.
         </p>
         <Link
-          href={"/"}
+          href={'/'}
           className="px-6 py-3 bg-transparent md:mt-6 text-[#7471E6] border border-[#7471E6] flex items-center gap-1 text-[14px] self-start"
         >
-          <p className="text-lg"> Explore Us</p>{" "}
+          <p className="text-lg"> Explore Us</p>{' '}
           <MdArrowOutward size={25} color="#7471E6" />
         </Link>
       </div>
       <div className=" md:w-1/2 flex flex-col items-center justify-center object-contain p-4 relative">
         <div
           className="absolute top-0 -right-4 w-72 h-72 bg-[#7571e6] rounded-full filter blur-3xl opacity-40 animate-blob "
-          style={{ animationDelay: "4s" }}
+          style={{ animationDelay: '4s' }}
         ></div>
         <div
           className="absolute right-20 w-72 h-72 bg-[#cccaf0] rounded-full filter blur-3xl opacity-40 animate-blob"
-          style={{ animationDelay: "2s" }}
+          style={{ animationDelay: '2s' }}
         ></div>
         <Image
           className="z-20"
-          src={"/whoWeAreImg.png"}
-          alt={"who we are img"}
+          src={'/whoWeAreImg.png'}
+          alt={'who we are img'}
           width={400}
           height={400}
         />
