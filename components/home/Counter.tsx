@@ -1,9 +1,14 @@
-"use client";
-import React, { useState, useEffect, useRef } from "react";
+'use client';
+import React, { useState, useEffect, useRef } from 'react';
 
-const ScrollCounter = ({ targetValue }) => {
+// Define the type for the component props
+interface ScrollCounterProps {
+  targetValue: number;
+}
+
+const ScrollCounter: React.FC<ScrollCounterProps> = ({ targetValue }) => {
   const [count, setCount] = useState(0);
-  const countRef = useRef(null);
+  const countRef = useRef<HTMLHeadingElement | null>(null);
   const [hasCounted, setHasCounted] = useState(false);
 
   useEffect(() => {
@@ -13,15 +18,15 @@ const ScrollCounter = ({ targetValue }) => {
         if (rect.top < window.innerHeight && rect.bottom >= 0 && !hasCounted) {
           startCounter();
           setHasCounted(true);
-          window.removeEventListener("scroll", handleScroll); // Remove listener to prevent multiple triggers
+          window.removeEventListener('scroll', handleScroll); // Remove listener to prevent multiple triggers
         }
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll); // Cleanup on unmount
+      window.removeEventListener('scroll', handleScroll); // Cleanup on unmount
     };
   }, [hasCounted]);
 
