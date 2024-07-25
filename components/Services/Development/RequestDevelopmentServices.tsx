@@ -13,13 +13,13 @@ function RequestDevelopmentServices() {
           </ul>
         </div>
         <div className="flex flex-row items-center gap-5 justify-between">
-          <button className="p-[8px] lg:h-[52px] lg:w-[98px] text-sm w-1/3 bg-[#6765C5]">
+          <button className="p-[8px] lg:h-[52px] lg:w-1/3 text-sm w-1/3 bg-[#6765C5]">
             Development
           </button>
-          <button className="p-[8px] lg:h-[52px] lg:w-[98px] md:w-1/3 text-sm w-1/3 bg-[#6765C5]">
+          <button className="p-[8px] lg:h-[52px] lg:w-1/3 md:w-1/3 text-sm w-1/3 bg-[#6765C5]">
             Staging
           </button>
-          <button className="p-[8px] lg:h-[52px] lg:w-[98px] md:w-1/3 text-sm w-1/3 bg-[#6765C5]">
+          <button className="p-[8px] lg:h-[52px] lg:w-1/3 md:w-1/3 text-sm w-1/3 bg-[#6765C5]">
             Production
           </button>
         </div>

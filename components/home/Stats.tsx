@@ -1,7 +1,6 @@
 import { partnersData, statsData } from "@/data/data";
 import React from "react";
 import { InfiniteMovingCards } from "../ui/movingcards";
-import ScrollCounter from "./Counter";
 
 const StatsAndPartners = () => {
   return (
@@ -13,8 +12,7 @@ const StatsAndPartners = () => {
               className="flex flex-col items-center gap-1 p-4 leading-none"
               key={index + 0.05 * 2}
             >
-              <ScrollCounter targetValue={item.value}/>
-              {/* <h1 className="text-[8rem] font-semibold">+{item.value}</h1> */}
+              <h1 className="text-[8rem] font-semibold">+{item.value}</h1>
               <h3 className="uppercase ml-8 text-[1.5rem]">{item.title}</h3>
             </div>
           ))}
