@@ -7,43 +7,43 @@ function PerfomanceMetrics() {
   const chartData = [
     {
       date: 'Jan 23',
-      Impressions: 289,
+      value: 289,
     },
     {
       date: 'Feb 23',
-      Impressions: 320,
+      value: 320,
     },
     {
       date: 'Mar 23',
-      Impressions: 30,
+      value: 30,
     },
     {
       date: 'Apr 23',
-      Impressions: 240,
+      value: 240,
     },
     {
       date: 'May 23',
-      Impressions: 10,
+      value: 10,
     },
     {
       date: 'Jun 23',
-      Impressions: 90,
+      value: 90,
     },
     {
       date: 'Jul 23',
-      Impressions: 670,
+      value: 670,
     },
     {
       date: 'Aug 23',
-      Impressions: 100,
+      value: 100,
     },
     {
       date: 'Sep 23',
-      Impressions: 190,
+      value: 190,
     },
     {
       date: 'Oct 23',
-      Impressions: 130,
+      value: 130,
     },
   ];
 
@@ -86,7 +86,7 @@ function PerfomanceMetrics() {
         </div>
       </div>
       <div className="graph lg:my-6 md:my-3 lg:w-full md:w-full w-full my-4">
-        <Card className="w-full shadow-lg bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg overflow-hidden">
+        <Card className="w-full shadow-lg bg-[#4848ff] rounded-lg overflow-hidden">
           <div className="p-6 flex flex-row justify-between">
             <div className="">
               <h2 className="lg:text-2xl md:text-2xl text-xs font-semibold text-black mb-2">
@@ -120,9 +120,10 @@ function PerfomanceMetrics() {
             <AreaChart
               data={filteredData}
               index="date"
-              categories={['Impressions']}
+              categories={["value"]}
               colors={['indigo']}
-              yAxisWidth={50}
+              yAxisWidth={100}
+              showLegend={false}
               // gridLines="horizontal"
               // padding={20}
               // barSpacing={30}
