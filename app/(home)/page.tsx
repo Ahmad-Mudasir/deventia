@@ -33,7 +33,7 @@ const page = () => {
         <ChooseUs />
         <StatsAndPartners />
         <WhoWeAre />
-        <Testimonial />
+        {/* <Testimonial /> */}
         <Portfolio />
       </TracingBeam>
     </>

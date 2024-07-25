@@ -1,6 +1,6 @@
-import { partnersData, statsData } from "@/data/data";
-import React from "react";
-import { InfiniteMovingCards } from "../ui/movingcards";
+import { partnersData, statsData } from '@/data/data';
+import React from 'react';
+import { InfiniteMovingCards } from '../ui/movingcards';
 
 const StatsAndPartners = () => {
   return (

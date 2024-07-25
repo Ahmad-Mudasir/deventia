@@ -1,10 +1,12 @@
-import { portfolioData } from '@/data/data';
 import { euroStyle, genos, poppins } from '@/utils/fonts';
 import Link from 'next/link';
 import React from 'react';
 import { MdArrowOutward } from 'react-icons/md';
 import { PinContainer } from '../ui/PinCards3d';
 import Image from 'next/image';
+import isaImg from '../../assets/images/isa-desktop.webp';
+import rsImg from '../../assets/images/RS-desktop.webp';
+
 const Portfolio = () => {
   return (
     <div
@@ -49,35 +51,52 @@ const Portfolio = () => {
         </Link>
       </div>
       <div className="flex items-center flex-wrap justify-center">
-        {portfolioData.map((item, index) => (
-          <PinContainer
-            key={index + 0.589 * 2}
-            title={item.title}
-            href={item.link}
-          >
-            <div className="flex basis-full flex-col rounded-xl tracking-tight sm:basis-1/2 w-[20rem] ">
-              <Image
-                src={item.imageUrl}
-                width={350}
-                height={400}
-                alt="website image"
-              />
-              <div className="mt-2 p-2 flex items-center justify-between">
-                <div className="">
-                  <h3 className={` text-[1rem] text-white z-10 font-[300]`}>
-                    Click Here To Visit{' '}
-                  </h3>
-                  <h3
-                    className={` text-[0.8rem] text-white z-10 font-[600] leading-none`}
-                  >
-                    {item.displayTitle}{' '}
-                  </h3>
-                </div>
-                <MdArrowOutward size={30} fill="#fff" />
+        <PinContainer
+          title={'ISA Consulting'}
+          href={'https://isaconsulting.com'}
+        >
+          <div className="flex basis-full flex-col rounded-xl tracking-tight sm:basis-1/2 w-[20rem] ">
+            <Image src={isaImg} width={350} height={400} alt="website image" />
+            <div className="mt-2 p-2 flex items-center justify-between">
+              <div className="">
+                <h3
+                  className={`!tracking-widest text-[1rem] text-white z-10 font-[300]`}
+                >
+                  Click Here To Visit{' '}
+                </h3>
+                <h3
+                  className={`!tracking-[0.15rem] text-[0.8rem] text-white z-10 font-[600] leading-none`}
+                >
+                  {'ISA Consulting - Get Dream Job'}
+                </h3>
               </div>
+              <MdArrowOutward size={30} fill="#fff" />
             </div>
-          </PinContainer>
-        ))}
+          </div>
+        </PinContainer>
+        <PinContainer
+          title={'RS Global Ties'}
+          href={'https://rs-global-ties.com'}
+        >
+          <div className="flex basis-full flex-col rounded-xl tracking-tight sm:basis-1/2 w-[20rem] ">
+            <Image src={rsImg} width={350} height={400} alt="website image" />
+            <div className="mt-2 p-2 flex items-center justify-between">
+              <div className="">
+                <h3
+                  className={`!tracking-widest text-[1rem] text-white z-10 font-[300]`}
+                >
+                  Click Here To Visit{' '}
+                </h3>
+                <h3
+                  className={`!tracking-[0.15rem] text-[0.8rem] text-white z-10 font-[600] leading-none`}
+                >
+                  {'RS Global Ties - Where Businesses Grow'}
+                </h3>
+              </div>
+              <MdArrowOutward size={30} fill="#fff" />
+            </div>
+          </div>
+        </PinContainer>
       </div>
     </div>
   );
