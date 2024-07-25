@@ -1,13 +1,7 @@
-<<<<<<< HEAD
 import { partnersData, statsData } from '@/data/data';
 import React from 'react';
 import { InfiniteMovingCards } from '../ui/movingcards';
 import ScrollCounter from './Counter';
-=======
-import { partnersData, statsData } from "@/data/data";
-import React from "react";
-import { InfiniteMovingCards } from "../ui/movingcards";
->>>>>>> ab5ece873000b2a9d8c288e18e5c97bb72be5484
 
 const StatsAndPartners = () => {
   return (
@@ -19,12 +13,8 @@ const StatsAndPartners = () => {
               className="flex flex-col items-center gap-1 p-4 leading-none"
               key={index + 0.05 * 2}
             >
-<<<<<<< HEAD
               <ScrollCounter targetValue={item.value} />
               {/* <h1 className="text-[8rem] font-semibold">+{item.value}</h1> */}
-=======
-              <h1 className="text-[8rem] font-semibold">+{item.value}</h1>
->>>>>>> ab5ece873000b2a9d8c288e18e5c97bb72be5484
               <h3 className="uppercase ml-8 text-[1.5rem]">{item.title}</h3>
             </div>
           ))}
