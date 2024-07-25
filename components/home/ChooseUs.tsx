@@ -33,8 +33,7 @@ const ChooseUs = () => {
       {/* CONTENT  */}
       <div className="md:px-8 px-4 py-8 md:py-16 md:w-1/2   flex flex-col items-start justify-center relative">
         <h3
-          className={`${euroStyle.className} text-[1.5rem] text-white z-10
-        `}
+          className={`${euroStyle.className} text-[1.5rem] text-white z-10 !tracking-widest`}
         >
           Choose Us
         </h3>
@@ -52,12 +51,9 @@ const ChooseUs = () => {
           >
             <input type="radio" name="my-accordion-2" />
             <div className="collapse-title text-xl font-medium flex items-center gap-4">
-              <div className="w-8 h-8 p-4 bg-[#FFFFFF7D] text-black font-semibold flex items-center justify-center">
-                {index + 1}
-              </div>
-              <p> {item.title}</p>{' '}
+              <p className="!tracking-widest"> {item.title}</p>{' '}
             </div>
-            <div className="collapse-content">
+            <div className="collapse-content !tracking-widest !font-thin">
               <p>{item.description}</p>
             </div>
           </div>
@@ -65,7 +61,7 @@ const ChooseUs = () => {
       </div>
       <div className=" md:w-1/2 flex flex-col p-8">
         <Image src={chooseUsImg} alt="choose us image" />
-        <p className="p-6 text-white text-[1.2rem]">
+        <p className="p-6 text-white text-[1.2rem] !tracking-widest">
           Deventia provides businesses with an edge over the competition with
           various benefits. Opting for outsourced IT services improves business
           efficiency and builds trust with customers and clients. Our services

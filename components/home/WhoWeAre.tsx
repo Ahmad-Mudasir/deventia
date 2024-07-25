@@ -27,7 +27,7 @@ const WhoWeAre = () => {
         >
           WE ARE A LEADING SOFTWARE HOUSE.
         </h1>
-        <p className="text-white text-lg">
+        <p className="text-white text-lg !tracking-widest">
           We’re a team of strategic digital marketing working globally with
           largest brands, We believe that progress only happens when you refused
           to play things safe. We combine ideas and behaviors, and insights with
@@ -52,7 +52,7 @@ const WhoWeAre = () => {
           style={{ animationDelay: '2s' }}
         ></div>
         <Image
-          className="z-20"
+          className="z-10"
           src={'/whoWeAreImg.png'}
           alt={'who we are img'}
           width={400}

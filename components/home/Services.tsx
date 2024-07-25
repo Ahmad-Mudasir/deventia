@@ -20,14 +20,12 @@ const Services = () => {
         ></div>
         {/* CONTENT  */}
         <h3
-          className={`${euroStyle.className} text-[1.5rem] text-white z-10
-        `}
+          className={`${euroStyle.className} text-[1.5rem] text-white z-10 tracking-widest`}
         >
           Services
         </h3>
         <h1
-          className={`${euroStyle.className} text-[2rem] md:text-[4rem] leading-none text-white/75  z-10
-          `}
+          className={`${euroStyle.className} text-[2rem] md:text-[4rem] leading-none text-white/75 z-10 tracking-wider`}
         >
           Empowering our global client to embrace modern technology, rethink
           processes, and elevate experiences

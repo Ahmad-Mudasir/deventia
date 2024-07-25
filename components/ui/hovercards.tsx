@@ -59,12 +59,12 @@ export const HoverCard = ({
             <h1 className="text-[2rem] text-white w-full font-medium tracking-widest">
               {title}
             </h1>
-            <p className="w-full !text-[18px] md:w-4/5 self-start text-white/90 leading-[1.2rem] tracking-[0.1rem]">
+            <p className="w-full !text-[18px] md:w-4/5 self-start text-white/90 leading-[1.2rem] tracking-[0.15rem] font-thin">
               {description}
             </p>
             <Link
               href={link}
-              className="p-2 bg-transparent  text-[#7471E6] hover:text-white hover:bg-[#7471E6] border border-[#7471E6] flex items-center gap-1 text-[16px] self-start font-semibold leading-[1.2rem] tracking-[0.1rem]"
+              className="p-2 bg-transparent  text-[#7471E6] hover:text-white hover:bg-[#7471E6] border border-[#7471E6] flex items-center gap-1 text-[16px] self-start font-semibold leading-[1.2rem] tracking-[0.19rem]"
             >
               <p> Learn More</p> <MdArrowOutward size={25} />
             </Link>

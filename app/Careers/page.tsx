@@ -34,27 +34,6 @@ const page = () => {
             jobType="Internship"
             location="Manseera, Pakistan"
           />
-          <CareerCard
-            title="Front End Engineer"
-            description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-        sint. Velit officia consequat duis enim velit mollit."
-            jobType="Internship"
-            location="Manseera, Pakistan"
-          />
-          <CareerCard
-            title="Front End Engineer"
-            description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-        sint. Velit officia consequat duis enim velit mollit."
-            jobType="Internship"
-            location="Manseera, Pakistan"
-          />
-          <CareerCard
-            title="Front End Engineer"
-            description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-        sint. Velit officia consequat duis enim velit mollit."
-            jobType="Internship"
-            location="Manseera, Pakistan"
-          />
         </motion.section>
       </div>
     </>

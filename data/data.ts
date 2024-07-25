@@ -3,52 +3,25 @@ export const servicesData = [
     title: 'Planning',
     description:
       'The project plan involves defining and prioritizing digital services, setting up robust technology infrastructure, and creating an effective marketing strategy to promote services.',
-    link: '#Planning',
+    link: '/Services/Plan',
   },
   {
     title: 'Design',
     description:
       'We offer core insights-driven digital transformation capabilities, modernize key systems to accelerate innovation, and provide a design-led, unified,Our service offerings encompass various design domains, including User Experience (UX) design, User Interface (UI) design, Web Design, Mobile Application design, and Design Prototyping.',
-    link: '#Design',
+    link: '/Services/Design-service',
   },
   {
     title: 'Development',
     description:
       'In development, we offer Full Stack Development, Machine Learning solutions, Development Support, Deployment Services, and Admin Panel Development.',
-    link: '#Development',
+    link: '/Services/Development',
   },
   {
     title: 'Testing',
     description:
       'In testing, we ensure quality and reliability through rigorous QA procedures, including functional, performance, security, and compatibility testing.',
-    link: '#',
-  },
-];
-
-export const designData = [
-  {
-    title: 'User Experience(UX)',
-    description:
-      'In our UX service, we design intuitive digital experiences through user research, wireframing, prototyping, and testing to enhance user satisfaction and drive conversions.',
-    link: '#UX',
-  },
-  {
-    title: 'User Interface(UI)',
-    description:
-      'In UI, we craft visually appealing and user-friendly interfaces for seamless digital experiences across devices and platforms.',
-    link: '#UI',
-  },
-  {
-    title: 'Web Design',
-    description:
-      "In Web Design, we create captivating and functional websites that effectively communicate our clients' brand identity and message. With expertise in layout design, navigation, and responsiveness, we ensure optimal user experience across all devices.",
-    link: '#WebDesign',
-  },
-  {
-    title: 'Mobile Application',
-    description:
-      'In testing, we ensure quality and reliability through rigorous QA procedures, including functional, performance, security, and compatibility testing.',
-    link: '#',
+    link: '/Services/Testing',
   },
 ];
 
@@ -198,19 +171,19 @@ export const accordionData = [
 ];
 export const statsData = [
   {
-    value: 99,
+    value: 30,
     title: 'Projects',
   },
   {
-    value: 35,
+    value: 15,
     title: 'Employees',
   },
   {
-    value: 12,
+    value: 10,
     title: 'Clients',
   },
   {
-    value: 3,
+    value: 1,
     title: 'Years',
   },
 ];

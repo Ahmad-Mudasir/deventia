@@ -9,7 +9,6 @@ import { TracingBeam } from '@/components/ui/tracingbeam';
 import { users } from '@/data/data';
 import React from 'react';
 import Portfolio from '@/components/home/Portfolio';
-import Head from 'next/head';
 
 const page = () => {
   return (
