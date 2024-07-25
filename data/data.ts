@@ -198,19 +198,19 @@ export const accordionData = [
 ];
 export const statsData = [
   {
-    value: 99,
+    value: 30,
     title: 'Projects',
   },
   {
-    value: 35,
+    value: 15,
     title: 'Employees',
   },
   {
-    value: 12,
+    value: 10,
     title: 'Clients',
   },
   {
-    value: 3,
+    value: 1,
     title: 'Years',
   },
 ];
