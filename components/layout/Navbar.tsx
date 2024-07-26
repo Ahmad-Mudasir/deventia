@@ -36,7 +36,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 bg-[#161616] h-screen overflow-y-auto flex flex-col"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 bg-[#161616] max-h-screen overflow-y-auto flex flex-col"
           >
             <li
               className={`p-3 ${
@@ -51,14 +51,30 @@ const Navbar = () => {
               <Link href={'/'}>Home</Link>
             </li>
             <li
+              onClick={() => {
+                handleHover('Services', !hovered.hover);
+              }}
               className={`p-3 relative ${
                 isActive('/Services') ? 'bg-[#7471E680]' : 'text-white'
               }`}
             >
               <Link className="flex gap-2 items-center" href={'/Services'}>
-                Services <FaAngleDown />
+                Services{' '}
+                <FaAngleDown
+                  className={`${
+                    hovered.hover && hovered.name === 'Services'
+                      ? 'rotate-180'
+                      : ''
+                  }`}
+                />
               </Link>
-              <div className="flex flex-col items-start mt-2 gap-2 bg-[#7471E6] w-fit h-fit rounded-lg shadow-md py-4 px-8 transition-all duration-700 ease-in-out">
+              <div
+                className={`${
+                  hovered.hover && hovered.name === 'Services'
+                    ? 'flex'
+                    : 'hidden'
+                } flex-col items-start mt-2 gap-2 bg-[#7471E6] w-fit h-fit rounded-lg shadow-md py-4 px-8 transition-all duration-700 ease-in-out`}
+              >
                 <Link
                   className="hover:font-medium hover:scale-110 transition-all duration-700 ease-in-out"
                   href={'/Services/Plan'}
@@ -93,15 +109,30 @@ const Navbar = () => {
               <Link href={'/Careers'}>Careers</Link>
             </li>
             <li
+              onClick={() => {
+                handleHover('Portfolio', !hovered.hover);
+              }}
               className={`p-3 ${
                 isActive('/Our-Portfolio') ? 'bg-[#7471E680]' : 'text-white'
               }`}
             >
               <Link className="flex gap-2 items-center" href={'/Our-Portfolio'}>
                 Our Portfolio
-                <FaAngleDown />
+                <FaAngleDown
+                  className={`${
+                    hovered.hover && hovered.name === 'Portfolio'
+                      ? 'rotate-180'
+                      : ''
+                  }`}
+                />
               </Link>
-              <div className="flex flex-col items-start mt-2 gap-2 bg-[#7471E6] w-fit h-fit rounded-lg shadow-md py-4 px-8">
+              <div
+                className={`${
+                  hovered.hover && hovered.name === 'Portfolio'
+                    ? 'flex'
+                    : 'hidden'
+                } flex-col items-start mt-2 gap-2 bg-[#7471E6] w-fit h-fit rounded-lg shadow-md py-4 px-8`}
+              >
                 <Link
                   className="hover:font-medium hover:scale-110 transition-all duration-700 ease-in-out"
                   href={'/Our-Portfolio/Projects/RS-Global-Ties'}

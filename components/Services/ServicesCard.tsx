@@ -37,11 +37,9 @@ const ServicesCard = ({
           </div>
         </Link>
       </div>
-      <Image
-        src={img}
-        alt="services"
-        className="w-full h-screen max-h-[30rem]"
-      />
+      <div className="w-full lg:h-screen max-h-[30rem]">
+        <Image src={img} alt="services" className="w-auto h-auto" />
+      </div>
     </section>
   );
 };

@@ -66,9 +66,6 @@ const ChooseUs = () => {
           various benefits. Opting for outsourced IT services improves business
           efficiency and builds trust with customers and clients. Our services
           can be tailored to meet specific needs to match your specific goals.
-          Our services can be tailored to meet specific needs to match your
-          specific goals. Our services can be tailored to meet specific needs to
-          match your specific goals.
         </p>
         <Link
           href={'/'}
