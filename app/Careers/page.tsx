@@ -1,11 +1,26 @@
 'use client';
 
+import axios from 'axios';
+import axiosInstance from '@/lib/axiosInstance';
 import CareerCard from '@/components/Career/CareerCard';
 import CareerFillters from '@/components/Career/CareerFillters';
 import Hero from '@/components/Career/Hero';
 import { motion } from 'framer-motion';
 
-const page = () => {
+const fetchJobs = async () => {
+  try {
+    const response = await axiosInstance.get('/job/get');
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch jobs:', error);
+    return [];
+  }
+};
+
+const page = async () => {
+  const jobs = await fetchJobs();
+  console.log('🚀 ~ fetchJobs ~ jobs:', jobs);
+
   return (
     <>
       <Hero />
