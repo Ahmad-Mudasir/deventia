@@ -3,6 +3,6 @@ const sendMail = require("../controller/mail/sendMail"); // Correct path
 
 const router = express.Router();
 
-router.post("/mail", sendMail); // Properly use sendMail
+router.post("/mail", sendMail); 
 
 module.exports = router;

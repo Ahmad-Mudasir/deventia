@@ -3,26 +3,24 @@ const nodemailer = require("nodemailer");
 // Configure the transporter with your Gmail credentials
 const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 587,
-    secure: false, // Use true for port 465, false for all other ports
+    port: 465,
+    secure: true,
+    service: "gmail",
     auth: {
-        user: "abdulmajid1m2@gmail.com", // Replace with your email
-        pass: "cekpalvvmiqcxvje", // Replace with your app password
+        user: "abdulmajid1m2@gmail.com",
+        pass: "cekpalvvmiqcxvje",
     },
 });
 
 // Function to send an email
-async function sendEmail(senderEmail, message,subject) {
+async function sendEmail(senderEmail, message, subject) {
     try {
         const info = await transporter.sendMail({
-            from: {
-                name: 'User',
-                address: senderEmail, // Dynamic sender email
-            },
-            to: 'abdulmajid1m2@gmail.com', // Fixed recipient email
-            subject: subject, // Subject line
-            text: message, // Plain text body
-            html: `<p>${message}</p>`, // HTML body
+            from: "abdulmajid1m2@gmail.com",
+            to: 'imrankohistani65@gmail.com',
+            subject: subject,
+            text: message,
+            html: `<p>${message}</p>`,
         });
 
         console.log("Message sent: %s", info.messageId);
