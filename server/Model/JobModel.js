@@ -16,6 +16,11 @@ const jobsSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
+    job_type: {
+        type: String,
+        required: true,
+        enum: ['Full-time', 'Part-time', 'Contract', 'Internship', 'Temporary',"Remote"]
+      },
   }, { timestamps: true });
   
   module.exports = mongoose.model('Job', jobsSchema);
