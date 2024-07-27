@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const CreateJobForm = () => {
   const [formData, setFormData] = useState({
@@ -7,7 +8,6 @@ const CreateJobForm = () => {
     location: '',
     jobType: '',
     jobDescription: '',
-    datePosted: ''
   });
 
   const handleChange = (e) => {
@@ -20,21 +20,31 @@ const CreateJobForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Check if all fields are filled
     if (Object.values(formData).some(field => field === '')) {
       alert('Please fill in all fields');
       return;
     }
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
-    // Clear the form
-    setFormData({
-      jobTitle: '',
-      location: '',
-      jobType: '',
-      jobDescription: '',
-      datePosted: ''
-    });
+    const jobData = {
+      job_title: formData.jobTitle,
+      experience: formData.jobType,
+      job_description: formData.jobDescription,
+      location: formData.location
+    };
+    axios.post('http://localhost:4000/job/post', jobData)
+      .then((response) => {
+        console.log(response.data);
+        alert('Job posted successfully');
+        setFormData({
+          jobTitle: '',
+          location: '',
+          jobType: '',
+          jobDescription: '',
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+        alert('Error posting job');
+      });
   };
 
   return (
@@ -86,19 +96,6 @@ const CreateJobForm = () => {
           </select>        
         </div>
 
-        <div className="form-group">
-          <label className="block mb-1 ml-4">Date Posted</label>
-          <input 
-            type="date" 
-            name="datePosted"
-            value={formData.datePosted}
-            onChange={handleChange}
-            className="w-full px-4 py-2 bg-gray-800 text-white" 
-            style={{ borderRadius: "19px" }} 
-            required
-          />
-        </div>
-        
         <div className="col-span-2 form-group">
           <label className="block mb-1 ml-4">Job Description</label>
           <textarea 
