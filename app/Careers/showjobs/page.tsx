@@ -17,6 +17,7 @@ const EditJobModal = ({
   const [jobDescription, setJobDescription] = useState(job.job_description);
   const [jobType, setJobType] = useState(job.job_type);
   const [location, setLocation] = useState(job.location);
+  const [seodescrription, setseodescrription]= useState(job.seo_description);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -26,6 +27,7 @@ const EditJobModal = ({
       job_description: jobDescription,
       job_type: jobType,
       location,
+      seodescription: seo_description,
     };
 
     try {
@@ -78,6 +80,16 @@ const EditJobModal = ({
               type="text"
               value={jobType}
               onChange={(e) => setJobType(e.target.value)}
+              required
+              className="w-full p-2 border border-gray-300 rounded"
+            />
+          </div>
+          <div className="mb-4">
+            <label>Seo Description</label>
+            <input
+              type="text"
+              value={seodescrription}
+              onChange={(e) => setseodescrription(e.target.value)}
               required
               className="w-full p-2 border border-gray-300 rounded"
             />
