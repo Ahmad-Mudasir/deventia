@@ -2,7 +2,7 @@ const Job = require("../../Model/JobModel");
 
 exports.postJob = async(req,res)=>{
     try{
-        const {job_title,experience,job_description,location} = req.body;
+        const {job_title,experience,job_description,location, job_type} = req.body;
         if(!job_title || !experience || !job_description || !location){
             return res.status(400).json({message:"All fields are required"})
         }
@@ -10,6 +10,7 @@ exports.postJob = async(req,res)=>{
             job_title,
             experience,
             job_description,
+            job_type,
             location
         })
         await job.save();
@@ -34,13 +35,14 @@ exports.getJobs = async(req,res)=>{
 exports.updateJob = async(req,res)=>{
     try{
         const {job_title,experience,job_description,location} = req.body;
-        if(!job_title || !experience || !job_description || !location){
+        if(!job_title || !experience || !job_description || !location || !job_type){
             return res.status(400).json({message:"All fields are required"})
         }
         const job = await Job.findByIdAndUpdate(req.params.id,{
             job_title,
             experience,
             job_description,
+            job_type,
             location
         },{new:true})
         res.json({message:"Job updated successfully",job})

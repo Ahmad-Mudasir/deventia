@@ -7,6 +7,7 @@ const CreateJobForm = () => {
     jobTitle: '',
     location: '',
     jobType: '',
+    experience: '',
     jobDescription: '',
   });
 
@@ -26,7 +27,8 @@ const CreateJobForm = () => {
     }
     const jobData = {
       job_title: formData.jobTitle,
-      experience: formData.jobType,
+      job_type: formData.jobType,
+      experience: formData.experience,
       job_description: formData.jobDescription,
       location: formData.location
     };
@@ -38,6 +40,7 @@ const CreateJobForm = () => {
           jobTitle: '',
           location: '',
           jobType: '',
+          experience: '',
           jobDescription: '',
         });
       })
@@ -50,7 +53,7 @@ const CreateJobForm = () => {
   return (
     <div className="p-10 text-white">
       <h2 className="text-2xl mb-4 mt-10 ml-4">Create new Job</h2>
-      <form className="grid grid-cols-2 gap-4 px-10 mt-8" onSubmit={handleSubmit}>
+      <form className="grid grid-cols-1 md:grid-cols-2 gap-4 px-10 mt-8" onSubmit={handleSubmit}>
         <div className="form-group">
           <label className="block mb-1 ml-4">Job Title</label>
           <input 
@@ -81,22 +84,36 @@ const CreateJobForm = () => {
         
         <div className="form-group">
           <label className="block mb-1 ml-4">Job Type</label>
-          <select 
+          <input 
             name="jobType"
             value={formData.jobType}
             onChange={handleChange}
             className="w-full px-4 py-2 bg-gray-800 text-white" 
             style={{ borderRadius: "19px" }}
             required
+            placeholder='Enter Job type'
           >
-            <option value="">Select Job Type</option>
-            <option value="Internship">Internship</option>
-            <option value="0-1 years experience">0-1 years experience</option>
+            
+          </input>        
+        </div>
+
+        <div className="form-group">
+          <label className="block mb-1 ml-4">Experience</label>
+          <select 
+            name="experience"
+            value={formData.experience}
+            onChange={handleChange}
+            className="w-full px-4 py-2 bg-gray-800 text-white" 
+            style={{ borderRadius: "19px" }}
+            required
+          >
+            <option value="Internship">0-1 years experience</option>
+            <option value="0-1 years experience">1-3 years experience</option>
             <option value="3-5 years experience">3-5 years experience</option>
           </select>        
         </div>
 
-        <div className="col-span-2 form-group">
+        <div className="col-span-1 md:col-span-2 form-group">
           <label className="block mb-1 ml-4">Job Description</label>
           <textarea 
             name="jobDescription"
@@ -108,7 +125,7 @@ const CreateJobForm = () => {
           ></textarea>
         </div>
 
-        <div className="col-span-2 flex justify-end">
+        <div className="col-span-1 md:col-span-2 flex justify-end">
           <button 
             type="submit" 
             className="px-8 py-2 bg-gray-800 text-white" 
