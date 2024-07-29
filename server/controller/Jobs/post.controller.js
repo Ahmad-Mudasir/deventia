@@ -2,7 +2,11 @@ const Job = require("../../Model/JobModel");
 
 exports.postJob = async(req,res)=>{
     try{
+<<<<<<< HEAD
         const {job_title,experience,job_description,location, job_type} = req.body;
+=======
+        const {job_title,experience,job_description,location,job_type,seo_description} = req.body;
+>>>>>>> 0cedf457d1fad5e9667e6a2a23d2c934a50c48a8
         if(!job_title || !experience || !job_description || !location){
             return res.status(400).json({message:"All fields are required"})
         }
@@ -10,8 +14,14 @@ exports.postJob = async(req,res)=>{
             job_title,
             experience,
             job_description,
+<<<<<<< HEAD
             job_type,
             location
+=======
+            location,
+            job_type,
+            seo_description
+>>>>>>> 0cedf457d1fad5e9667e6a2a23d2c934a50c48a8
         })
         await job.save();
         res.json({message:"Job posted successfully",job})
@@ -32,6 +42,7 @@ exports.getJobs = async(req,res)=>{
 }
 
 // update job using id
+<<<<<<< HEAD
 exports.updateJob = async (req, res) => {
     try {
         const { job_title, experience, job_description, location, job_type } = req.body;
@@ -61,6 +72,25 @@ exports.updateJob = async (req, res) => {
         res.json({ message: "Job updated successfully", job: updatedJob });
     } catch (error) {
         res.status(500).send({ message: error.message });
+=======
+exports.updateJob = async(req,res)=>{
+    try{
+        const {job_title,experience,job_description,location,job_type,seo_description} = req.body;
+        if(!job_title || !experience || !job_description || !location || !job_type){
+            return res.status(400).json({message:"All fields are required"})
+        }
+        const job = await Job.findByIdAndUpdate(req.params.id,{
+            job_title,
+            experience,
+            job_description,
+            location,
+            job_type,
+            seo_description
+        },{new:true})
+        res.json({message:"Job updated successfully",job})
+    }catch(error){
+        res.status(500).send({message:error.message})
+>>>>>>> 0cedf457d1fad5e9667e6a2a23d2c934a50c48a8
     }
 };
 

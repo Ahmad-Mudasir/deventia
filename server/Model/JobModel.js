@@ -20,6 +20,11 @@ const jobsSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
+    seo_description: {
+      type: String,
+  
+    },
   }, { timestamps: true });
   
-  module.exports = mongoose.model('Job', jobsSchema);
+  
+module.exports = mongoose.model('Job', jobsSchema);
