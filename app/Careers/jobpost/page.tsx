@@ -107,6 +107,7 @@ const CreateJobForm = () => {
             style={{ borderRadius: "19px" }}
             required
           >
+            <option value="Internship">choose</option>
             <option value="Internship">0-1 years experience</option>
             <option value="0-1 years experience">1-3 years experience</option>
             <option value="3-5 years experience">3-5 years experience</option>
