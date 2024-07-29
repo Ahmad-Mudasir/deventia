@@ -35,7 +35,7 @@ const sendMail = async (req, res) => {
     const { senderEmail, message, subject } = req.body; // Extract sender email and message from request body
 
     if (!senderEmail || !message || !subject) {
-        return res.status(400).json({ message: "Sender email and message are required." });
+        return res.status(400).json({ message: "Sender email ,subject and  message are required." });
     }
 
     try {
