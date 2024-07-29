@@ -1,31 +1,54 @@
 'use client';
 
-import axios from 'axios';
 import axiosInstance from '@/lib/axiosInstance';
 import CareerCard from '@/components/Career/CareerCard';
 import CareerFillters from '@/components/Career/CareerFillters';
 import Hero from '@/components/Career/Hero';
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { ImSpinner8 } from 'react-icons/im';
 
-const fetchJobs = async () => {
-  try {
-    const response = await axiosInstance.get('/job/get');
-    return response.data;
-  } catch (error) {
-    console.error('Failed to fetch jobs:', error);
-    return [];
+interface Job {
+  _id: number;
+  job_title: string;
+  job_description: string;
+  location: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+const Page = () => {
+  const [jobs, setJobs] = useState<Job[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const response = await axiosInstance.get('/job/get');
+        setJobs(response.data);
+      } catch (error) {
+        console.error('Failed to fetch jobs:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchJobs();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen text-white">
+        <ImSpinner8 size={30} className="animate-spin" />
+      </div>
+    );
   }
-};
-
-const page = async () => {
-  const jobs = await fetchJobs();
-  console.log('🚀 ~ fetchJobs ~ jobs:', jobs);
 
   return (
     <>
       <Hero />
       <div className="careers-bg">
-        <CareerFillters />
+        <CareerFillters jobLength={jobs.length} />
         <motion.section
           variants={{
             hidden: { opacity: 0 },
@@ -35,23 +58,20 @@ const page = async () => {
           whileInView="show"
           className="px-[5%] grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8"
         >
-          <CareerCard
-            title="Front End Engineer"
-            description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-        sint. Velit officia consequat duis enim velit mollit."
-            jobType="Internship"
-            location="Manseera, Pakistan"
-          />
-          <CareerCard
-            title="Front End Engineer"
-            description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-        sint. Velit officia consequat duis enim velit mollit."
-            jobType="Internship"
-            location="Manseera, Pakistan"
-          />
+          {jobs.map((job) => (
+            <CareerCard
+              key={job._id}
+              title={job.job_title}
+              description={job.job_description}
+              jobType="Internship"
+              location={job.location}
+              jobId={job._id}
+            />
+          ))}
         </motion.section>
       </div>
     </>
   );
 };
-export default page;
+
+export default Page;

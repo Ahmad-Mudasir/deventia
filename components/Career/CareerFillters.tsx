@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { FaAngleDown, FaSliders } from 'react-icons/fa6';
 
-const CareerFillters = () => {
+const CareerFillters = ({ jobLength }: { jobLength: number }) => {
   const [arrow, setArrow] = useState(false);
   const handleClick = () => {
     setArrow(!arrow);
@@ -16,7 +16,7 @@ const CareerFillters = () => {
         Join Our Team and Explore Exciting Opportunities to Shape Your Future.
       </p>
       <div className="flex items-center flex-col md:flex-row justify-between gap-4 my-12">
-        <h3 className="mr-auto">Showing 34 Jobs</h3>
+        <h3 className="mr-auto">Showing {jobLength || 0} Jobs</h3>
         <div className="flex flex-wrap items-center justify-between mr-0 ml-auto gap-8">
           <label className="flex items-center gap-2 cursor-pointer">
             <input

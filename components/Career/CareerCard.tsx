@@ -8,14 +8,19 @@ const CareerCard = ({
   description,
   jobType,
   location,
+  key,
+  jobId,
 }: {
   title: string;
   description: string;
   jobType: string;
   location: string;
+  key: number;
+  jobId: number;
 }) => {
   return (
     <motion.div
+      key={key}
       variants={{
         hidden: { opacity: 0 },
         show: { opacity: 1 },
@@ -30,7 +35,7 @@ const CareerCard = ({
         <h3 className="font-bold text-xl md:text-2xl">{jobType}</h3>
         <p className="text-base text-[#A7A7A7] mr-auto">{location}</p>
         <Link
-          href={'Careers/Detials'}
+          href={`/Careers/${jobId}`}
           className="bg-[#7471E6] border-2 border-[#7471E6] hover:bg-transparent text-white hover:text-[#7471E6] px-4 py-2 text-base font-semibold transition-all ease-in-out duration-700"
         >
           Detials
