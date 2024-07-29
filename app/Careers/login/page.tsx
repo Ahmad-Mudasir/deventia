@@ -10,7 +10,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/login', { email, password });
+      const response = await axios.post('http://localhost:4000/login', { email, password });
 
       if (response.data === 'Admin Login Successful' || response.data === 'User Login Successful') {
         // Handle successful login (e.g., show a success message or redirect using another method)
