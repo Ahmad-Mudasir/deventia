@@ -7,7 +7,6 @@ const jobsSchema = new mongoose.Schema(
     },
     experience: {
       type: String,
-
       required: true,
     },
     job_description: {

@@ -2,11 +2,26 @@
 import { useState } from 'react';
 import { FaAngleDown, FaSliders } from 'react-icons/fa6';
 
-const CareerFillters = ({ jobLength }: { jobLength: number }) => {
+type FilterType = 'fulltime' | 'parttime' | 'internship';
+
+const CareerFillters = ({
+  jobLength,
+  filters,
+  onFilterChange,
+  sortBy,
+  onSortChange,
+}: {
+  jobLength: number;
+  filters: { fulltime: boolean; parttime: boolean; internship: boolean };
+  onFilterChange: (filter: FilterType) => void;
+  sortBy: string;
+  onSortChange: (sort: string) => void;
+}) => {
   const [arrow, setArrow] = useState(false);
   const handleClick = () => {
     setArrow(!arrow);
   };
+
   return (
     <section className="px-[5%]">
       <h1 className="font-bold text-2xl md:text-4xl pt-12 mb-2">
@@ -22,6 +37,8 @@ const CareerFillters = ({ jobLength }: { jobLength: number }) => {
             <input
               type="checkbox"
               className="appearance-none w-5 h-5 border-2 border-[#8A88EC] rounded-sm bg-transparent checked:bg-[#8A88EC]"
+              checked={filters.fulltime}
+              onChange={() => onFilterChange('fulltime')}
             />
             Fulltime
           </label>
@@ -29,6 +46,8 @@ const CareerFillters = ({ jobLength }: { jobLength: number }) => {
             <input
               type="checkbox"
               className="appearance-none w-5 h-5 border-2 border-[#8A88EC] rounded-sm bg-transparent checked:bg-[#8A88EC]"
+              checked={filters.parttime}
+              onChange={() => onFilterChange('parttime')}
             />
             Part time
           </label>
@@ -36,6 +55,8 @@ const CareerFillters = ({ jobLength }: { jobLength: number }) => {
             <input
               type="checkbox"
               className="appearance-none w-5 h-5 border-2 border-[#8A88EC] rounded-sm bg-transparent checked:bg-[#8A88EC]"
+              checked={filters.internship}
+              onChange={() => onFilterChange('internship')}
             />
             Internship
           </label>
@@ -49,6 +70,8 @@ const CareerFillters = ({ jobLength }: { jobLength: number }) => {
             <select
               name="vacancy"
               className="appearance-none bg-transparent text-white border-[1.5px] border-[#E6E6E6] outline-none pl-6 pr-16 py-3 w-full"
+              value={sortBy}
+              onChange={(e) => onSortChange(e.target.value)}
               onClick={handleClick}
             >
               <option className="bg-black" value="Newest">

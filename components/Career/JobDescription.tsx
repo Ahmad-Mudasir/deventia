@@ -9,29 +9,30 @@ const JobDescription = ({
     job_title: string;
     job_description: string;
     location: string;
-    experience: number;
+    experience: string;
     _id: number;
-    createdAt: Date;
-    updatedAt: Date;
+    createdAt: string;
+    updatedAt: string;
   };
 }) => {
+  const createdAt = new Date(job.createdAt);
   return (
-    <main className="bg-[#7571e618] p-8 w-fit col-span-1 md:col-span-2">
-      <h1 className="font-bold text-lg md:text-xl">Software Engineer</h1>
+    <main className="bg-[#7571e618] p-8 w-full">
+      <h1 className="font-bold text-lg md:text-xl">{job.job_title}</h1>
       <p className="text-base text-[#BEBEBE] mt-2 mb-12">
-        Posted by Admin on November 12th, 2020
+        Posted by Admin on <span>{createdAt.toDateString()}</span>
       </p>
       <div className="flex gap-8 flex-wrap">
         <InfoCard
           icon={FaCompass}
-          title="2-3 Years"
+          title={job.experience + ' Years'}
           subtitle="Experience"
           bgColor="#8653C7"
           iconColor="white"
         />
         <InfoCard
           icon={FaLocationDot}
-          title="London, England"
+          title={job.location}
           subtitle="Location"
           bgColor="#FBA556"
           iconColor="white"

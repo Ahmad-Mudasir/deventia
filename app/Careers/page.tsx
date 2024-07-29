@@ -13,13 +13,22 @@ interface Job {
   job_title: string;
   job_description: string;
   location: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
+  job_type: string;
 }
+type FilterType = 'fulltime' | 'parttime' | 'internship';
 
 const Page = () => {
   const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
+  const [filters, setFilters] = useState<{ [key in FilterType]: boolean }>({
+    fulltime: false,
+    parttime: false,
+    internship: false,
+  });
+
+  const [sortBy, setSortBy] = useState('Newest');
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -34,7 +43,35 @@ const Page = () => {
     };
 
     fetchJobs();
-  }, []);
+  }, [jobs, filters, sortBy]);
+
+  const handleFilterChange = (filter: FilterType) => {
+    setFilters((prev) => ({
+      ...prev,
+      [filter]: !prev[filter],
+    }));
+  };
+
+  const handleSortChange = (sort: string) => {
+    setSortBy(sort);
+  };
+
+  const filteredJobs = jobs.filter((job) => {
+    if (filters.fulltime && job.job_type === 'Full-time') return true;
+    if (filters.parttime && job.job_type === 'Part-time') return true;
+    if (filters.internship && job.job_type === 'Internship') return true;
+    if (!filters.fulltime && !filters.parttime && !filters.internship)
+      return true;
+    return false;
+  });
+
+  const sortedJobs = [...filteredJobs].sort((a, b) => {
+    if (sortBy === 'Newest') {
+      return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+    } else {
+      return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
+    }
+  });
 
   if (loading) {
     return (
@@ -48,27 +85,32 @@ const Page = () => {
     <>
       <Hero />
       <div className="careers-bg">
-        <CareerFillters jobLength={jobs.length} />
-        <motion.section
-          variants={{
-            hidden: { opacity: 0 },
-            show: { opacity: 1, transition: { staggerChildren: 0.5 } },
-          }}
-          initial="hidden"
-          whileInView="show"
-          className="px-[5%] grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8"
-        >
-          {jobs.map((job) => (
-            <CareerCard
-              key={job._id}
-              title={job.job_title}
-              description={job.job_description}
-              jobType="Internship"
-              location={job.location}
-              jobId={job._id}
-            />
-          ))}
-        </motion.section>
+        <CareerFillters
+          jobLength={sortedJobs.length}
+          filters={filters}
+          onFilterChange={handleFilterChange}
+          sortBy={sortBy}
+          onSortChange={handleSortChange}
+        />
+        <section className="px-[5%] grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8">
+          {sortedJobs.length !== 0 ? (
+            sortedJobs.map((job) => (
+              <CareerCard
+                key={job._id}
+                title={job.job_title}
+                description={job.job_description}
+                jobType={job.job_type}
+                location={job.location}
+                jobId={job._id}
+              />
+            ))
+          ) : (
+            <div className="text-white flex justify-center items-center w-full">
+              No jobs found. We are regularly posting new jobs. Stay connected
+              for new opportunities.
+            </div>
+          )}
+        </section>
       </div>
     </>
   );

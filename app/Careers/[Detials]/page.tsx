@@ -2,7 +2,7 @@
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { ImSpinner8 } from 'react-icons/im';
-import AboutCompany from '@/components/Career/AboutCompany';
+// import AboutCompany from '@/components/Career/AboutCompany';
 import JobDescription from '@/components/Career/JobDescription';
 import JobApplication from '@/components/Career/JobApplication';
 import Link from 'next/link';
@@ -106,10 +106,11 @@ const page = () => {
           Join Our Team and Explore Exciting Opportunities to Shape Your Future.
         </p>
       </div>
-      <div className="px-[5%] grid gap-8 grid-cols-1 md:grid-cols-3  mt-12">
-        <AboutCompany />
+      <div className="px-[5%] mt-12">
+        {/* <AboutCompany /> */}
         <JobDescription job={job} />
       </div>
+
       <div className="px-[5%] mt-8">
         <JobApplication />
       </div>
