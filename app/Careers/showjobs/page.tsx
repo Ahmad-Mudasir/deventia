@@ -27,7 +27,7 @@ const EditJobModal = ({
       job_description: jobDescription,
       job_type: jobType,
       location,
-      seodescription: seo_description,
+      seodescrription,
     };
 
     try {
