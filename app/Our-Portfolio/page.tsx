@@ -6,6 +6,37 @@ import ISA from '../../assets/images/ISA.webp';
 import patientDoctor from '../../assets/images/patientDoctor.webp';
 import origin from '../../assets/images/origin.webp';
 import DadiRentBoat from '../../assets/images/DadiRentBoat.webp';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Our Portfolio',
+  description:
+    "Explore our diverse portfolio showcasing innovative projects. From cutting-edge web solutions to streamlined business tools, discover how we've helped businesses thrive with tailored solutions. See examples like RS Global Ties, Private CPA, ISA Consulting, and more.",
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Our Portfolio',
+    description:
+      "Explore our diverse portfolio showcasing innovative projects. From cutting-edge web solutions to streamlined business tools, discover how we've helped businesses thrive with tailored solutions. See examples like RS Global Ties, Private CPA, ISA Consulting, and more.",
+    url: 'https://nextjs.org',
+    siteName: 'DevEntia Tech Pvt. Ltd',
+    images: [
+      {
+        url: 'https://nextjs.org/og.png', // Must be an absolute URL
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://nextjs.org/og-alt.png', // Must be an absolute URL
+        width: 1800,
+        height: 1600,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+};
 
 const page = () => {
   return (
