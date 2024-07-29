@@ -9,6 +9,7 @@ const CreateJobForm = () => {
     jobType: '',
     experience: '',
     jobDescription: '',
+    
   });
 
   const handleChange = (e) => {
@@ -30,7 +31,8 @@ const CreateJobForm = () => {
       job_type: formData.jobType,
       experience: formData.experience,
       job_description: formData.jobDescription,
-      location: formData.location
+      location: formData.location,
+      seo_description:formData.seodescription
     };
     axios.post('http://localhost:4000/job/post', jobData)
       .then((response) => {
@@ -42,6 +44,7 @@ const CreateJobForm = () => {
           jobType: '',
           experience: '',
           jobDescription: '',
+          seodescription:'',
         });
       })
       .catch((error) => {
@@ -115,14 +118,13 @@ const CreateJobForm = () => {
         </div>
 
         <div className="form-group">
-          <label className="block mb-1 ml-4">Job Type</label>
+          <label className="block mb-1 ml-4">Seo Description</label>
           <input 
             name="seotags"
-            value={formData.jobType}
+            value={formData.seodescription}
             onChange={handleChange}
             className="w-full px-4 py-2 bg-gray-800 text-white" 
             style={{ borderRadius: "19px" }}
-            
             placeholder='SEO'
           />
             
