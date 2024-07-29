@@ -13,7 +13,7 @@ import { MdOutlineArrowOutward } from 'react-icons/md';
 import heroBgImg from '../../../assets/images/career-hero-bg-img.webp';
 import axiosInstance from '@/lib/axiosInstance';
 
-const page = () => {
+const Page = () => {
   const path = usePathname();
   const pathSegments = path.split('/');
   const id = pathSegments[pathSegments.length - 1];
@@ -117,4 +117,4 @@ const page = () => {
     </>
   );
 };
-export default page;
+export default Page;
