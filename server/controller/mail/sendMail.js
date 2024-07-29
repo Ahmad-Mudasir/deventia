@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // Function to send an email
-async function sendEmail(senderEmail, message, subject) {
+async function sendEmail(senderEmail, message, subject, phoneNumber, fullName ) {
     try {
         const info = await transporter.sendMail({
             from: "abdulmajid1m2@gmail.com",
@@ -22,8 +22,11 @@ async function sendEmail(senderEmail, message, subject) {
             text: message,
             html: `
              <p><strong>Email:</strong> ${senderEmail}</p>
+             <p><strong>Message:</strong> ${fullName}</p>
              <p><strong>Subject:</strong> ${subject}</p>
-                <p><strong>Message:</strong> ${message}</p>`,
+            <p><strong>Message:</strong> ${message}</p>
+            <p><strong>Message:</strong> ${phoneNumber}</p>
+            `,
         });
 
         console.log("Message sent: %s", info.messageId);
@@ -38,9 +41,11 @@ const sendMail = async (req, res) => {
     const {
         senderEmail,
         message,
-        subject
+        subject,
+        phoneNumber,
+        fullName
     } = req.body; // Extract sender email and message from request body
-
+    console.log(req.body)
     if (!senderEmail || !message || !subject) {
         return res.status(400).json({ message: "Sender email and message are required." });
     }
