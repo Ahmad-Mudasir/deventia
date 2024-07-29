@@ -92,9 +92,9 @@ const CreateJobForm = () => {
             style={{ borderRadius: "19px" }}
             required
             placeholder='Enter Job type'
-          >
+          />
             
-          </input>        
+                  
         </div>
 
         <div className="form-group">
@@ -107,13 +107,27 @@ const CreateJobForm = () => {
             style={{ borderRadius: "19px" }}
             required
           >
-            <option value="Internship">choose</option>
-            <option value="Internship">0-1 years experience</option>
-            <option value="0-1 years experience">1-3 years experience</option>
+            <option value="chhose experience">choose experience</option>
+            <option value="0-1 years ">0-1 years experience</option>
+            <option value="1-3 years experience">1-3 years experience</option>
             <option value="3-5 years experience">3-5 years experience</option>
           </select>        
         </div>
 
+        <div className="form-group">
+          <label className="block mb-1 ml-4">Job Type</label>
+          <input 
+            name="seotags"
+            value={formData.jobType}
+            onChange={handleChange}
+            className="w-full px-4 py-2 bg-gray-800 text-white" 
+            style={{ borderRadius: "19px" }}
+            
+            placeholder='SEO'
+          />
+            
+                 
+        </div>
         <div className="col-span-1 md:col-span-2 form-group">
           <label className="block mb-1 ml-4">Job Description</label>
           <textarea 
