@@ -13,7 +13,6 @@ const Login = () => {
       const response = await axios.post('http://localhost:4000/login', { email, password });
 
       if (response.data === 'Admin Login Successful' || response.data === 'User Login Successful') {
-        // Handle successful login (e.g., show a success message or redirect using another method)
         console.log('Login successful');
       } else {
         setError(response.data);
