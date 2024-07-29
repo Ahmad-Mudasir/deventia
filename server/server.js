@@ -34,7 +34,7 @@ app.use(cors(options));
 readdirSync("./Routes").map((r) => app.use("/", require("./Routes/" + r)))
 
 // database
-mongoose.connect("mongodb://localhost:27017/deventia").then(() => console.log("database connection successfully")).catch((err) => console.log(`error connecting to mongodb ${err}`))
+mongoose.connect("mongodb+srv://asgharkhanglipton:zZgDPYCBB59ia4iy@cluster0.7ipdy2j.mongodb.net/deventia").then(() => console.log("database connection successfully")).catch((err) => console.log(`error connecting to mongodb ${err}`))
 
 const PORT =  4000;
 app.listen(PORT, () => {
