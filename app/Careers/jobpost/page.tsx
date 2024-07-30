@@ -1,6 +1,8 @@
 'use client'
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
+
 
 const CreateJobForm = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +13,7 @@ const CreateJobForm = () => {
     jobDescription: '',
     
   });
+  const router = useRouter();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,6 +41,7 @@ const CreateJobForm = () => {
       .then((response) => {
         console.log(response.data);
         alert('Job posted successfully');
+        router.push('/Careers/showjobs');
         setFormData({
           jobTitle: '',
           location: '',

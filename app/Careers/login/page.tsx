@@ -1,11 +1,13 @@
 'use client'
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,6 +16,7 @@ const Login = () => {
 
       if (response.data === 'Admin Login Successful' || response.data === 'User Login Successful') {
         console.log('Login successful');
+        router.push('/Careers/showjobs');
       } else {
         setError(response.data);
       }
