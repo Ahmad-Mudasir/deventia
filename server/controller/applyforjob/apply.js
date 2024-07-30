@@ -54,7 +54,7 @@ async function sendEmail(firstName, lastName, middleName, birthDate, email, phon
     }
 }
 
-const uploadFile = require('./file.js'); // Import the uploadFile function
+// const uploadFile = require('./file.js'); // Import the uploadFile function
 
 const applyJob = async (req, res) => {
     // Use multer to handle file upload
