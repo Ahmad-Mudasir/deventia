@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const CreateJobForm = () => {
@@ -26,7 +27,7 @@ const CreateJobForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (Object.values(formData).some(field => field === '')) {
-      alert('Please fill in all fields');
+      toast.error('Please fill in all fields');
       return;
     }
     const jobData = {
@@ -39,8 +40,7 @@ const CreateJobForm = () => {
     };
     axios.post('http://localhost:4000/job/post', jobData)
       .then((response) => {
-        console.log(response.data);
-        alert('Job posted successfully');
+        toast.error('Error posting job');
         router.push('/Careers/showjobs');
         setFormData({
           jobTitle: '',
