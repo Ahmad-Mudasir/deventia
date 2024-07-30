@@ -6,3 +6,5 @@ const router = express.Router();
 router.post("/jobapply", applyJob); 
 
 module.exports = router;
+
+

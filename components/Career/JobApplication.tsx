@@ -15,7 +15,7 @@ const JobApplication = () => {
     email: '',
     phoneNumber: '',
     aboutYou: '',
-    // file: null as File | null, // Change to null initially
+    file: null as File | null, // Change to null initially
   });
 
   // Handle text and date input changes
@@ -39,42 +39,41 @@ const JobApplication = () => {
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(applicationData);
-  
+
     // Check for validation
     const { firstName, lastName, birthDate, email, phoneNumber, aboutYou } = applicationData;
     if (!firstName || !lastName || !birthDate || !email || !phoneNumber || !aboutYou) {
-      alert('Please fill in all required fields.');
-      return;
+        alert('Please fill in all required fields.');
+        return;
     }
-  
+
     const formData = new FormData();
     formData.append('firstName', firstName);
     formData.append('lastName', lastName);
-    formData.append('middleName', applicationData.middleName || ''); // Optional field
+    formData.append('middleName', applicationData.middleName || '');
     formData.append('birthDate', birthDate);
     formData.append('email', email);
     formData.append('phoneNumber', phoneNumber);
     formData.append('aboutYou', aboutYou);
-  
-    // if (applicationData.file) {
-    //   formData.append('file', applicationData.file);
-    // }
-  
-    try {
-      const response = await axios.post("http://localhost:4000/jobapply", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-  
-      console.log("Success:", response.data);
-      setShowPopup(true);
-    } catch (error) {
-      console.error("Error:", error.response?.data || error.message);
+
+    if (applicationData.file) {
+        formData.append('file', applicationData.file);
     }
-  };
-  
+
+    try {
+        const response = await axios.post("http://localhost:4000/jobapply", formData, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            },
+        });
+
+        console.log("Success:", response.data);
+        setShowPopup(true);
+    } catch (error) {
+        console.error("Error:", error);
+    }
+};
+
 
   // Handle file removal
   const handleFileRemove = () => {
