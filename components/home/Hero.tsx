@@ -21,7 +21,7 @@ const Hero = () => {
         <source src={'/homepagebg.mp4'} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className="absolute top-0 left-0 w-full h-full bg-[#7571e666]"></div>
+      {/* <div className="absolute top-0 left-0 w-full h-full bg-[#7571e666]"></div> */}
       <div className="absolute inset-0 flex items-center justify-start p-8">
         <div className="flex flex-col items-start gap-6">
           <div className="flex items-center gap-1 1200px:w-1/2">
