@@ -31,7 +31,7 @@ const SendMessage = () => {
 
       console.log("Success:", response.data);
     } catch (error) {
-      console.log("Error:", error);
+      console.error("Error:", error);
     }
   };
 
@@ -55,8 +55,8 @@ const SendMessage = () => {
         Your email
         <input
           type="email"
-          name="email"
-          value={messageData.email} 
+          name="senderEmail"
+          value={messageData.senderEmail} 
           onChange={handleChange}
           placeholder="Enter Your email"
           className="outline-none px-4 py-3 border-[1.5px] border-[#D3D3D3] w-full text-[#797979] font-normal"
