@@ -1,6 +1,8 @@
 'use client';
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
+import { ToastContainer, toast } from 'react-toastify';
 
 const CreateJobForm = () => {
   const [formData, setFormData] = useState({
@@ -9,7 +11,9 @@ const CreateJobForm = () => {
     jobType: '',
     experience: '',
     jobDescription: '',
+    seodescription: '',
   });
+  const router = useRouter();
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -24,7 +28,7 @@ const CreateJobForm = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (Object.values(formData).some((field) => field === '')) {
-      alert('Please fill in all fields');
+      toast.error('Please fill in all fields');
       return;
     }
     const jobData = {
@@ -33,18 +37,20 @@ const CreateJobForm = () => {
       experience: formData.experience,
       job_description: formData.jobDescription,
       location: formData.location,
+      seo_description: formData.seodescription,
     };
     axios
       .post('http://localhost:4000/job/post', jobData)
       .then((response) => {
-        console.log(response.data);
-        alert('Job posted successfully');
+        toast.error('Error posting job');
+        router.push('/Careers/showjobs');
         setFormData({
           jobTitle: '',
           location: '',
           jobType: '',
           experience: '',
           jobDescription: '',
+          seodescription: '',
         });
       })
       .catch((error) => {
@@ -112,12 +118,24 @@ const CreateJobForm = () => {
             style={{ borderRadius: '19px' }}
             required
           >
-            <option value="0-1 years experience">0-1 years experience</option>
+            <option value="chhose experience">choose experience</option>
+            <option value="0-1 years ">0-1 years experience</option>
             <option value="1-3 years experience">1-3 years experience</option>
             <option value="3-5 years experience">3-5 years experience</option>
           </select>
         </div>
 
+        <div className="form-group">
+          <label className="block mb-1 ml-4">Seo Description</label>
+          <input
+            name="seotags"
+            value={formData.seodescription}
+            onChange={handleChange}
+            className="w-full px-4 py-2 bg-gray-800 text-white"
+            style={{ borderRadius: '19px' }}
+            placeholder="SEO"
+          />
+        </div>
         <div className="col-span-1 md:col-span-2 form-group">
           <label className="block mb-1 ml-4">Job Description</label>
           <textarea
