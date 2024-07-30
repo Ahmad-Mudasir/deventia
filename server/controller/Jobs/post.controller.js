@@ -17,8 +17,8 @@ exports.postJob = async (req, res) => {
       job_title,
       experience,
       job_description,
-      location,
       job_type,
+      location,
       seo_description,
     });
     await job.save();
@@ -49,6 +49,8 @@ exports.updateJob = async (req, res) => {
       job_type,
       seo_description,
     } = req.body;
+    const jobId = req.params.id;
+
     if (
       !job_title ||
       !experience ||
@@ -58,19 +60,25 @@ exports.updateJob = async (req, res) => {
     ) {
       return res.status(400).json({ message: 'All fields are required' });
     }
-    const job = await Job.findByIdAndUpdate(
-      req.params.id,
+
+    const updatedJob = await Job.findByIdAndUpdate(
+      jobId,
       {
         job_title,
         experience,
         job_description,
-        location,
         job_type,
+        location,
         seo_description,
       },
       { new: true }
     );
-    res.json({ message: 'Job updated successfully', job });
+
+    if (!updatedJob) {
+      return res.status(500).json({ message: 'Error updating job' });
+    }
+
+    res.json({ message: 'Job updated successfully', job: updatedJob });
   } catch (error) {
     res.status(500).send({ message: error.message });
   }

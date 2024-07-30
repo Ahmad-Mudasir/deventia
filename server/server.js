@@ -14,10 +14,10 @@ function options(req, res) {
       setSuccessStatus: 200,
       origin: true,
     };
-    //   } else {
-    //     temp = {
-    //       origin: '',
-    //     };
+  } else {
+    temp = {
+      origin: 'stupid',
+    };
   }
   res(null, temp);
 }
@@ -25,7 +25,15 @@ function options(req, res) {
 // this is middleware
 
 app.use(express.json());
-app.use(cors(options));
+// app.use(cors(options));
+// app.use(cors());
+
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
 // import all routes
 readdirSync('./Routes').map((r) => app.use('/', require('./Routes/' + r)));
