@@ -1,6 +1,8 @@
 'use client';
-
-import AboutCompany from '@/components/Career/AboutCompany';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { ImSpinner8 } from 'react-icons/im';
+// import AboutCompany from '@/components/Career/AboutCompany';
 import JobDescription from '@/components/Career/JobDescription';
 import JobApplication from '@/components/Career/JobApplication';
 import Link from 'next/link';
@@ -9,8 +11,45 @@ import Image from 'next/image';
 import { IoArrowDownOutline } from 'react-icons/io5';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import heroBgImg from '../../../assets/images/career-hero-bg-img.webp';
+import axiosInstance from '@/lib/axiosInstance';
 
-const page = () => {
+const Page = () => {
+  const path = usePathname();
+  const pathSegments = path.split('/');
+  const id = pathSegments[pathSegments.length - 1];
+  const [job, setJob] = useState(null);
+
+  useEffect(() => {
+    if (id) {
+      axiosInstance
+        .get('/job/get')
+        .then((response) => {
+          const jobs = response.data;
+          const foundJob = jobs.find(
+            (job: {
+              job_title: string;
+              job_description: string;
+              location: string;
+              experience: number;
+              _id: string;
+              createdAt: Date;
+              updatedAt: Date;
+            }) => job._id === id
+          );
+          setJob(foundJob);
+        })
+        .catch((error) => console.error('Error fetching job:', error));
+    }
+  }, [id]);
+
+  if (!job) {
+    return (
+      <div className="flex items-center justify-center h-screen text-white">
+        <ImSpinner8 size={30} className="animate-spin" />
+      </div>
+    );
+  }
+
   const handleScroll = () => {
     window.scrollBy({ top: window.innerHeight, left: 0, behavior: 'smooth' });
   };
@@ -67,14 +106,15 @@ const page = () => {
           Join Our Team and Explore Exciting Opportunities to Shape Your Future.
         </p>
       </div>
-      <div className="px-[5%] grid gap-8 grid-cols-1 md:grid-cols-3  mt-12">
-        <AboutCompany />
-        <JobDescription />
+      <div className="px-[5%] mt-12">
+        {/* <AboutCompany /> */}
+        <JobDescription job={job} />
       </div>
+
       <div className="px-[5%] mt-8">
         <JobApplication />
       </div>
     </>
   );
 };
-export default page;
+export default Page;

@@ -1,31 +1,30 @@
-const express = require("express");
-const mongoose = require("mongoose")
+const express = require('express');
+const mongoose = require('mongoose');
 const app = express();
-const { readdirSync } = require("fs")
+const { readdirSync } = require('fs');
 
-const cors = require("cors");
+const cors = require('cors');
 
-
-
-let allowed = ["http://localhost:4000", "http://localhost:5173", "another"]
+let allowed = ['http://localhost:4000', 'http://localhost:5173', 'another'];
 function options(req, res) {
-    let temp;
-    let origin = req.header("Origin");
-    if (allowed.indexOf(origin) > -1) {
-        temp = {
-            setSuccessStatus: 200,
-            origin: true,
-        }
-    } else {
-        temp = {
-            origin: "stupid"
-        }
-    }
-    res(null, temp)
+  let temp;
+  let origin = req.header('Origin');
+  if (allowed.indexOf(origin) > -1) {
+    temp = {
+      setSuccessStatus: 200,
+      origin: true,
+    };
+    //   } else {
+    //     temp = {
+    //       origin: '',
+    //     };
+  }
+  res(null, temp);
 }
 
-// this is middleware 
+// this is middleware
 
+<<<<<<< HEAD
 app.use(express.json())
 // app.use(cors(options));
 // app.use(cors());
@@ -37,15 +36,23 @@ const corsOptions ={
     optionSuccessStatus:200
 }
 app.use(cors(corsOptions));
-
+=======
+app.use(express.json());
+app.use(cors(options));
+>>>>>>> f0dae88519af156233e0dee3c115f871e94e1f15
 
 // import all routes
-readdirSync("./Routes").map((r) => app.use("/", require("./Routes/" + r)))
+readdirSync('./Routes').map((r) => app.use('/', require('./Routes/' + r)));
 
 // database
-mongoose.connect("mongodb+srv://asgharkhanglipton:zZgDPYCBB59ia4iy@cluster0.7ipdy2j.mongodb.net/deventia").then(() => console.log("database connection successfully")).catch((err) => console.log(`error connecting to mongodb ${err}`))
+mongoose
+  .connect(
+    'mongodb+srv://asgharkhanglipton:zZgDPYCBB59ia4iy@cluster0.7ipdy2j.mongodb.net/deventia'
+  )
+  .then(() => console.log('database connection successfully'))
+  .catch((err) => console.log(`error connecting to mongodb ${err}`));
 
-const PORT =  4000;
+const PORT = 4000;
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-})
+  console.log(`Server is running on port ${PORT}`);
+});
