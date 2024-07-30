@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const EditJobModal = ({
   job,
@@ -118,6 +119,7 @@ const EditJobModal = ({
   );
 };
 
+
 const ShowJobs = ({
   title,
   description,
@@ -140,6 +142,18 @@ const ShowJobs = ({
   const handleDelete = () => {
     onDelete(jobId);
   };
+
+  const router = useRouter();
+  const [loading, setLoading] = useState(true); 
+
+useEffect(() => {
+  const token = localStorage.getItem('token');
+  if (!token) {
+    router.push('/Careers/login'); 
+  } else {
+    setLoading(false); 
+  }
+}, [router]);
 
   const handleEdit = () => {
     onEdit({ job_title: title, job_description: description, job_type: jobType, location, experience, _id: jobId });
@@ -212,15 +226,25 @@ const JobList = () => {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
+  const router = useRouter();
 
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    router.push('/Careers/login');
+  };
   return (
     <div >
-      <div className='p-4'>
+      <div className='p-4 flex flex-row gap-4'>
         <Link
         href={'/Careers/jobpost'}
         >
        <button className='mt-14 bg-[#7471E6] border-2 border-[#7471E6] hover:bg-transparent px-4 py-2 rounded'>Add Job</button>
        </Link>
+       
+       <button 
+       onClick={handleLogout}
+       className='mt-14 bg-[#7471E6] border-2 border-[#7471E6] hover:bg-transparent px-4 py-2 rounded'>logout</button>
+       
        </div>
     <div className=" container mx-auto p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
      

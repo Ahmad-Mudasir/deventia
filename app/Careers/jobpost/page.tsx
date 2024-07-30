@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { ToastContainer, toast } from 'react-toastify';
@@ -14,7 +14,17 @@ const CreateJobForm = () => {
     jobDescription: '',
     seodescription: '',
   });
+  const [loading, setLoading] = useState(true); 
   const router = useRouter();
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      router.push('/Careers/login'); 
+    } else {
+      setLoading(false); 
+    }
+  }, [router]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -56,6 +66,10 @@ const CreateJobForm = () => {
         toast.error('Error posting job');
       });
   };
+
+  if (loading) {
+    return <p>Loading...</p>; // Render a loading message or spinner
+  }
 
   return (
     <div className="p-10 text-white">

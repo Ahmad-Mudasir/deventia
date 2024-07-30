@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -9,26 +11,24 @@ const Login = () => {
   const [error, setError] = useState(null);
   const router = useRouter();
 
-  const handleSubmit = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:4000/login', { email, password });
-
-      if (response.data === 'Admin Login Successful' || response.data === 'User Login Successful') {
-        console.log('Login successful');
-        router.push('/Careers/showjobs');
-      } else {
-        setError(response.data);
-      }
+      localStorage.setItem('token', response.data.token);
+      toast.success('Login successful');
+      router.push('/Careers/showjobs');
     } catch (error) {
-      setError('Server error');
+      const errorMessage = error.response?.data?.message || 'Login failed. Please try again.';
+      toast.error(errorMessage);
     }
   };
 
   return (
     <div className="p-10 text-white flex justify-center items-center flex-col">
+      <ToastContainer />
       <h2 className="text-2xl mb-4 mt-12 text-center">Login</h2>
-      <form className="flex flex-col w-full max-w-sm mt-4" onSubmit={handleSubmit}>
+      <form className="flex flex-col w-full max-w-sm mt-4" onSubmit={handleLogin}>
         <div className="form-group mb-4">
           <label className="block mb-1 ml-4">Email</label>
           <input
