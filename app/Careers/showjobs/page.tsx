@@ -1,38 +1,53 @@
-'use client'
+'use client';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
+// Define Job type
+interface Job {
+  _id: string;
+  job_title: string;
+  experience: string;
+  job_description: string;
+  job_type: string;
+  location: string;
+  seo_description: string;
+}
+
 const EditJobModal = ({
   job,
   onClose,
-  onSave
+  onSave,
 }: {
-  job: any;
+  job: Job;
   onClose: () => void;
-  onSave: (updatedJob: any) => void;
+  onSave: (updatedJob: Job) => void;
 }) => {
   const [jobTitle, setJobTitle] = useState(job.job_title);
   const [experience, setExperience] = useState(job.experience);
   const [jobDescription, setJobDescription] = useState(job.job_description);
   const [jobType, setJobType] = useState(job.job_type);
   const [location, setLocation] = useState(job.location);
-  const [seodescrription, setseodescrription]= useState(job.seo_description);
+  const [seoDescription, setSeoDescription] = useState(job.seo_description);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     const updatedJob = {
+      _id: job._id, // Include _id in the updated job
       job_title: jobTitle,
       experience,
       job_description: jobDescription,
       job_type: jobType,
       location,
-      seodescrription,
+      seo_description: seoDescription,
     };
 
     try {
-      await axios.put(`http://localhost:4000/job/update/${job._id}`, updatedJob);
+      await axios.put(
+        `http://localhost:4000/job/update/${job._id}`,
+        updatedJob
+      );
       onSave(updatedJob);
       onClose();
     } catch (error) {
@@ -89,8 +104,8 @@ const EditJobModal = ({
             <label>Seo Description</label>
             <input
               type="text"
-              value={seodescrription}
-              onChange={(e) => setseodescrription(e.target.value)}
+              value={seoDescription}
+              onChange={(e) => setSeoDescription(e.target.value)}
               required
               className="w-full p-2 border border-gray-300 rounded"
             />
@@ -106,10 +121,17 @@ const EditJobModal = ({
             />
           </div>
           <div className="flex justify-end gap-4">
-            <button type="button" onClick={onClose} className="bg-gray-500 text-white px-4 py-2 rounded">
+            <button
+              type="button"
+              onClick={onClose}
+              className="bg-gray-500 text-white px-4 py-2 rounded"
+            >
               Cancel
             </button>
-            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
+            <button
+              type="submit"
+              className="bg-blue-500 text-white px-4 py-2 rounded"
+            >
               Save
             </button>
           </div>
@@ -119,7 +141,6 @@ const EditJobModal = ({
   );
 };
 
-
 const ShowJobs = ({
   title,
   description,
@@ -128,7 +149,7 @@ const ShowJobs = ({
   experience,
   jobId,
   onDelete,
-  onEdit
+  onEdit,
 }: {
   title: string;
   description: string;
@@ -137,32 +158,37 @@ const ShowJobs = ({
   experience: string;
   jobId: string;
   onDelete: (id: string) => void;
-  onEdit: (job: any) => void;
+  onEdit: (job: Job) => void;
 }) => {
   const handleDelete = () => {
     onDelete(jobId);
   };
-
   const router = useRouter();
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
 
-useEffect(() => {
-  const token = localStorage.getItem('token');
-  if (!token) {
-    router.push('/Careers/login'); 
-  } else {
-    setLoading(false); 
-  }
-}, [router]);
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      router.push('/Careers/login');
+    } else {
+      setLoading(false);
+    }
+  }, [router]);
 
   const handleEdit = () => {
-    onEdit({ job_title: title, job_description: description, job_type: jobType, location, experience, _id: jobId });
+    onEdit({
+      job_title: title,
+      job_description: description,
+      job_type: jobType,
+      location,
+      experience,
+      seo_description: '',
+      _id: jobId,
+    });
   };
 
   return (
-    
     <div className="border-[1px] border-[#5357689d] p-8 bg-gradient-to-b from-[rgba(117,113,230,0.21)] to-[rgba(65,63,128,0.21)]">
-      
       <h2 className="font-bold text-2xl md:text-3xl mb-4">{title}</h2>
       <div className="text-base text-[#C0C0C0] border-b-[1.5px] border-dashed border-[#c0c0c07c] pb-4">
         <p>{description}</p>
@@ -178,7 +204,10 @@ useEffect(() => {
         >
           Delete
         </button>
-        <button onClick={handleEdit} className="bg-[#7471E6] border-2 border-[#7471E6] hover:bg-transparent px-4 py-2 rounded">
+        <button
+          onClick={handleEdit}
+          className="bg-[#7471E6] border-2 border-[#7471E6] hover:bg-transparent px-4 py-2 rounded"
+        >
           Edit
         </button>
       </div>
@@ -187,13 +216,15 @@ useEffect(() => {
 };
 
 const JobList = () => {
-  const [jobs, setJobs] = useState([]);
+  const router = useRouter();
+  const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [editingJob, setEditingJob] = useState(null);
+  const [editingJob, setEditingJob] = useState<Job | null>(null);
 
   useEffect(() => {
-    axios.get('http://localhost:4000/job/get')
+    axios
+      .get('http://localhost:4000/job/get')
       .then((response) => {
         setJobs(response.data);
         setLoading(false);
@@ -206,9 +237,10 @@ const JobList = () => {
   }, []);
 
   const deleteJob = (id: string) => {
-    axios.delete(`http://localhost:4000/job/delete/${id}`)
+    axios
+      .delete(`http://localhost:4000/job/delete/${id}`)
       .then(() => {
-        setJobs(jobs.filter((job: any) => job._id !== id));
+        setJobs(jobs.filter((job) => job._id !== id));
       })
       .catch((error) => {
         console.error(error);
@@ -216,8 +248,8 @@ const JobList = () => {
       });
   };
 
-  const saveJob = (updatedJob: any) => {
-    setJobs(jobs.map((job: any) => (job._id === updatedJob._id ? updatedJob : job)));
+  const saveJob = (updatedJob: Job) => {
+    setJobs(jobs.map((job) => (job._id === updatedJob._id ? updatedJob : job)));
   };
 
   const closeEditModal = () => {
@@ -226,49 +258,49 @@ const JobList = () => {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
-  const router = useRouter();
 
   const handleLogout = () => {
     localStorage.removeItem('token');
     router.push('/Careers/login');
   };
+
   return (
-    <div >
-      <div className='p-4 flex flex-row gap-4'>
-        <Link
-        href={'/Careers/jobpost'}
+    <div>
+      <div className="p-4 flex flex-row gap-4">
+        <Link href={'/Careers/jobpost'}>
+          <button className="mt-14 bg-[#7471E6] border-2 border-[#7471E6] hover:bg-transparent px-4 py-2 rounded">
+            Add Job
+          </button>
+        </Link>
+        <button
+          onClick={handleLogout}
+          className="mt-14 bg-[#7471E6] border-2 border-[#7471E6] hover:bg-transparent px-4 py-2 rounded"
         >
-       <button className='mt-14 bg-[#7471E6] border-2 border-[#7471E6] hover:bg-transparent px-4 py-2 rounded'>Add Job</button>
-       </Link>
-       
-       <button 
-       onClick={handleLogout}
-       className='mt-14 bg-[#7471E6] border-2 border-[#7471E6] hover:bg-transparent px-4 py-2 rounded'>logout</button>
-       
-       </div>
-    <div className=" container mx-auto p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-     
-      {jobs.map((job: any) => (
-        <ShowJobs
-          key={job._id}
-          jobId={job._id}
-          title={job.job_title}
-          description={job.job_description}
-          experience={job.experience}
-          jobType={job.job_type}
-          location={job.location}
-          onDelete={deleteJob}
-          onEdit={setEditingJob}
-        />
-      ))}
-      {editingJob && (
-        <EditJobModal
-          job={editingJob}
-          onClose={closeEditModal}
-          onSave={saveJob}
-        />
-      )}
-    </div>
+          Logout
+        </button>
+      </div>
+      <div className="container mx-auto p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+        {jobs.map((job) => (
+          <ShowJobs
+            key={job._id}
+            jobId={job._id}
+            title={job.job_title}
+            description={job.job_description}
+            experience={job.experience}
+            jobType={job.job_type}
+            location={job.location}
+            onDelete={deleteJob}
+            onEdit={setEditingJob}
+          />
+        ))}
+        {editingJob && (
+          <EditJobModal
+            job={editingJob}
+            onClose={closeEditModal}
+            onSave={saveJob}
+          />
+        )}
+      </div>
     </div>
   );
 };
