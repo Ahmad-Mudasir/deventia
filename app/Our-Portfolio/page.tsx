@@ -23,14 +23,9 @@ export const metadata: Metadata = {
     siteName: 'DevEntia Tech Pvt. Ltd',
     images: [
       {
-        url: 'https://nextjs.org/og.png', // Must be an absolute URL
+        url: 'https://res.cloudinary.com/dhsgpxu04/image/upload/v1722417303/ourportfolio_iyrkpk.jpg', // Must be an absolute URL
         width: 800,
         height: 600,
-      },
-      {
-        url: 'https://nextjs.org/og-alt.png', // Must be an absolute URL
-        width: 1800,
-        height: 1600,
       },
     ],
     locale: 'en_US',

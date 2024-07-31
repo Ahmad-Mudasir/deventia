@@ -17,16 +17,10 @@ export const metadata: Metadata = {
     siteName: "DevEntia Tech Pvt. Ltd",
     images: [
       {
-        url: "https://example.com/path-to-services-image.jpg", 
+        url: "https://res.cloudinary.com/dhsgpxu04/image/upload/v1722417304/services_ulnrx5.jpg", 
         width: 1200,
         height: 630,
         alt: "DevEntia Tech Pvt. Ltd Services Overview", 
-      },
-      {
-        url: "https://example.com/path-to-services-banner.jpg", 
-        width: 1800,
-        height: 1200,
-        alt: "Our Services at DevEntia Tech Pvt. Ltd", 
       },
     ],
     locale: "en_US",
