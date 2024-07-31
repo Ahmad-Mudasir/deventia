@@ -42,7 +42,7 @@ const ScrollCounter: React.FC<ScrollCounterProps> = ({ targetValue }) => {
       } else {
         setCount(currentCount);
       }
-    }, 50); // Adjust interval speed here
+    }, 80); // Adjust interval speed here
   };
 
   return (

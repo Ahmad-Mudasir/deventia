@@ -4,9 +4,14 @@ import { FaFile, FaFileUpload } from "react-icons/fa";
 import SubmitApplicationPopup from "./SubmitApplicationPopup";
 import axios from "axios";
 import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Loader from './Loader';
+
 
 const JobApplication = () => {
   const [showPopup, setShowPopup] = useState(false);
+  const [loader, setLoader] = useState(false);
   const [applicationData, setApplicationData] = useState({
     firstName: "",
     lastName: "",
@@ -40,6 +45,7 @@ const JobApplication = () => {
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    setLoader(true);
     e.preventDefault();
     console.log(applicationData);
 
@@ -81,8 +87,9 @@ const JobApplication = () => {
           },
         }
       );
-
+      setLoader(false);
       console.log("Success:", response.data);
+      toast.success('Login successful');
       setShowPopup(true);
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -92,7 +99,7 @@ const JobApplication = () => {
         alert('An error occurred while submitting your application. Please try again.');
       } else {
         console.error("Error message:");
-        alert('An unexpected error occurred. Please try again later.');
+        toast.error('some error');
       }
     }
   };
@@ -250,7 +257,11 @@ const JobApplication = () => {
       >
         Submit
       </button>
-
+      {loader && (
+        <div className="absolute inset-0 flex justify-center items-center bg-[#00000080]">
+          <Loader />
+        </div>
+      )}
       {showPopup && <SubmitApplicationPopup setShowPopup={setShowPopup} />}
     </form>
   );
