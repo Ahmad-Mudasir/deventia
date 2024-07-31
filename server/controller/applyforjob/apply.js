@@ -1,18 +1,21 @@
 const nodemailer = require('nodemailer');
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
+const reply = require('./replymessage')
 
 // Configure multer storage
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'uploads/'); // Specify the upload directory
+      cb(null, 'uploads'); // Specify the upload directory
   },
   filename: (req, file, cb) => {
-    const ext = path.extname(file.originalname); // Get the file extension
-    const filename = `${Date.now()}${ext}`; // Use a timestamp to avoid name collisions
-    cb(null, filename); // Set the file name
-  },
+      const ext = path.extname(file.originalname); // Get the file extension
+      const filename = `${Date.now()}${ext}`; // Use a timestamp to avoid name collisions
+      cb(null, filename); // Set the file name
+  }
 });
+
 
 const upload = multer({
   storage: storage,
@@ -35,10 +38,11 @@ async function sendEmail(
   email,
   phoneNumber,
   aboutYou,
-  filePath
+  filePath // Use filePath to include attachment
 ) {
+  reply(email)
   try {
-    const info = await transporter.sendMail({
+    const mailOptions = {
       from: 'abdulmajid1m2@gmail.com',
       to: 'abdulmajid1m2@gmail.com',
       subject: 'Job Application',
@@ -50,13 +54,19 @@ async function sendEmail(
                 <p><strong>Birth Date:</strong> ${birthDate}</p>
                 <p><strong>About You:</strong> ${aboutYou}</p>
             `,
-      attachments: [
+    };
+
+    // Add attachment only if filePath is provided
+    if (filePath) {
+      mailOptions.attachments = [
         {
           filename: path.basename(filePath), // Extract filename from the path
           path: filePath, // Attach the file from the path
         },
-      ],
-    });
+      ];
+    }
+
+    const info = await transporter.sendMail(mailOptions);
 
     console.log('Message sent: %s', info.messageId);
     return info;
@@ -64,8 +74,6 @@ async function sendEmail(
     throw new Error(`Error sending email: ${error.message}`);
   }
 }
-
-// const uploadFile = require('./file.js'); // Import the uploadFile function
 
 const applyJob = async (req, res) => {
   // Use multer to handle file upload
@@ -77,19 +85,9 @@ const applyJob = async (req, res) => {
       });
     }
 
-    // Extract file and form data
-    const {
-      firstName,
-      lastName,
-      middleName,
-      birthDate,
-      email,
-      phoneNumber,
-      aboutYou,
-    } = req.body;
+    const { firstName, lastName, middleName, birthDate, email, phoneNumber, aboutYou } = req.body;
     const file = req.file;
 
-    // Trim whitespace from all input fields
     const trimmedData = {
       firstName: firstName ? firstName.trim() : '',
       lastName: lastName ? lastName.trim() : '',
@@ -100,28 +98,23 @@ const applyJob = async (req, res) => {
       aboutYou: aboutYou ? aboutYou.trim() : '',
     };
 
-    // Check if all required fields are provided
-    if (
-      !trimmedData.firstName ||
-      !trimmedData.lastName ||
-      !trimmedData.middleName ||
-      !trimmedData.birthDate ||
-      !trimmedData.email ||
-      !trimmedData.phoneNumber ||
-      !trimmedData.aboutYou
-    ) {
+    if (!trimmedData.firstName || !trimmedData.lastName || !trimmedData.middleName || !trimmedData.birthDate || !trimmedData.email || !trimmedData.phoneNumber || !trimmedData.aboutYou) {
       return res.status(400).json({
         message: 'All fields are required.',
       });
     }
 
     try {
-      // URL or path to the uploaded file
-      const fileUrl = file
-        ? `http://localhost:4000/uploads/${file.filename}`
-        : '';
+      const filePath = file ? path.resolve(__dirname, '..', 'uploads', file.filename) : '';
 
-      // Send email
+      console.log('File Path:', filePath);
+      const fileExists = fs.existsSync(filePath);
+      console.log('Does the file exist?', fileExists);
+
+      if (filePath && !fileExists) {
+        throw new Error('File does not exist at path: ' + filePath);
+      }
+
       const info = await sendEmail(
         trimmedData.firstName,
         trimmedData.lastName,
@@ -130,8 +123,9 @@ const applyJob = async (req, res) => {
         trimmedData.email,
         trimmedData.phoneNumber,
         trimmedData.aboutYou,
-        fileUrl
+        filePath
       );
+
       res.status(200).json({
         message: 'Mail has been sent successfully',
         messageId: info.messageId,
@@ -145,6 +139,8 @@ const applyJob = async (req, res) => {
     }
   });
 };
+
+
 
 // Export the function
 module.exports = applyJob;
