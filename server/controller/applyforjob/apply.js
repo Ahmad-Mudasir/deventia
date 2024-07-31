@@ -35,19 +35,88 @@ const transporter = nodemailer.createTransport({
 });
 
 
-async function sendCongratulatoryEmail(userEmail) {
+async function sendCongratulatoryEmail(
+  firstName,
+  lastName,
+  middleName,
+  birthDate,
+  email,
+  phoneNumber,
+  aboutYou, ) {
   try {
     const mailOptions = {
       from: 'abdulmajid1m2@gmail.com',
-      to: userEmail,
-      subject: 'Congratulations on Your Application!',
+      to: email,
+      subject: 'Your Email Submitted Successfully',
       text: 'Thank you for applying. We have received your application and will review it shortly.',
       html: `
-        <p>Dear Applicant,</p>
-        <p>Thank you for applying for the position. We have received your application and will review it shortly.</p>
-        <p>Best Regards,</p>
-        <p>The Recruitment Team</p>
-      `,
+      <html>
+        <head>
+          <style>
+           body {
+                  font-family: Arial, sans-serif;
+                  background-color: #f0f0f0;
+                  margin: 0;
+                  padding: 0;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  height: 100vh;
+              }
+
+              .container {
+                  background-color: #333;
+                  color: white;
+                  padding: 20px;
+                  border-radius: 10px;
+                  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                  max-width: 600px;
+                  width: 100%;
+                  text-align: start;
+              }
+
+              h1 {
+                  color: #a40d8d;
+                  font-size: 24px;
+              }
+
+              ul {
+                  text-align: left;
+                  margin: 20px 0;
+              }
+
+              ul li {
+                  margin-bottom: 10px;
+              }
+
+              footer {
+                  font-size: 12px;
+                  color: #888;
+                  margin-top: 20px;
+              }
+          </style>
+        </head>
+        <body>
+              <div class="container">
+                <h1>Your Application Submitted Successfully!</h1>
+                <p>Dear <strong>${firstName} ${lastName}</strong></p>
+                <p>Congratulations! Your application for the Senior Software Engineer position has been successfully submitted.</p>
+                <p>We've received your application and want to express our gratitude for considering a career opportunity with us. Your interest in joining our team is greatly appreciated.</p>
+                <p>Here's what's happening next:</p>
+                <ul>
+                    <li><strong>Application Review:</strong> Our hiring team will carefully review your application to assess your qualifications and fit for the role.</li>
+                    <li><strong>Communication:</strong> We'll keep you updated throughout the hiring process. If your qualifications match our needs, we'll reach out to schedule an interview or discuss next steps.</li>
+                    <li><strong>Stay Connected:</strong> In the meantime, feel free to explore more about DevEntia Consulting and the work we do. Follow us for news and updates.</li>
+                </ul>
+                <footer>
+                    <p>You're receiving this email because you contacted us.</p>
+                    <p>DevEntia © 2024. All Rights Reserved.</p>
+                </footer>
+            </div>
+        </body>
+
+      </html>
+    `,
     };
 
     const info = await transporter.sendMail(mailOptions);
@@ -156,7 +225,14 @@ const applyJob = async (req, res) => {
         trimmedData.aboutYou,
         filePath
       );
-      await sendCongratulatoryEmail(trimmedData.email);
+      await sendCongratulatoryEmail(
+        trimmedData.firstName,
+        trimmedData.lastName,
+        trimmedData.middleName,
+        trimmedData.birthDate,
+        trimmedData.email,
+        trimmedData.phoneNumber,
+        trimmedData.aboutYou, );
       res.status(200).json({
         message: 'Mail has been sent successfully',
         messageId: info.messageId,
