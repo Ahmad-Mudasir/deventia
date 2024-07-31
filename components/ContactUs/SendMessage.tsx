@@ -1,6 +1,6 @@
-"use client";
-import { useState } from "react";
-import axios from "axios";
+'use client';
+import React, { useState } from 'react';
+import axios from 'axios';
 
 const SendMessage = () => {
   const [messageData, setMessageData] = useState({
@@ -11,7 +11,9 @@ const SendMessage = () => {
     message: '',
   });
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setMessageData((prevData) => ({
       ...prevData,
@@ -19,33 +21,37 @@ const SendMessage = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault(); 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:4000/mail", messageData, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await axios.post(
+        'http://localhost:4000/mail',
+        messageData,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
 
-      console.log("Success:", response.data);
+      console.log('Success:', response.data);
     } catch (error) {
-      console.error("Error:", error);
+      console.error('Error:', error);
     }
   };
 
   return (
     <form
       className="relative md:-top-28 bg-[#7571e6d4] p-8 mx-[5%] grid grid-cols-1 md:grid-cols-2 gap-8 py-32"
-      onSubmit={handleSubmit} 
+      onSubmit={handleSubmit}
     >
       <label className="flex flex-col gap-4 text-lg font-semibold w-full">
         Full Name
         <input
           type="text"
           name="fullName"
-          value={messageData.fullName} 
+          value={messageData.fullName}
           onChange={handleChange}
           placeholder="Enter Your name"
           className="outline-none px-4 py-3 border-[1.5px] border-[#D3D3D3] w-full text-[#797979] font-normal"
@@ -56,7 +62,7 @@ const SendMessage = () => {
         <input
           type="email"
           name="senderEmail"
-          value={messageData.senderEmail} 
+          value={messageData.senderEmail}
           onChange={handleChange}
           placeholder="Enter Your email"
           className="outline-none px-4 py-3 border-[1.5px] border-[#D3D3D3] w-full text-[#797979] font-normal"
@@ -67,7 +73,7 @@ const SendMessage = () => {
         <input
           type="tel"
           name="phoneNumber"
-          value={messageData.phoneNumber} 
+          value={messageData.phoneNumber}
           onChange={handleChange}
           placeholder="Enter Your phone number"
           className="outline-none px-4 py-3 border-[1.5px] border-[#D3D3D3] w-full text-[#797979] font-normal"
@@ -78,7 +84,7 @@ const SendMessage = () => {
         <input
           type="text"
           name="subject"
-          value={messageData.subject} 
+          value={messageData.subject}
           onChange={handleChange}
           placeholder="Enter Your Subject"
           className="outline-none px-4 py-3 border-[1.5px] border-[#D3D3D3] w-full text-[#797979] font-normal"
@@ -96,7 +102,7 @@ const SendMessage = () => {
         ></textarea>
       </label>
       <button
-        type="submit" 
+        type="submit"
         className="bg-[#070707] px-8 py-3 font-semibold text-base w-fit col-span-1 md:col-span-2 block mx-auto"
       >
         Send Message
