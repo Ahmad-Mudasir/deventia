@@ -7,6 +7,7 @@ import Hero from '@/components/Career/Hero';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { ImSpinner8 } from 'react-icons/im';
+// import { Metadata } from 'next';
 
 interface Job {
   _id: number;
@@ -18,6 +19,32 @@ interface Job {
   job_type: string;
 }
 type FilterType = 'fulltime' | 'parttime' | 'internship';
+
+// export const metadata: Metadata = {
+//   title: "Careers at DevEntia Tech Pvt. Ltd",
+//   description: "Explore career opportunities at DevEntia Tech Pvt. Ltd. Find the latest job openings, including full-time, part-time, and internship positions. Apply today and join our team!",
+//   openGraph: {
+//     title: "Careers at DevEntia Tech Pvt. Ltd",
+//     description: "Explore career opportunities at DevEntia Tech Pvt. Ltd. Find the latest job openings, including full-time, part-time, and internship positions. Apply today and join our team!",
+//     siteName: "DevEntia Tech Pvt. Ltd",
+//     images: [
+//       {
+//         url: "https://example.com/path-to-careers-image.jpg", 
+//         width: 800,
+//         height: 600,
+//         alt: "Careers at DevEntia Tech Pvt. Ltd", 
+//       },
+//       {
+//         url: "https://example.com/path-to-careers-banner.jpg", 
+//         width: 1800,
+//         height: 1600,
+//         alt: "Careers Banner Image", 
+//       },
+//     ],
+//     locale: "en_US",
+//     type: "website",
+//   },
+// };
 
 const Page = () => {
   const [jobs, setJobs] = useState<Job[]>([]);

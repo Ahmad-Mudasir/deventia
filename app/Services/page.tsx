@@ -6,6 +6,33 @@ import services2 from '../../assets/images/services2.webp';
 import services3 from '../../assets/images/services3.webp';
 import services4 from '../../assets/images/services4.webp';
 import GetInTouch from '@/components/AboutUs/GetInTouch';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Our Services | DevEntia Tech Pvt. Ltd",
+  description: "Explore the comprehensive IT solutions offered by DevEntia Tech Pvt. Ltd. We specialize in planning, design, development, and testing services to elevate your business with cutting-edge technology.",
+  openGraph: {
+    title: "Our Services | DevEntia Tech Pvt. Ltd",
+    description: "Explore the comprehensive IT solutions offered by DevEntia Tech Pvt. Ltd. We specialize in planning, design, development, and testing services to elevate your business with cutting-edge technology.",
+    siteName: "DevEntia Tech Pvt. Ltd",
+    images: [
+      {
+        url: "https://example.com/path-to-services-image.jpg", 
+        width: 1200,
+        height: 630,
+        alt: "DevEntia Tech Pvt. Ltd Services Overview", 
+      },
+      {
+        url: "https://example.com/path-to-services-banner.jpg", 
+        width: 1800,
+        height: 1200,
+        alt: "Our Services at DevEntia Tech Pvt. Ltd", 
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
 
 const page = () => {
   return (

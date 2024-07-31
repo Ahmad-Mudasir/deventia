@@ -9,6 +9,33 @@ import { TracingBeam } from '@/components/ui/tracingbeam';
 import { users } from '@/data/data';
 import React from 'react';
 import Portfolio from '@/components/home/Portfolio';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "DevEntia Tech Pvt. Ltd | Web Development, App Development, and AI Services",
+  description: "Welcome to DevEntia Tech Pvt. Ltd, your leading partner in web development, app development, and AI solutions. Discover how our innovative technology can transform your business.",
+  openGraph: {
+    title: "DevEntia Tech Pvt. Ltd | Web Development, App Development, and AI Services",
+    description: "Welcome to DevEntia Tech Pvt. Ltd, your leading partner in web development, app development, and AI solutions. Discover how our innovative technology can transform your business.",
+    siteName: "DevEntia Tech Pvt. Ltd",
+    images: [
+      {
+        url: "https://example.com/path-to-homepage-image.jpg", 
+        width: 1200,
+        height: 630,
+        alt: "Innovative Technology Solutions by DevEntia Tech", 
+      },
+      {
+        url: "https://example.com/path-to-homepage-banner.jpg", 
+        width: 1800,
+        height: 1200,
+        alt: "DevEntia Tech Pvt. Ltd Banner", 
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
 
 const page = () => {
   return (
