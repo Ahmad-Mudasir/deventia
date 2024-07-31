@@ -26,7 +26,11 @@ const CreateJobForm = () => {
     }
   }, [router]);
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -34,7 +38,7 @@ const CreateJobForm = () => {
     });
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (Object.values(formData).some((field) => field === '')) {
       toast.error('Please fill in all fields');
