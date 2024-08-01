@@ -8,8 +8,11 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from './Loader';
 import axiosInstance from '@/lib/axiosInstance';
+import { useContext } from 'react';
+import AppContext from '@/app/context/context';
 
 const JobApplication = () => {
+  const {jobTitle} = useContext(AppContext)
   const [showPopup, setShowPopup] = useState(false);
   const [loader, setLoader] = useState(false);
   const [applicationData, setApplicationData] = useState({
@@ -72,6 +75,7 @@ const JobApplication = () => {
     formData.append('email', email);
     formData.append('phoneNumber', phoneNumber);
     formData.append('aboutYou', aboutYou);
+    formData.append('jobTitle', jobTitle);
 
     if (applicationData.file) {
       formData.append('file', applicationData.file);
@@ -117,7 +121,7 @@ const JobApplication = () => {
       encType="multipart/form-data"
     >
       <h1 className="font-bold text-lg md:text-xl mb-8 col-span-1 md:col-span-3">
-        Software Engineer
+        {jobTitle}
       </h1>
 
       <label className="flex flex-col gap-2 text-base text-[#E9E9E9] font-medium w-full">
