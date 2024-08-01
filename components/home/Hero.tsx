@@ -16,9 +16,9 @@ const Hero = () => {
         autoPlay
         muted
         loop
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        className="absolute top-0 left-0 w-full h-full object-cover lg:object-fill"
       >
-        <source src={'/homepagebg.mp4'} type="video/mp4" />
+        <source src={'/home-video1.mp4'} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       {/* <div className="absolute top-0 left-0 w-full h-full bg-[#7571e666]"></div> */}
