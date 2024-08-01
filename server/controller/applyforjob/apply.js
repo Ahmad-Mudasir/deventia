@@ -57,7 +57,7 @@ async function sendCongratulatoryEmail(
           <style>
            body {
                   font-family: Arial, sans-serif;
-                  background-color: #545454 ;
+                  background-color: #7571e672 ;
                   margin: 0;
                   padding: 0;
                   display: flex;
@@ -96,11 +96,17 @@ async function sendCongratulatoryEmail(
                   color: #888;
                   margin-top: 20px;
               }
+              .heading{
+                color: #7571e6;
+              }
+              p{
+                color: white;
+              }
           </style>
         </head>
         <body>
               <div class="container">
-                <h1>Your Application Submitted Successfully!</h1>
+                <h1 class="heading">Your Application Submitted Successfully!</h1>
                 <p>Dear <strong>${firstName} ${lastName}</strong></p>
                 <p>Congratulations! Your application for the ${jobTitle} position has been successfully submitted.</p>
                 <p>We've received your application and want to express our gratitude for considering a career opportunity with us. Your interest in joining our team is greatly appreciated.</p>

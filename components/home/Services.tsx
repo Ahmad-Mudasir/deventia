@@ -6,7 +6,7 @@ import { HoverCard } from '../ui/hovercards';
 const Services = () => {
   return (
     <div
-      className={`w-full flex flex-col md:flex-row items-center bg-[#191919] overflow-hidden ${euroStyle.className} z-10`}
+      className={`w-full flex flex-col md:flex-row items-start bg-[#191919] overflow-hidden ${euroStyle.className} z-10`}
     >
       <div className="md:px-8 px-4 py-8 md:py-16 md:w-1/2 flex flex-col items-start justify-start relative">
         {/* ANIMATING DIVS  */}
@@ -20,7 +20,7 @@ const Services = () => {
         ></div>
         {/* CONTENT  */}
         <h3
-          className={`${euroStyle.className} text-4xl text-white z-10 tracking-widest`}
+          className={`${euroStyle.className} text-6xl text-white z-10 tracking-widest`}
         >
           Services
         </h3>
