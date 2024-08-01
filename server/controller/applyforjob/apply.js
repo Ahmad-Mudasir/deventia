@@ -42,7 +42,9 @@ async function sendCongratulatoryEmail(
   birthDate,
   email,
   phoneNumber,
-  aboutYou, ) {
+  aboutYou,
+  jobTitle
+ ) {
   try {
     const mailOptions = {
       from: 'abdulmajid1m2@gmail.com',
@@ -55,7 +57,7 @@ async function sendCongratulatoryEmail(
           <style>
            body {
                   font-family: Arial, sans-serif;
-                  background-color: #f0f0f0;
+                  background-color: #7571e672 ;
                   margin: 0;
                   padding: 0;
                   display: flex;
@@ -94,13 +96,19 @@ async function sendCongratulatoryEmail(
                   color: #888;
                   margin-top: 20px;
               }
+              .heading{
+                color: #7571e6;
+              }
+              p{
+                color: white;
+              }
           </style>
         </head>
         <body>
               <div class="container">
-                <h1>Your Application Submitted Successfully!</h1>
+                <h1 class="heading">Your Application Submitted Successfully!</h1>
                 <p>Dear <strong>${firstName} ${lastName}</strong></p>
-                <p>Congratulations! Your application for the Senior Software Engineer position has been successfully submitted.</p>
+                <p>Congratulations! Your application for the ${jobTitle} position has been successfully submitted.</p>
                 <p>We've received your application and want to express our gratitude for considering a career opportunity with us. Your interest in joining our team is greatly appreciated.</p>
                 <p>Here's what's happening next:</p>
                 <ul>
@@ -136,6 +144,7 @@ async function sendEmail(
   email,
   phoneNumber,
   aboutYou,
+  jobTitle,
   filePath
 ) {
   // reply(email)
@@ -150,6 +159,7 @@ async function sendEmail(
                 <p><strong>Email:</strong> ${email}</p>
                 <p><strong>Phone Number:</strong> ${phoneNumber}</p>
                 <p><strong>Birth Date:</strong> ${birthDate}</p>
+                <p><strong>Job Title:</strong> ${jobTitle}</p>
                 <p><strong>About You:</strong> ${aboutYou}</p>
             `,
     };
@@ -185,7 +195,8 @@ const applyJob = async (req, res) => {
       birthDate,
       email,
       phoneNumber,
-      aboutYou
+      aboutYou,
+      jobTitle
     } = req.body;
     const file = req.file;
 
@@ -197,6 +208,7 @@ const applyJob = async (req, res) => {
       email: email ? email.trim() : '',
       phoneNumber: phoneNumber ? phoneNumber.trim() : '',
       aboutYou: aboutYou ? aboutYou.trim() : '',
+      jobTitle: jobTitle ? jobTitle.trim() : '',
     };
 
     if (!trimmedData.firstName || !trimmedData.lastName || !trimmedData.middleName || !trimmedData.birthDate || !trimmedData.email || !trimmedData.phoneNumber || !trimmedData.aboutYou) {
@@ -232,7 +244,9 @@ const applyJob = async (req, res) => {
         trimmedData.birthDate,
         trimmedData.email,
         trimmedData.phoneNumber,
-        trimmedData.aboutYou, );
+        trimmedData.aboutYou, 
+        trimmedData.jobTitle
+      );
       res.status(200).json({
         message: 'Mail has been sent successfully',
         messageId: info.messageId,

@@ -20,7 +20,7 @@ const Services = () => {
         ></div>
         {/* CONTENT  */}
         <h3
-          className={`${euroStyle.className} text-[1.5rem] text-white z-10 tracking-widest`}
+          className={`${euroStyle.className} text-6xl text-white z-10 tracking-widest`}
         >
           Services
         </h3>

@@ -1,5 +1,6 @@
-import Footer from '@/components/layout/Footer';
-import Navbar from '@/components/layout/Navbar';
+import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
+import { AppWrapper } from "@/app/context/context";
 
 export default function RootLayout({
   children,
@@ -9,7 +10,7 @@ export default function RootLayout({
   return (
     <div className="max-w-[1750px] mx-auto">
       <Navbar />
-      {children}
+      <AppWrapper>{children}</AppWrapper>
       <Footer />
     </div>
   );

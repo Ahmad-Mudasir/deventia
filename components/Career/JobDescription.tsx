@@ -1,7 +1,9 @@
-import React from 'react';
-import { FaCompass, FaLocationDot, FaNewspaper, FaStar } from 'react-icons/fa6';
-import InfoCard from './InfoCard';
-
+"use client"
+import React,{useEffect} from "react";
+import { FaCompass, FaLocationDot, FaNewspaper, FaStar } from "react-icons/fa6";
+import InfoCard from "./InfoCard";
+import { useContext } from "react";
+import AppContext from "@/app/context/context";
 const JobDescription = ({
   job,
 }: {
@@ -16,6 +18,11 @@ const JobDescription = ({
   };
 }) => {
   const createdAt = new Date(job.createdAt);
+  const {setJobTitle} = useContext(AppContext)
+  useEffect(() => {
+    // Set the job title in context when the component mounts
+    setJobTitle(job.job_title);
+  }, [job.job_title, setJobTitle]);
   return (
     <main className="bg-[#7571e618] p-8 w-full">
       <h1 className="font-bold text-lg md:text-xl">{job.job_title}</h1>
@@ -25,7 +32,7 @@ const JobDescription = ({
       <div className="flex gap-8 flex-wrap">
         <InfoCard
           icon={FaCompass}
-          title={job.experience + ' Years'}
+          title={job.experience + " Years"}
           subtitle="Experience"
           bgColor="#8653C7"
           iconColor="white"
