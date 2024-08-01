@@ -1,8 +1,11 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { ImSpinner8 } from 'react-icons/im';
+import axiosInstance from '@/lib/axiosInstance';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Define Job type
 interface Job {
@@ -44,20 +47,19 @@ const EditJobModal = ({
     };
 
     try {
-      await axios.put(
-        `http://localhost:4000/job/update/${job._id}`,
-        updatedJob
-      );
+      await axiosInstance.put(`/job/update/${job._id}`, updatedJob);
       onSave(updatedJob);
+      toast.success('job updated successfully');
       onClose();
     } catch (error) {
       console.error(error);
-      alert('Error updating job');
+      toast.error('Error updating the job');
     }
   };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-10">
+      <ToastContainer />
       <div className="bg-white text-black p-8 rounded max-h-[80%] w-full max-w-lg overflow-auto">
         <h2 className="text-2xl mb-4">Edit Job</h2>
         <form onSubmit={handleSubmit}>
@@ -189,6 +191,8 @@ const ShowJobs = ({
 
   return (
     <div className="border-[1px] border-[#5357689d] p-8 bg-gradient-to-b from-[rgba(117,113,230,0.21)] to-[rgba(65,63,128,0.21)]">
+      <ToastContainer />
+
       <h2 className="font-bold text-2xl md:text-3xl mb-4">{title}</h2>
       <div className="text-base text-[#C0C0C0] border-b-[1.5px] border-dashed border-[#c0c0c07c] pb-4">
         <p>{description}</p>
@@ -223,8 +227,8 @@ const JobList = () => {
   const [editingJob, setEditingJob] = useState<Job | null>(null);
 
   useEffect(() => {
-    axios
-      .get('http://localhost:4000/job/get')
+    axiosInstance
+      .get('/job/get')
       .then((response) => {
         setJobs(response.data);
         setLoading(false);
@@ -237,14 +241,15 @@ const JobList = () => {
   }, []);
 
   const deleteJob = (id: string) => {
-    axios
-      .delete(`http://localhost:4000/job/delete/${id}`)
+    axiosInstance
+      .delete(`/job/delete/${id}`)
       .then(() => {
+        toast.success('job deleted successfully');
         setJobs(jobs.filter((job) => job._id !== id));
       })
       .catch((error) => {
         console.error(error);
-        alert('Error deleting job');
+        toast.error('Error Deleting the job');
       });
   };
 
@@ -256,16 +261,24 @@ const JobList = () => {
     setEditingJob(null);
   };
 
-  if (loading) return <p>Loading...</p>;
+  if (loading)
+    return (
+      <div className="flex items-center justify-center h-screen text-white">
+        <ImSpinner8 size={30} className="animate-spin" />
+      </div>
+    );
   if (error) return <p>{error}</p>;
 
   const handleLogout = () => {
     localStorage.removeItem('token');
+    toast.success('Logout successful');
     router.push('/Careers/login');
   };
 
   return (
     <div>
+      <ToastContainer />
+
       <div className="p-4 flex flex-row gap-4">
         <Link href={'/Careers/jobpost'}>
           <button className="mt-14 bg-[#7471E6] border-2 border-[#7471E6] hover:bg-transparent px-4 py-2 rounded">

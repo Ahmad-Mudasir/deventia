@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axiosInstance from '@/lib/axiosInstance';
 
 const CreateJobForm = () => {
   const [formData, setFormData] = useState({
@@ -52,8 +53,8 @@ const CreateJobForm = () => {
       location: formData.location,
       seo_description: formData.seodescription,
     };
-    axios
-      .post('http://localhost:4000/job/post', jobData)
+    axiosInstance
+      .post('/job/post', jobData)
       .then((response) => {
         toast.success('Job posted successfully');
         router.push('/Careers/showjobs');

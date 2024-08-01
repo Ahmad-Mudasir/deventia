@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import axios from 'axios';
+import axiosInstance from '@/lib/axiosInstance';
 
 const SendMessage = () => {
   const [messageData, setMessageData] = useState({
@@ -25,15 +25,11 @@ const SendMessage = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        'http://localhost:4000/mail',
-        messageData,
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
+      const response = await axiosInstance.post('/mail', messageData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
       console.log('Success:', response.data);
     } catch (error) {

@@ -29,16 +29,16 @@ type FilterType = 'fulltime' | 'parttime' | 'internship';
 //     siteName: "DevEntia Tech Pvt. Ltd",
 //     images: [
 //       {
-//         url: "https://example.com/path-to-careers-image.jpg", 
+//         url: "https://example.com/path-to-careers-image.jpg",
 //         width: 800,
 //         height: 600,
-//         alt: "Careers at DevEntia Tech Pvt. Ltd", 
+//         alt: "Careers at DevEntia Tech Pvt. Ltd",
 //       },
 //       {
-//         url: "https://example.com/path-to-careers-banner.jpg", 
+//         url: "https://example.com/path-to-careers-banner.jpg",
 //         width: 1800,
 //         height: 1600,
-//         alt: "Careers Banner Image", 
+//         alt: "Careers Banner Image",
 //       },
 //     ],
 //     locale: "en_US",

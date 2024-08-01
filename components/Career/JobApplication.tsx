@@ -1,25 +1,25 @@
-"use client";
+'use client';
 
-import { FaFile, FaFileUpload } from "react-icons/fa";
-import SubmitApplicationPopup from "./SubmitApplicationPopup";
-import axios from "axios";
-import { useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
+import { FaFile, FaFileUpload } from 'react-icons/fa';
+import SubmitApplicationPopup from './SubmitApplicationPopup';
+import axios from 'axios';
+import { useState } from 'react';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from './Loader';
-
+import axiosInstance from '@/lib/axiosInstance';
 
 const JobApplication = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [loader, setLoader] = useState(false);
   const [applicationData, setApplicationData] = useState({
-    firstName: "",
-    lastName: "",
-    middleName: "",
-    birthDate: "",
-    email: "",
-    phoneNumber: "",
-    aboutYou: "",
+    firstName: '',
+    lastName: '',
+    middleName: '',
+    birthDate: '',
+    email: '',
+    phoneNumber: '',
+    aboutYou: '',
     file: null as File | null, // Change to null initially
   });
 
@@ -60,45 +60,43 @@ const JobApplication = () => {
       !phoneNumber ||
       !aboutYou
     ) {
-      alert("Please fill in all required fields.");
+      alert('Please fill in all required fields.');
       return;
     }
 
     const formData = new FormData();
-    formData.append("firstName", firstName);
-    formData.append("lastName", lastName);
-    formData.append("middleName", applicationData.middleName || "");
-    formData.append("birthDate", birthDate);
-    formData.append("email", email);
-    formData.append("phoneNumber", phoneNumber);
-    formData.append("aboutYou", aboutYou);
+    formData.append('firstName', firstName);
+    formData.append('lastName', lastName);
+    formData.append('middleName', applicationData.middleName || '');
+    formData.append('birthDate', birthDate);
+    formData.append('email', email);
+    formData.append('phoneNumber', phoneNumber);
+    formData.append('aboutYou', aboutYou);
 
     if (applicationData.file) {
-      formData.append("file", applicationData.file);
+      formData.append('file', applicationData.file);
     }
 
     try {
-      const response = await axios.post(
-        "http://localhost:4000/jobapply",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const response = await axiosInstance.post('/jobapply', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
       setLoader(false);
-      console.log("Success:", response.data);
+      console.log('Success:', response.data);
       toast.success('Login successful');
       setShowPopup(true);
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        console.error("Error response:", error.response?.data);
-        console.error("Error status:", error.response?.status);
-        console.error("Error headers:", error.response?.headers);
-        alert('An error occurred while submitting your application. Please try again.');
+        console.error('Error response:', error.response?.data);
+        console.error('Error status:', error.response?.status);
+        console.error('Error headers:', error.response?.headers);
+        alert(
+          'An error occurred while submitting your application. Please try again.'
+        );
       } else {
-        console.error("Error message:");
+        console.error('Error message:');
         toast.error('some error');
       }
     }
