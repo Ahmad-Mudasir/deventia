@@ -98,10 +98,7 @@ const Portfolio = () => {
             </div>
           </div>
         </PinContainer>
-        <PinContainer
-          title={'Makewell.life'}
-          href={'https://rs-global-ties.com'}
-        >
+        <PinContainer title={'Makewell.life'} href={'https://makewell.life/'}>
           <div className="flex basis-full flex-col rounded-xl tracking-tight sm:basis-1/2 w-[20rem] ">
             <Image
               src={makewellImg}
