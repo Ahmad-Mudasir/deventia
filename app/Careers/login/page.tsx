@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axiosInstance from '@/lib/axiosInstance';
-
+import { euroStyle } from "@/utils/fonts";
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -21,7 +21,7 @@ const Login = () => {
       });
       localStorage.setItem('token', response.data.token);
       toast.success('Login successful');
-      router.push('/Careers/showjobs');
+      router.push('/Careers/jobpost');
     } catch (err: unknown) {
       let errorMessage = 'Login failed. Please try again.';
       if (err instanceof AxiosError && err.response?.data?.message) {
@@ -31,52 +31,51 @@ const Login = () => {
       setError(errorMessage);
     }
   };
-
+  
   return (
-    <div className="p-10 text-white flex justify-center items-center flex-col">
+    <div className="p-6 bg-[#8157c5] text-white flex justify-center items-center h-screen w-screen flex-col">
       <ToastContainer />
-      <h2 className="text-2xl mb-4 mt-12 text-center">Login</h2>
+      <h1
+          className={`font-bold text-3xl md:text-5xl lg:text-9xl tracking-wider ${euroStyle.className}`}>
+          Login
+      </h1>
       <form
         className="flex flex-col w-full max-w-sm mt-4"
         onSubmit={handleLogin}
       >
-        <div className="form-group mb-4">
-          <label className="block mb-1 ml-4">Email</label>
-          <input
-            type="text"
-            name="email"
-            placeholder="Enter your Email"
-            className="w-full px-4 py-2 bg-gray-800 text-white"
-            style={{ borderRadius: '19px' }}
-            required
-            value={email}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setEmail(e.target.value)
-            }
-          />
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-start h-fit">
+          <label className="bg-white text-sm text-[#7571e6a2] font-bold flex flex-row p-4 gap-1 w-full col-span-2">
+            Email:
+            <input
+              type="text"
+              name="message"
+              className="outline-none bg-transparent border-b-2 border-[#7571e6a2] w-full"
+              required
+              value={email}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setEmail(e.target.value)
+              }
+            />
+          </label>
+          <label className="bg-white text-sm text-[#7571e6a2] font-bold flex flex-row p-4 gap-1 w-full col-span-2">
+            Password:
+            <input
+              type="text"
+              name="message"
+              className="outline-none bg-transparent border-b-2 border-[#7571e6a2] w-full"
+              required
+              value={password}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setPassword(e.target.value)
+              }
+            />
+          </label>
         </div>
-
-        <div className="form-group mb-4">
-          <label className="block mb-1 ml-4">Password</label>
-          <input
-            type="password"
-            name="password"
-            placeholder="Enter your Password"
-            className="w-full px-4 py-2 bg-gray-800 text-white"
-            style={{ borderRadius: '19px' }}
-            required
-            value={password}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setPassword(e.target.value)
-            }
-          />
-        </div>
-
         <div className="flex justify-center">
           <button
             type="submit"
-            className="px-8 py-2 bg-gray-800 text-white"
-            style={{ borderRadius: '19px' }}
+            // className="px-10 py-2 bg-gray-800 text-white text-2xl"
+            className={`font-bold text-4xl bg-gray-800 px-8 mt-6 w-full py-2 tracking-wider ${euroStyle.className}`}
           >
             Login
           </button>
