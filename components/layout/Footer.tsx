@@ -71,7 +71,7 @@ const Footer = () => {
           </h4>
           <div className="flex gap-2">
             <a
-              href="https://www.google.com"
+              href="https://www.facebook.com/profile.php?id=61555020486889&mibextid=LQQJ4d"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 border-2 border-white/25 hover:border-[#7471E6] rounded-full hover:scale-125 transition-all duration-700 ease-in-out hover:text-[#7471E6]"
@@ -95,7 +95,7 @@ const Footer = () => {
               <FaInstagram />
             </a>
             <a
-              href="https://www.google.com"
+              href="https://deventialimited.slack.com/join/shared_invite/zt-2nreu7n87-U3thaVfp3_M0PwzRV73OKg"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 border-2 border-white/25 hover:border-[#7471E6] rounded-full hover:scale-125 transition-all duration-700 ease-in-out hover:text-[#7471E6]"
@@ -162,9 +162,6 @@ const Footer = () => {
       <div className="flex justify-center gap-4">
         <h4 className="font-semibold text-xl text-white/35 text-center ml-auto mr-0">
           © 2024 — DEVENTIA
-        </h4>
-        <h4 className="ml-auto mr-0 font-semibold text-xl text-white/35">
-          En {'   '}Es
         </h4>
       </div>
     </footer>

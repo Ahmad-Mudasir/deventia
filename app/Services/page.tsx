@@ -9,22 +9,24 @@ import GetInTouch from '@/components/AboutUs/GetInTouch';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Our Services | DevEntia Tech Pvt. Ltd",
-  description: "Explore the comprehensive IT solutions offered by DevEntia Tech Pvt. Ltd. We specialize in planning, design, development, and testing services to elevate your business with cutting-edge technology.",
+  title: 'Our Services',
+  description:
+    'Explore the comprehensive IT solutions offered by DevEntia Tech Pvt. Ltd. We specialize in planning, design, development, and testing services to elevate your business with cutting-edge technology.',
   openGraph: {
-    title: "Our Services | DevEntia Tech Pvt. Ltd",
-    description: "Explore the comprehensive IT solutions offered by DevEntia Tech Pvt. Ltd. We specialize in planning, design, development, and testing services to elevate your business with cutting-edge technology.",
-    siteName: "DevEntia Tech Pvt. Ltd",
+    title: 'Our Services',
+    description:
+      'Explore the comprehensive IT solutions offered by DevEntia Tech Pvt. Ltd. We specialize in planning, design, development, and testing services to elevate your business with cutting-edge technology.',
+    siteName: 'DevEntia Tech Pvt. Ltd',
     images: [
       {
-        url: "https://res.cloudinary.com/dhsgpxu04/image/upload/v1722417304/services_ulnrx5.jpg", 
+        url: 'https://res.cloudinary.com/dhsgpxu04/image/upload/v1722417304/services_ulnrx5.jpg',
         width: 1200,
         height: 630,
-        alt: "DevEntia Tech Pvt. Ltd Services Overview", 
+        alt: 'DevEntia Tech Pvt. Ltd Services Overview',
       },
     ],
-    locale: "en_US",
-    type: "website",
+    locale: 'en_US',
+    type: 'website',
   },
 };
 

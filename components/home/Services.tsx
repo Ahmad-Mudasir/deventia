@@ -14,7 +14,7 @@ const Services = () => {
           autoPlay
           muted
           loop
-          className="absolute bottom-0 left-0 w-full h-full object-cover bg-repeat"
+          className="absolute top-0 left-0 w-full h-full object-cover bg-repeat"
         >
           <source src={'/servicesbganimations.mp4'} type="video/mp4" />
           Your browser does not support the video tag.

@@ -28,7 +28,8 @@ export const servicesData = [
 export const users = [
   {
     name: 'ISA Consulting',
-    designation: 'ISA is Your Bridge to Success in Staffing and Employment',
+    designation:
+      'ISA is Your Bridge to Success in Staffing and Employment. Empower Your Career and Business with Strategic Staffing Solutions',
     image:
       'https://res.cloudinary.com/dhsgpxu04/image/upload/v1722516206/isa-desktop_fxbc4v.webp',
     href: 'https://isaconsulting.com/',
@@ -42,7 +43,7 @@ export const users = [
     href: 'https://makewell.life/',
   },
   {
-    name: 'Dadi Rent Baot',
+    name: 'Dadi Rent Boat',
     designation:
       'Get on board, an unforgettable day at sea awaits you thanks to DaDi rent boat and dinghy rental',
     image:
@@ -57,14 +58,16 @@ export const users = [
     href: 'https://rsglobalties.com/',
   },
   {
-    name: 'Repo Track',
-    designation: 'Product Manager, Innovate Inc',
-    image: 'https://picsum.photos/id/13/300/300',
+    name: 'Private CPA',
+    designation: 'Welcome to Charm Ads, where every click ignites success.',
+    image:
+      'https://res.cloudinary.com/dhsgpxu04/image/upload/v1722601318/cpa-desktop_mds9m8.webp',
     href: 'https://repo-track.vercel.app/',
   },
   {
     name: 'Origin.com',
-    designation: 'Product Manager, Innovate Inc',
+    designation:
+      'Welcome to Orgin.com, where you can hire expert website designers for any job.',
     image:
       'https://res.cloudinary.com/dhsgpxu04/image/upload/v1722516206/origin-desktop_xxpxls.webp',
     href: 'https://repo-track.vercel.app/',

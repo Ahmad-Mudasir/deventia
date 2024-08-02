@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: 'DevEntia Tech Pvt. Ltd',
     images: [
       {
-        url: 'https://res.cloudinary.com/dhsgpxu04/image/upload/v1722417324/home_m9zoc7.jpg',
+        url: 'https://res.cloudinary.com/dhsgpxu04/image/upload/v1722603971/home-hero_zyqkwj.png',
         width: 1200,
         height: 630,
         alt: 'Innovative Technology Solutions by DevEntia Tech',

@@ -18,7 +18,7 @@ const ServicesCard = ({
 }) => {
   return (
     <section
-      className={`flex gap-8 lg:gap-28 flex-col mt-8 ${
+      className={`flex gap-8 lg:gap-28 flex-col ${
         flexReverse ? 'md:flex-row-reverse' : 'md:flex-row'
       } services-bg p-[5%]`}
     >
@@ -37,7 +37,7 @@ const ServicesCard = ({
           </div>
         </Link>
       </div>
-      <div className="w-full lg:h-screen max-h-[30rem]">
+      <div className="w-full lg:h-fit max-h-[30rem]">
         <Image src={img} alt="services" className="w-auto h-auto" />
       </div>
     </section>

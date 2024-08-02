@@ -1,7 +1,6 @@
 'use client';
 import React, { useRef } from 'react';
 import { useScroll, useTransform, motion } from 'framer-motion';
-import Link from 'next/link';
 
 export const ScrollView = ({
   users,
@@ -42,7 +41,7 @@ export const ScrollView = ({
 
   return (
     <div
-      className="hidden h-fit md:flex items-stretch justify-center relative p-2 md:p-20 bg-[#191919] overflow-hidden"
+      className="hidden h-fit md:flex items-stretch justify-center relative p-2  bg-[#191919] overflow-hidden"
       ref={containerRef}
     >
       <div
@@ -66,7 +65,7 @@ export const ScrollView = ({
         style={{ animationDelay: '5s' }}
       ></div>
       <div
-        className="py-10 w-full relative"
+        className="py-10 w-full h-fit relative"
         style={{
           perspective: '1000px',
         }}
@@ -122,35 +121,31 @@ export const Card = ({
       }}
       className="max-w-5xl mx-auto h-fit w-full border-4 border-[#7471E6] p-6 bg-[#222222] rounded-[30px] shadow-2xl items-stretch"
     >
-      <div className="bg-gray-100 h-full w-full rounded-2xl grid grid-cols-1 md:grid-cols-3  gap-4 pt-20 p-4 place-items-stretch">
+      <div className="bg-gray-100 h-fit w-full rounded-2xl grid grid-cols-1 md:grid-cols-3  gap-4 p-4">
         {users.map((user, idx: number) => (
-          <a
-            target="_blan"
+          <motion.a
+            // style={{ translateY: translate }}
+            whileHover={{
+              boxShadow:
+                '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+            }}
+            target="_blank"
             href={user.href}
             key={`user-${idx}`}
-            className="place-items-stretch"
+            className="relative bg-white rounded-md cursor-pointer"
           >
-            <motion.div
-              className="bg-white rounded-md cursor-pointer relative"
-              style={{ translateY: translate }}
-              whileHover={{
-                boxShadow:
-                  '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
-              }}
-            >
-              <img
-                src={user.image}
-                className="rounded-tr-md rounded-tl-md text-sm "
-                alt="thumbnail"
-              />
-              <div className="p-4">
-                <h1 className="font-semibold text-sm text-[#7471E6] mb-1 tracking-widest">
-                  {user.name}
-                </h1>
-                <h2 className=" text-gray-500 text-xs ">{user.designation}</h2>
-              </div>
-            </motion.div>
-          </a>
+            <img
+              src={user.image}
+              className="rounded-tr-md rounded-tl-md text-sm mb-auto"
+              alt="thumbnail"
+            />
+            <div className="p-4 mt-auto mb-0">
+              <h1 className="font-semibold text-sm text-[#7471E6] mb-1 tracking-widest">
+                {user.name}
+              </h1>
+              <h2 className=" text-gray-500 text-xs ">{user.designation}</h2>
+            </div>
+          </motion.a>
         ))}
       </div>
     </motion.div>
