@@ -1,26 +1,27 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { useRouter } from "next/navigation";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+'use client';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ImSpinner8 } from 'react-icons/im';
 
 const CreateJobForm = () => {
   const [formData, setFormData] = useState({
-    jobTitle: "",
-    location: "",
-    jobType: "",
-    experience: "",
-    jobDescription: "",
-    seodescription: "",
+    jobTitle: '',
+    location: '',
+    jobType: '',
+    experience: '',
+    jobDescription: '',
+    seodescription: '',
   });
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token');
     if (!token) {
-      router.push("/Careers/login");
+      router.push('/Careers/login');
     } else {
       setLoading(false);
     }
@@ -40,8 +41,8 @@ const CreateJobForm = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (Object.values(formData).some((field) => field === "")) {
-      toast.error("Please fill in all fields");
+    if (Object.values(formData).some((field) => field === '')) {
+      toast.error('Please fill in all fields');
       return;
     }
 
@@ -55,47 +56,64 @@ const CreateJobForm = () => {
     };
 
     try {
-      const response = await axios.post("http://localhost:4000/job/post", jobData, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      console.log("Success:", response.data);
-      toast.success("Job posted successfully");
-      router.push("/Careers/showjobs"); // Redirect to another page after successful submission
+      const response = await axios.post(
+        'http://localhost:4000/job/post',
+        jobData,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      console.log('Success:', response.data);
+      toast.success('Job posted successfully');
+      router.push('/Careers/showjobs'); // Redirect to another page after successful submission
       setFormData({
-        jobTitle: "",
-        location: "",
-        jobType: "",
-        experience: "",
-        jobDescription: "",
-        seodescription: "",
+        jobTitle: '',
+        location: '',
+        jobType: '',
+        experience: '',
+        jobDescription: '',
+        seodescription: '',
       });
-    } catch (error) {
+    } catch (error: unknown) {
       if (axios.isAxiosError(error)) {
-        console.error("Error response:", error.response?.data);
-        toast.error(`Error: ${error.response?.data.message || "Something went wrong"}`);
+        console.error('Error response:', error.response?.data);
+        toast.error(
+          `Error: ${error.response?.data.message || 'Something went wrong'}`
+        );
+      } else if (error instanceof Error) {
+        console.error('Error message:', error.message);
+        toast.error('An unexpected error occurred');
       } else {
-        console.error("Error message:", error.message);
-        toast.error("An unexpected error occurred");
+        console.error('Error message:', error);
+        toast.error('An unexpected error occurred');
       }
     }
   };
 
   if (loading) {
-    return <p>Loading...</p>; // Render a loading message or spinner
+    return (
+      <div className="flex items-center justify-center h-screen text-white">
+        <ImSpinner8 size={30} className="animate-spin" />
+      </div>
+    );
   }
 
   return (
     <div className="p-12 bg-gray-900 text-white min-h-screen">
       <ToastContainer />
-      <h2 className="text-3xl font-bold mb-6 mt-4 ml-4 text-white">Create New Job</h2>
+      <h2 className="text-3xl font-bold mb-6 mt-4 ml-4 text-white">
+        Create New Job
+      </h2>
       <form
         className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 md:px-10 mt-8 bg-gray-800 rounded-lg shadow-lg p-6"
         onSubmit={handleSubmit}
       >
         <div className="form-group">
-          <label className="block mb-2 font-semibold text-gray-300 ml-4">Job Title</label>
+          <label className="block mb-2 font-semibold text-gray-300 ml-4">
+            Job Title
+          </label>
           <input
             type="text"
             name="jobTitle"
@@ -108,7 +126,9 @@ const CreateJobForm = () => {
         </div>
 
         <div className="form-group">
-          <label className="block mb-2 font-semibold text-gray-300 ml-4">Location</label>
+          <label className="block mb-2 font-semibold text-gray-300 ml-4">
+            Location
+          </label>
           <input
             type="text"
             name="location"
@@ -121,7 +141,9 @@ const CreateJobForm = () => {
         </div>
 
         <div className="form-group">
-          <label className="block mb-2 font-semibold text-gray-300 ml-4">Job Type</label>
+          <label className="block mb-2 font-semibold text-gray-300 ml-4">
+            Job Type
+          </label>
           <input
             type="text"
             name="jobType"
@@ -134,7 +156,9 @@ const CreateJobForm = () => {
         </div>
 
         <div className="form-group">
-          <label className="block mb-2 font-semibold text-gray-300 ml-4">Experience</label>
+          <label className="block mb-2 font-semibold text-gray-300 ml-4">
+            Experience
+          </label>
           <select
             name="experience"
             value={formData.experience}
@@ -150,7 +174,9 @@ const CreateJobForm = () => {
         </div>
 
         <div className="form-group">
-          <label className="block mb-2 font-semibold text-gray-300 ml-4">SEO Description</label>
+          <label className="block mb-2 font-semibold text-gray-300 ml-4">
+            SEO Description
+          </label>
           <input
             name="seodescription"
             value={formData.seodescription}
@@ -161,7 +187,9 @@ const CreateJobForm = () => {
         </div>
 
         <div className="col-span-1 md:col-span-2 form-group">
-          <label className="block mb-2 font-semibold text-gray-300 ml-4">Job Description</label>
+          <label className="block mb-2 font-semibold text-gray-300 ml-4">
+            Job Description
+          </label>
           <textarea
             name="jobDescription"
             value={formData.jobDescription}
