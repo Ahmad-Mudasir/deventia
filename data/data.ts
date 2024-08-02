@@ -30,30 +30,44 @@ export const users = [
     name: 'ISA Consulting',
     designation: 'ISA is Your Bridge to Success in Staffing and Employment',
     image:
-      'https://www.clicdata.com/wp-content/uploads/2022/12/tiktok-performance-dashboard-768x794.png',
-    badge: 'Mentor',
-    href: '#',
+      'https://res.cloudinary.com/dhsgpxu04/image/upload/v1722516206/isa-desktop_fxbc4v.webp',
+    href: 'https://isaconsulting.com/',
   },
   {
-    name: 'Sarah Singh',
-    designation: "Founder, Sarah's Kitchen",
-    image: 'https://picsum.photos/id/11/300/300',
-    badge: 'Mentor',
-    href: '#',
+    name: 'MakeWell.life',
+    designation:
+      'Simplify medical tourism, attract more patients, and maximize revenue with our AI-powered platform',
+    image:
+      'https://res.cloudinary.com/dhsgpxu04/image/upload/v1722578596/makewell-mobile_nd9mjh.webp',
+    href: 'https://makewell.life/',
   },
   {
-    name: 'John Doe',
-    designation: 'Software Engineer, Tech Corp',
-    image: 'https://picsum.photos/id/12/300/300',
-    badge: 'Mentor',
-    href: '#',
+    name: 'Dadi Rent Baot',
+    designation:
+      'Get on board, an unforgettable day at sea awaits you thanks to DaDi rent boat and dinghy rental',
+    image:
+      'https://res.cloudinary.com/dhsgpxu04/image/upload/v1722516208/dadi-desktop_joz8xi.webp',
+    href: 'https://www.dadirent.it/',
   },
   {
-    name: 'Jane Smith',
+    name: 'Rs Global Tie',
+    designation: 'Welcome to the fastest growing B2B Network',
+    image:
+      'https://res.cloudinary.com/dhsgpxu04/image/upload/v1722516206/RS-desktop_bgrivg.webp',
+    href: 'https://rsglobalties.com/',
+  },
+  {
+    name: 'Repo Track',
     designation: 'Product Manager, Innovate Inc',
     image: 'https://picsum.photos/id/13/300/300',
-    badge: 'Mentor',
-    href: '#',
+    href: 'https://repo-track.vercel.app/',
+  },
+  {
+    name: 'Origin.com',
+    designation: 'Product Manager, Innovate Inc',
+    image:
+      'https://res.cloudinary.com/dhsgpxu04/image/upload/v1722516206/origin-desktop_xxpxls.webp',
+    href: 'https://repo-track.vercel.app/',
   },
 ];
 

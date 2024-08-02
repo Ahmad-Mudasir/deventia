@@ -1,22 +1,22 @@
-import { servicesData } from "@/data/data";
-import { euroStyle } from "@/utils/fonts";
-import React from "react";
-import { HoverCard } from "../ui/hovercards";
+import { servicesData } from '@/data/data';
+import { euroStyle } from '@/utils/fonts';
+import React from 'react';
+import { HoverCard } from '../ui/hovercards';
 
 const Services = () => {
   return (
     <div
-      className={`w-full flex flex-col md:flex-row items-start bg-[#191919] overflow-hidden ${euroStyle.className} z-10`}
-    >   
-      <div className="md:px-8 px-4 py-8 md:py-16 md:w-1/2 flex flex-col items-start justify-start relative">
+      className={`relative w-full flex flex-col md:flex-row items-stretch bg-[#191919] overflow-hidden ${euroStyle.className} z-10`}
+    >
+      <div className="md:px-8 px-4 py-8 md:py-16 md:w-1/2 flex flex-col justify-center relative">
         {/* ANIMATING DIVS  */}
         <video
           autoPlay
           muted
           loop
-          className="absolute top-0 left-0 w-full h-full object-fill"
+          className="absolute bottom-0 left-0 w-full h-full object-cover bg-repeat"
         >
-          <source src={"/servicesbganimations.mp4"} type="video/mp4" />
+          <source src={'/servicesbganimations.mp4'} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         {/* <div
@@ -48,7 +48,7 @@ const Services = () => {
             description={item.description}
             link={item.link}
             key={index + 0.01 * 2}
-            className={`${index < servicesData.length - 1 ? "border-b" : ""}`}
+            className={`${index < servicesData.length - 1 ? 'border-b' : ''}`}
           />
         ))}
       </div>

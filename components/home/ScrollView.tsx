@@ -11,7 +11,6 @@ export const ScrollView = ({
     name: string;
     designation: string;
     image: string;
-    badge?: string;
     href: string;
   }[];
   titleComponent: string | React.ReactNode;
@@ -43,7 +42,7 @@ export const ScrollView = ({
 
   return (
     <div
-      className="hidden h-fit md:flex items-center justify-center relative p-2 md:p-20 bg-[#191919] overflow-hidden"
+      className="hidden h-fit md:flex items-stretch justify-center relative p-2 md:p-20 bg-[#191919] overflow-hidden"
       ref={containerRef}
     >
       <div
@@ -110,7 +109,6 @@ export const Card = ({
     name: string;
     designation: string;
     image: string;
-    badge?: string;
     href: string;
   }[];
 }) => {
@@ -122,11 +120,16 @@ export const Card = ({
         boxShadow:
           '0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003',
       }}
-      className="max-w-5xl mx-auto h-fit w-full border-4 border-[#7471E6] p-6 bg-[#222222] rounded-[30px] shadow-2xl"
+      className="max-w-5xl mx-auto h-fit w-full border-4 border-[#7471E6] p-6 bg-[#222222] rounded-[30px] shadow-2xl items-stretch"
     >
-      <div className="bg-gray-100 h-full w-full rounded-2xl grid grid-cols-1 md:grid-cols-3  gap-4 pt-20 p-4">
+      <div className="bg-gray-100 h-full w-full rounded-2xl grid grid-cols-1 md:grid-cols-3  gap-4 pt-20 p-4 place-items-stretch">
         {users.map((user, idx: number) => (
-          <a target="_blan" href={user.href} key={`user-${idx}`}>
+          <a
+            target="_blan"
+            href={user.href}
+            key={`user-${idx}`}
+            className="place-items-stretch"
+          >
             <motion.div
               className="bg-white rounded-md cursor-pointer relative"
               style={{ translateY: translate }}
