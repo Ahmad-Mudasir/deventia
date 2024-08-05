@@ -1,9 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
-const {
-  readdirSync
-} = require('fs');
+const { readdirSync } = require('fs');
 
 const cors = require('cors');
 
@@ -42,7 +40,8 @@ app.use(cors(corsOptions));
 readdirSync('./Routes').map((r) => app.use('/', require('./Routes/' + r)));
 
 // database
-mongoose.connect(
+mongoose
+  .connect(
     'mongodb+srv://asgharkhanglipton:zZgDPYCBB59ia4iy@cluster0.7ipdy2j.mongodb.net/deventia'
   )
   .then(() => console.log('database connection successfully'))

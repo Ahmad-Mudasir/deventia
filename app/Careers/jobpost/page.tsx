@@ -5,6 +5,43 @@ import { useRouter } from 'next/navigation';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ImSpinner8 } from 'react-icons/im';
+import 'react-quill/dist/quill.snow.css';
+import ReactQuill from 'react-quill';
+
+const modules = {
+  toolbar: {
+    container: [
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+      ['bold', 'italic', 'underline', 'blockquote'],
+      [{ color: [] }],
+      [
+        { list: 'ordered' },
+        { list: 'bullet' },
+        { indent: '-1' },
+        { indent: '+1' },
+      ],
+      ['link', 'image'],
+      ['clean'],
+    ],
+  },
+  clipboard: {
+    matchVisual: true,
+  },
+};
+const formats = [
+  'header',
+  'bold',
+  'italic',
+  'underline',
+  'strike',
+  'blockquote',
+  'list',
+  'bullet',
+  'indent',
+  'link',
+  'image',
+  'clean',
+];
 
 const CreateJobForm = () => {
   const [formData, setFormData] = useState({
@@ -197,6 +234,17 @@ const CreateJobForm = () => {
             className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-150 ease-in-out h-32"
             required
           ></textarea>
+          {/* <ReactQuill
+            value={formData.jobDescription}
+            modules={modules}
+            formats={formats}
+            className="h-[90%]"
+            name="jobDescription"
+            onChange={handleChange}
+            // onChange={(newrequirments) => {
+            //   setrequirments(newrequirments);
+            // }}
+          /> */}
         </div>
 
         <div className="col-span-1 md:col-span-2 flex justify-end">
