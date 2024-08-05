@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import mission from '../../assets/images/mission.webp';
-import vission from '../../assets/images/vission.webp';
+import mission from '../../assets/images/mission.png';
+import vission from '../../assets/images/vission.png';
 
 const OurMissionAndVission = () => {
   return (

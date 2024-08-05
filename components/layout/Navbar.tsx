@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import logoImg from '@/assets/images/logoImg.gif';
 import Link from 'next/link';
@@ -12,6 +12,9 @@ import { FaAngleDown } from 'react-icons/fa6';
 
 const Navbar = () => {
   const [hovered, setHovered] = useState({ hover: false, name: '' });
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
   const currentPath = usePathname();
   const isActive = (pathName: string) => {
     return currentPath.startsWith(pathName);
@@ -21,9 +24,35 @@ const Navbar = () => {
     setHovered({ hover: hover, name: name });
   };
 
+  const handleScroll = () => {
+    if (typeof window !== 'undefined') {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY) {
+        setShowNavbar(false);
+      } else {
+        setShowNavbar(true);
+      }
+      setLastScrollY(currentScrollY);
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }
+  }, [lastScrollY]);
+
   return (
     <div
-      className={`navbar bg-[#7571e67c] fixed bg-opacity-5 backdrop-filter backdrop-blur-sm shadow-sm z-20 !p-0 w-[96%] left-[2%] right-[2%] top-4 max-w-[1750px] ${inter.className} !font-[400]`}
+      className={`navbar bg-[#7571e67c] fixed bg-opacity-5 backdrop-filter backdrop-blur-sm shadow-sm z-20 !p-0 w-[96%] left-[2%] right-[2%] top-4 max-w-[1750px] ${
+        inter.className
+      } !font-[400] transition-transform duration-300 ${
+        showNavbar ? 'translate-y-0' : '!top-0 -translate-y-full '
+      }`}
     >
       <div className="navbar-start">
         <div className="dropdown">
@@ -181,7 +210,7 @@ const Navbar = () => {
 
             <Link
               href={'/Contact-us'}
-              className="p-3 bg-[#7471E680] text-white/70 flex items-center gap-2"
+              className=" ml-2 p-3 bg-[#7471E680] text-white/70 flex items-center gap-2"
             >
               Contact Us <MdOutlineArrowOutward size={25} />
             </Link>
@@ -352,7 +381,7 @@ const Navbar = () => {
 
         <Link
           href={'/Contact-us'}
-          className="p-3 bg-[#7471E680] text-white/70 flex items-center gap-2 hover:font-medium  transition-all duration-700 ease-in-out"
+          className="ml-2 p-3 bg-[#7471E680] text-white/70 flex items-center gap-2 hover:font-medium  transition-all duration-700 ease-in-out"
         >
           Contact Us <MdOutlineArrowOutward size={25} />
         </Link>

@@ -10,6 +10,7 @@ import { users } from '@/data/data';
 import React from 'react';
 import Portfolio from '@/components/home/Portfolio';
 import { Metadata } from 'next';
+import GetInTouch from '@/components/AboutUs/GetInTouch';
 
 export const metadata: Metadata = {
   title: 'DevEntia Tech Pvt. Ltd',
@@ -38,11 +39,20 @@ const page = () => {
     <>
       <TracingBeam>
         <Hero />
+        <WhoWeAre />
         <Services />
+        <ChooseUs />
+        <StatsAndPartners />
         <ScrollView
           users={users}
           titleComponent={
             <>
+              <h3
+                className={`text-[2rem] text-white z-10 font-[200]
+        `}
+              >
+                Portfolio{' '}
+              </h3>
               <h1 className="text-xl font-semibold text-white">
                 30+ Completed Projects <br />
                 <span className="text-3xl md:text-[5rem] font-bold mt-1 leading-none">
@@ -52,11 +62,9 @@ const page = () => {
             </>
           }
         />
-        <ChooseUs />
-        <StatsAndPartners />
-        <WhoWeAre />
         {/* <Testimonial /> */}
-        <Portfolio />
+        {/* <Portfolio /> */}
+        <GetInTouch />
       </TracingBeam>
     </>
   );

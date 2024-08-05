@@ -62,7 +62,7 @@ export const users = [
     designation: 'Welcome to Charm Ads, where every click ignites success.',
     image:
       'https://res.cloudinary.com/dhsgpxu04/image/upload/v1722601318/cpa-desktop_mds9m8.webp',
-    href: 'https://repo-track.vercel.app/',
+    href: '#',
   },
   {
     name: 'Origin.com',
@@ -70,7 +70,7 @@ export const users = [
       'Welcome to Orgin.com, where you can hire expert website designers for any job.',
     image:
       'https://res.cloudinary.com/dhsgpxu04/image/upload/v1722516206/origin-desktop_xxpxls.webp',
-    href: 'https://repo-track.vercel.app/',
+    href: '#',
   },
 ];
 

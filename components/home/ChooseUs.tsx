@@ -2,7 +2,7 @@ import { accordionData } from '@/data/data';
 import { euroStyle } from '@/utils/fonts';
 import Image from 'next/image';
 import React from 'react';
-import chooseUsImg from '@/public/chooseUsImg.png';
+import chooseUsImg from '@/public/chooseImage.png';
 import Link from 'next/link';
 const ChooseUs = () => {
   return (

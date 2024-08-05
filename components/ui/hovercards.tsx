@@ -41,7 +41,7 @@ export const HoverCard = ({
   return (
     <div
       className={cn(
-        'p-0.5 md:border-l-2 md:border-white  bg-transparent flex items-center justify-center w-full h-full relative',
+        'p-0.5 bg-transparent flex items-center justify-center w-full h-full relative',
         className
       )}
     >
@@ -54,21 +54,19 @@ export const HoverCard = ({
           mouseY={mouseY}
           randomString={randomString}
         />
-        <div className="relative z-10 h-full flex items-center justify-center">
-          <div className="relative p-4 h-full  rounded-full flex items-center justify-center text-white text-4xl flex-col gap-4">
-            <h1 className="text-[2rem] text-white w-full font-medium tracking-widest">
-              {title}
-            </h1>
-            <p className="w-full !text-[18px] md:w-4/5 self-start text-white/90 leading-[1.2rem] tracking-[0.15rem] font-thin">
-              {description}
-            </p>
-            <Link
-              href={link}
-              className="p-2 bg-transparent  text-[#7471E6] hover:text-white hover:bg-[#7471E6] border border-[#7471E6] flex items-center gap-1 text-[16px] self-start font-semibold leading-[1.2rem] tracking-[0.19rem]"
-            >
-              <p> Learn More</p> <MdArrowOutward size={25} />
-            </Link>
-          </div>
+        <div className="relative p-4 h-full  rounded-full flex items-center justify-center text-white text-4xl flex-col gap-4">
+          <h1 className="text-[2rem] text-white w-full font-medium tracking-widest">
+            {title}
+          </h1>
+          <p className="mt-0 mb-auto w-full !text-[18px] self-start text-white/90 leading-[1.2rem] tracking-[0.15rem] font-thin">
+            {description}
+          </p>
+          <Link
+            href={link}
+            className="p-2 bg-transparent  text-[#7471E6] hover:text-white hover:bg-[#7471E6] border border-[#7471E6] flex items-center gap-1 text-[16px] self-start font-semibold leading-[1.2rem] tracking-[0.19rem]"
+          >
+            <p> Learn More</p> <MdArrowOutward size={25} />
+          </Link>
         </div>
       </div>
     </div>
