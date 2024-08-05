@@ -53,6 +53,7 @@ const Portfolio = () => {
       </div>
       <div className="flex items-center flex-wrap justify-center">
         <PinContainer
+          key={1}
           title={'RS Global Ties'}
           href={'https://rs-global-ties.com'}
         >
@@ -76,6 +77,7 @@ const Portfolio = () => {
           </div>
         </PinContainer>
         <PinContainer
+          key={2}
           title={'ISA Consulting'}
           href={'https://isaconsulting.com'}
         >
@@ -98,7 +100,11 @@ const Portfolio = () => {
             </div>
           </div>
         </PinContainer>
-        <PinContainer title={'Makewell.life'} href={'https://makewell.life/'}>
+        <PinContainer
+          key={3}
+          title={'Makewell.life'}
+          href={'https://makewell.life/'}
+        >
           <div className="flex basis-full flex-col rounded-xl tracking-tight sm:basis-1/2 w-[20rem] ">
             <Image
               src={makewellImg}
