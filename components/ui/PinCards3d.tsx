@@ -9,12 +9,14 @@ export const PinContainer = ({
   href,
   className,
   containerClassName,
+  key,
 }: {
   children: React.ReactNode;
   title?: string;
   href?: string;
   className?: string;
   containerClassName?: string;
+  key: number;
 }) => {
   const [transform, setTransform] = useState(
     'translate(-50%,-50%) rotateX(0deg)'
@@ -29,7 +31,7 @@ export const PinContainer = ({
 
   return (
     <div
-      key={title}
+      key={key}
       className={cn(
         'relative group/pin z-50  cursor-pointer',
         containerClassName

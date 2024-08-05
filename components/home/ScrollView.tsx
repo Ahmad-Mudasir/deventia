@@ -147,7 +147,7 @@ export const Card = ({
           //     <h2 className=" text-gray-500 text-xs ">{user.designation}</h2>
           //   </div>
           // </motion.a>
-          <PinContainer title={user.name} href={user.href}>
+          <PinContainer key={idx} title={user.name} href={user.href}>
             <div className="flex basis-full flex-col rounded-xl tracking-tight sm:basis-1/2 w-[300px] md:w-[13rem] lg:w-[18rem]">
               <img
                 src={user.image}
