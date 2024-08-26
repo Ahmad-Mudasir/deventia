@@ -14,6 +14,8 @@ const Hero = () => {
     <div className="relative bg-[#161616] h-screen">
       <video
         autoPlay
+        playsInline
+        controls={false}
         muted
         loop
         className="absolute top-0 left-0 w-full h-full object-cover lg:object-fill"

@@ -1,7 +1,6 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 
-// Define the type for the component props
 interface ScrollCounterProps {
   targetValue: number;
 }
@@ -46,7 +45,7 @@ const ScrollCounter: React.FC<ScrollCounterProps> = ({ targetValue }) => {
   };
 
   return (
-    <h1 ref={countRef} className="text-[8rem] font-semibold">
+    <h1 ref={countRef} className="text-7xl md:text-[8rem] font-semibold">
       +{count}
     </h1>
   );

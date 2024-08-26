@@ -2,10 +2,8 @@
 
 import Link from 'next/link';
 import React from 'react';
-import Image from 'next/image';
 import { IoArrowDownOutline } from 'react-icons/io5';
 import { MdOutlineArrowOutward } from 'react-icons/md';
-import heroBgImg from '../../assets/images/services-hero-bg.webp';
 
 const Hero = () => {
   const handleScroll = () => {
@@ -16,6 +14,8 @@ const Hero = () => {
     <header className="relative bg-[#161616] h-screen">
       <video
         autoPlay
+        playsInline
+        controls={false}
         muted
         loop
         className="absolute top-0 left-0 w-full h-full !object-right object-cover lg:|!object-fill"

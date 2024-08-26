@@ -2,13 +2,11 @@ import ChooseUs from '@/components/home/ChooseUs';
 import Hero from '@/components/home/Hero';
 import { ScrollView } from '@/components/home/ScrollView';
 import Services from '@/components/home/Services';
-// import Testimonial from '@/components/home/Testimonial';
 import StatsAndPartners from '@/components/home/Stats';
 import WhoWeAre from '@/components/home/WhoWeAre';
 import { TracingBeam } from '@/components/ui/tracingbeam';
 import { users } from '@/data/data';
 import React from 'react';
-import Portfolio from '@/components/home/Portfolio';
 import { Metadata } from 'next';
 import GetInTouch from '@/components/AboutUs/GetInTouch';
 
@@ -47,10 +45,7 @@ const page = () => {
           users={users}
           titleComponent={
             <>
-              <h3
-                className={`text-[2rem] text-white z-10 font-[200]
-        `}
-              >
+              <h3 className={`text-[2rem] text-white z-10 font-[200]`}>
                 Portfolio{' '}
               </h3>
               <h1 className="text-xl font-semibold text-white">
