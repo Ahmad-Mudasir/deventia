@@ -12,6 +12,8 @@ const Services = () => {
         {/* ANIMATING DIVS  */}
         <video
           autoPlay
+          playsInline
+          controls={false}
           muted
           loop
           className="absolute top-0 left-0 w-full h-full object-cover bg-repeat"
@@ -19,15 +21,7 @@ const Services = () => {
           <source src={'/servicesbganimations.mp4'} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        {/* <div
-          className="absolute top-0 -left-4 w-72 h-72 bg-[#7571e6] rounded-full filter blur-3xl opacity-40 animate-blob "
-          style={{ animationDelay: '4s' }}
-        ></div>
-        <div
-          className="absolute left-20 w-72 h-72 bg-[#cccaf0] rounded-full filter blur-3xl opacity-40 animate-blob"
-          style={{ animationDelay: '2s' }}
-        ></div> */}
-        {/* CONTENT  */}
+
         <h3
           className={`${euroStyle.className} text-6xl text-white z-10 tracking-widest`}
         >

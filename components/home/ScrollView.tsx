@@ -124,29 +124,6 @@ export const Card = ({
     >
       <div className="bg-gray-100 h-fit w-full rounded-2xl grid grid-cols-1 md:grid-cols-3  gap-4 p-4">
         {users.map((user, idx: number) => (
-          // <motion.a
-          //   // style={{ translateY: translate }}
-          //   whileHover={{
-          //     boxShadow:
-          //       '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
-          //   }}
-          //   target="_blank"
-          //   href={user.href}
-          //   key={`user-${idx}`}
-          //   className="relative bg-white rounded-md cursor-pointer"
-          // >
-          //   <img
-          //     src={user.image}
-          //     className="rounded-tr-md rounded-tl-md text-sm mb-auto"
-          //     alt="thumbnail"
-          //   />
-          //   <div className="p-4 mt-auto mb-0">
-          //     <h1 className="font-semibold text-sm text-[#7471E6] mb-1 tracking-widest">
-          //       {user.name}
-          //     </h1>
-          //     <h2 className=" text-gray-500 text-xs ">{user.designation}</h2>
-          //   </div>
-          // </motion.a>
           <PinContainer key={idx} title={user.name} href={user.href}>
             <div className="flex basis-full flex-col rounded-xl tracking-tight sm:basis-1/2 w-[300px] md:w-[13rem] lg:w-[18rem]">
               <img
