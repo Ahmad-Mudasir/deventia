@@ -1,4 +1,4 @@
-// lib/axiosInstance.ts
+// lib/axiosInstance.t
 
 import axios from 'axios';
 
