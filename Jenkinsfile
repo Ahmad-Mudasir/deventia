@@ -1,11 +1,9 @@
-// piplines
 pipeline {
     agent any
     stages {
         stage('Checkout') {
             steps {
-               checkout scmGit(branches: [[name: '*/production']], extensions: [], userRemoteConfigs: [[credentialsId: 'abdul_git_repo_credentials', url: 'https://github.com/deventialimited/deventia-website-version-02.git']])
-                )
+                checkout scmGit(branches: [[name: '*/production']], extensions: [], userRemoteConfigs: [[credentialsId: 'abdul_git_repo_credentials', url: 'https://github.com/deventialimited/deventia-website-version-02.git']])
             }
         }
         stage('Install Dependencies - Frontend') {
