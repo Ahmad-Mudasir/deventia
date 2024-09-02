@@ -30,15 +30,19 @@ app.use(express.json());
 // app.use(cors());
 
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: ['http://localhost:3000', 'https://api.deventiatech.com'],
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
 
 // import all routes
-readdirSync('./Routes').map((r) => app.use('/', require('./Routes/' + r)));
-
+try {
+  const routes = readdirSync('./Routes');
+  routes.map((r) => app.use('/', require('./Routes/' + r)));
+} catch (err) {
+  console.error('Error reading routes directory:', err);
+}
 // database
 mongoose
   .connect(
