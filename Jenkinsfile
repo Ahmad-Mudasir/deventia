@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
     stages {
@@ -47,8 +46,8 @@ pipeline {
                     // Start the backend process using PM2 with server.js
                     sh 'pm2 start Backend/server.js --name backend --watch -f'
 
-                    // Serve the Next.js build using a static server via PM2
-                    sh 'pm2 serve Frontend/out 3000 --name frontend --spa'
+                    // Start the Next.js app using PM2
+                    sh 'pm2 start Frontend/node_modules/.bin/next --name frontend -- start'
 
                     // Save the PM2 process list for persistence
                     sh 'pm2 save'
