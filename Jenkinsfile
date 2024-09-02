@@ -8,33 +8,33 @@ pipeline {
             }
         }
         stage('Install Dependencies - Frontend') {
-        //     steps {
-        //         dir('Frontend') {
-        //             sh 'npm install' // Install dependencies for the frontend
-        //         }
-        //     }
-        // }
-        // stage('Build - Frontend') {
-        //     steps {
-        //         dir('Frontend') {
-        //             script {
-        //                 try {
-        //                     sh 'npm run build' // Build the Next.js app
-        //                 } catch (err) {
-        //                     echo "Build failed: ${err}"
-        //                     error("Build failure")
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
+            steps {
+                dir('Frontend') {
+                    sh 'npm install' // Install dependencies for the frontend
+                }
+            }
+        }
+        stage('Build - Frontend') {
+            steps {
+                dir('Frontend') {
+                    script {
+                        try {
+                            sh 'npm run build' // Build the Next.js app
+                        } catch (err) {
+                            echo "Build failed: ${err}"
+                            error("Build failure")
+                        }
+                    }
+                }
+            }
+        }
         stage('Install Dependencies - Backend') {
-        //     steps {
-        //         dir('Backend') {
-        //             sh 'npm install' // Install dependencies for the backend
-        //         }
-        //     }
-        // }
+            steps {
+                dir('Backend') {
+                    sh 'npm install' // Install dependencies for the backend
+                }
+            }
+        }
         stage('Start Applications with PM2') {
             steps {
                 script {
