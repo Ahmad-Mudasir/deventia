@@ -1,4 +1,4 @@
-// d
+
 pipeline {
     agent any
     stages {
