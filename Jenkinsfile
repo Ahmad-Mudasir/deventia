@@ -1,4 +1,4 @@
-// piplnie
+// pipeline
 pipeline {
     agent any
     stages {
