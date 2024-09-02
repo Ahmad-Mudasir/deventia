@@ -2,7 +2,7 @@ import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
 import Head from 'next/head';
 import { Metadata } from 'next';
-
+// dd
 export const metadata: Metadata = {
   icons: {
     icon: 'favicon.ico',
