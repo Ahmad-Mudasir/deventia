@@ -1,4 +1,4 @@
-// pip
+
 pipeline {
     agent any
     stages {
