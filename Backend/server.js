@@ -5,7 +5,7 @@ const { readdirSync } = require('fs');
 
 const cors = require('cors');
 
-let allowed = ['http://localhost:4000', 'http://localhost:5173', 'another'];
+let allowed = ['http://localhost:4000', 'http://localhost:5173', ' https://deventiatech.com', 'https://www.deventiatech.com',];
 
 function options(req, res) {
   let temp;
@@ -30,7 +30,7 @@ app.use(express.json());
 // app.use(cors());
 
 const corsOptions = {
-  origin: ['http://localhost:3000', 'https://api.deventiatech.com'],
+  origin: ['http://localhost:3000', 'https://deventiatech.com', 'https://www.deventiatech.com',],
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
