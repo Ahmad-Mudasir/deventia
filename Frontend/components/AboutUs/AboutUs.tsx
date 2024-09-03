@@ -1,3 +1,4 @@
+// about us page
 import Image from 'next/image';
 import aboutUsImg from '../../assets/images/about-us.webp';
 const AboutUs = () => {
