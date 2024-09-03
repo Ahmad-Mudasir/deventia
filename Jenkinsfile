@@ -34,29 +34,23 @@ pipeline {
                 }
             }
         }
-        stage('Start Frontend with PM2') {
+        stage('Start Applications with PM2') {
             steps {
                 script {
-                    // Navigate to the Frontend directory where ecosystem.config.js is located
-                    dir('Frontend') {
-                        // Stop and delete existing PM2 frontend processes if they are running
-                        sh 'pm2 stop frontend || true'
-                        sh 'pm2 delete frontend || true'
+                    // Stop and delete PM2 processes if they are running
+                    sh 'pm2 stop backend || true'
+                    sh 'pm2 delete backend || true'
+                    sh 'pm2 stop frontend || true'
+                    sh 'pm2 delete frontend || true'
 
-                        // Start the frontend application using PM2 with the ecosystem file
-                        sh 'pm2 start ecosystem.config.js'
-
-                        // Save the PM2 process list for persistence
-                        sh 'pm2 save'
-                    }
-                }
-            }
-        }
-        stage('Start Backend') {
-            steps {
-                script {
-                    // Start the backend process using PM2
+                    // Start the backend process using PM2 with server.js
                     sh 'pm2 start Backend/server.js --name backend --watch -f'
+
+                    // Start the Next.js app using PM2
+                    sh 'pm2 start Frontend/node_modules/.bin/next --name frontend -- start --port 3000'
+
+                    // Save the PM2 process list for persistence
+                    sh 'pm2 save'
                 }
             }
         }
