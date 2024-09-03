@@ -37,15 +37,18 @@ pipeline {
         stage('Start Frontend with PM2') {
             steps {
                 script {
-                    // Stop and delete existing PM2 frontend processes if they are running
-                    sh 'pm2 stop frontend || true'
-                    sh 'pm2 delete frontend || true'
+                    // Navigate to the Frontend directory where ecosystem.config.js is located
+                    dir('Frontend') {
+                        // Stop and delete existing PM2 frontend processes if they are running
+                        sh 'pm2 stop frontend || true'
+                        sh 'pm2 delete frontend || true'
 
-                    // Start the frontend application using PM2 with ecosystem file
-                    sh 'pm2 start ecosystem.config.js'
+                        // Start the frontend application using PM2 with the ecosystem file
+                        sh 'pm2 start ecosystem.config.js'
 
-                    // Save the PM2 process list for persistence
-                    sh 'pm2 save'
+                        // Save the PM2 process list for persistence
+                        sh 'pm2 save'
+                    }
                 }
             }
         }
