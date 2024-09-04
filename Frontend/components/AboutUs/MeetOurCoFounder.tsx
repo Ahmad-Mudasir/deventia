@@ -23,12 +23,15 @@ const MeetOurCoFounder = () => {
           visionary leadership are instrumental in shaping our company&apos;s
           future.
         </p>
-        <button
-          type="button"
+        <br />
+        <a
+          href="https://www.linkedin.com/in/huzaifa-rajpoot-7a7718289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-[#7571e681] px-8 py-3 font-semibold text-balance w-fit mt-8 text-black"
         >
           Book a call
-        </button>
+        </a>
       </div>
     </section>
   );

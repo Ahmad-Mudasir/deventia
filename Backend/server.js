@@ -5,7 +5,7 @@ const { readdirSync } = require('fs');
 
 const cors = require('cors');
 
-let allowed = ['http://localhost:4000', 'http://localhost:5173', 'another'];
+let allowed = ['http://localhost:4000', 'http://localhost:5173', ' https://deventiatech.com', 'https://www.deventiatech.com',];
 
 function options(req, res) {
   let temp;
@@ -30,15 +30,19 @@ app.use(express.json());
 // app.use(cors());
 
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: ['http://localhost:3000', 'https://deventiatech.com', 'https://www.deventiatech.com',],
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
 
 // import all routes
-readdirSync('./Routes').map((r) => app.use('/', require('./Routes/' + r)));
-
+try {
+  const routes = readdirSync('./Routes');
+  routes.map((r) => app.use('/', require('./Routes/' + r)));
+} catch (err) {
+  console.error('Error reading routes directory:', err);
+}
 // database
 mongoose
   .connect(

@@ -68,7 +68,7 @@ const ChooseUs = () => {
           can be tailored to meet specific needs to match your specific goals.
         </p>
         <Link
-          href={'/'}
+          href={'/Contact-us'}
           className="py-2 px-6 bg-transparent  text-[#7471E6] border border-[#7471E6] flex items-center gap-1 text-[1.2rem] self-start"
         >
           Start Project

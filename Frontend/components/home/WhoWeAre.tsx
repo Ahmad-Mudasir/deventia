@@ -25,10 +25,10 @@ const WhoWeAre = () => {
           className={`${euroStyle.className} text-[2rem] md:text-[4rem] leading-none text-white/75  z-10
           `}
         >
-          WE ARE A LEADING SOFTWARE HOUSE.
+          WE ARE A LEADING SOFTWARE COMPANY.
         </h1>
         <p className="text-white text-lg !tracking-widest">
-          We’re a team of strategic digital marketing working globally with
+          We’re a team of strategic software Development working globally with
           largest brands, We believe that progress only happens when you refused
           to play things safe. We combine ideas and behaviors, and insights with
           design, technological data to produce brand experiences that customers
