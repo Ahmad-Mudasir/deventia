@@ -4,7 +4,6 @@ import Link from 'next/link';
 import React from 'react';
 import { IoArrowDownOutline } from 'react-icons/io5';
 import { MdOutlineArrowOutward } from 'react-icons/md';
-import AnimatedText from './AnimatedText';
 
 const Hero = () => {
   const handleScroll = () => {
@@ -42,8 +41,8 @@ const Hero = () => {
               />
             </div>
           </div>
-          <h1 className="text-white text-start text-3xl font-semibold">
-            <AnimatedText />
+          <h1 className="text-white text-start text-[3rem] 500px:text-[5rem] font-bold 1200px:leading-none">
+            Unlocking <br /> Digital Excellence
           </h1>
           <Link
             href={'/Contact-us'}
