@@ -36,7 +36,7 @@ import nextjs from '../../assets/images/nextjs.png';
 import reactjs from '../../assets/images/reactjs.png';
 import graphql from '../../assets/images/graphql.png';
 import redux from '../../assets/images/redux.png';
-import './AnimatedText.css';
+import styles from './AnimatedText.module.css';
 import Image from 'next/image';
 
 const AnimatedText = () => {
@@ -104,7 +104,10 @@ const AnimatedText = () => {
     <>
       {['Deventia', 'Scripting', 'Future', 'Technologies'].map(
         (word, wordIndex) => (
-          <div key={wordIndex} className="word gap-0.5 space-y-0.5">
+          <div
+            className={` ${styles.container} word gap-0.5 space-y-0.5`}
+            key={wordIndex}
+          >
             {word.split('').map((letter, index) => {
               // Assign icon and increment the global index
               const iconElement = icons[globalIconIndex % icons.length];
