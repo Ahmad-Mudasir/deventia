@@ -173,12 +173,12 @@ const AnimatedText = () => {
                   data-letter={letter}
                 >
                   <div
-                    className={`${styles.animation_icon} shadow-md rounded bg-[#2d2deb] p-2 opacity-80`}
+                    className={`${styles.animation_icon} shadow-md rounded bg-[#4945f7] p-2 opacity-80`}
                   >
                     {iconElement}
                   </div>
                   <div
-                    className={`${styles.letter} shadow-md rounded bg-[#2d2deb]`}
+                    className={`${styles.letter} shadow-md rounded bg-[#4945f7]`}
                   >
                     {letter}
                   </div>
