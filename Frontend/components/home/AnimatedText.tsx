@@ -36,7 +36,7 @@ import nextjs from '../../assets/images/nextjs.png';
 import reactjs from '../../assets/images/reactjs.png';
 import graphql from '../../assets/images/graphql.png';
 import redux from '../../assets/images/redux.png';
-import styles from './AnimatedText.module.css';
+import styles from '../../styles/AnimatedText.module.css';
 import Image from 'next/image';
 
 const AnimatedText = () => {
@@ -80,14 +80,14 @@ const AnimatedText = () => {
 
   useEffect(() => {
     const flipWords = () => {
-      const words = document.querySelectorAll('.word');
+      const words = document.querySelectorAll(`.${styles.word}`);
       words.forEach((word, wordIndex) => {
         setTimeout(() => {
-          word.classList.add('flipped');
+          word.classList.add(styles.flipped);
         }, (wordIndex + 1) * 1000);
 
         setTimeout(() => {
-          word.classList.remove('flipped');
+          word.classList.remove(styles.flipped);
         }, (wordIndex + 1) * 1000 + 4000);
       });
     };
@@ -105,7 +105,7 @@ const AnimatedText = () => {
       {['Deventia', 'Scripting', 'Future', 'Technologies'].map(
         (word, wordIndex) => (
           <div
-            className={` ${styles.container} word gap-0.5 space-y-0.5`}
+            className={` ${styles.word} gap-0.5 space-y-0.5`}
             key={wordIndex}
           >
             {word.split('').map((letter, index) => {
@@ -116,13 +116,17 @@ const AnimatedText = () => {
               return (
                 <div
                   key={index}
-                  className="box size-[30px] lg:size-[50px] font-tt-hoves"
+                  className={`${styles.box} size-[30px] lg:size-[50px]`}
                   data-letter={letter}
                 >
-                  <div className="animation-icon shadow-md rounded bg-[#2d2deb] p-2 opacity-80 font-tt-hoves">
+                  <div
+                    className={`${styles.animation_icon} shadow-md rounded bg-[#2d2deb] p-2 opacity-80`}
+                  >
                     {iconElement}
                   </div>
-                  <div className="letter shadow-md rounded bg-[#2d2deb] font-tt-hoves">
+                  <div
+                    className={`${styles.letter} shadow-md rounded bg-[#2d2deb]`}
+                  >
                     {letter}
                   </div>
                 </div>
