@@ -109,9 +109,8 @@ const AnimatedText = () => {
             key={wordIndex}
           >
             {word.split('').map((letter, index) => {
-              // Assign icon and increment the global index
               const iconElement = icons[globalIconIndex % icons.length];
-              globalIconIndex += 1; // Update the global index
+              globalIconIndex += 1;
 
               return (
                 <div
