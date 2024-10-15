@@ -151,7 +151,6 @@ const AnimatedText = () => {
     return () => clearInterval(intervalId); // Cleanup interval on component unmount
   }, []);
 
-  // Global icon index to track the icon for each letter across all words
   let globalIconIndex = 0;
 
   return (
