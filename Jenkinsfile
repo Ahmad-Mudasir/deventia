@@ -38,10 +38,10 @@ pipeline {
             steps {
                 script {
                     // Stop and delete PM2 processes if they are running
-                    sh 'pm2 stop backend || true'
-                    sh 'pm2 delete backend || true'
-                    sh 'pm2 stop frontend || true'
-                    sh 'pm2 delete frontend || true'
+                    // sh 'pm2 stop backend || true'
+                    // sh 'pm2 delete backend || true'
+                    // sh 'pm2 stop frontend || true'
+                    // sh 'pm2 delete frontend || true'
 
                     // Start the backend process using PM2 with server.js
                     sh 'pm2 start Backend/server.js --name backend --watch -f'
