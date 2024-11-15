@@ -148,7 +148,7 @@ const AnimatedText = () => {
 
     flipWords();
     const intervalId = setInterval(flipWords, 4000); // Repeat every 4 seconds
-    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   let globalIconIndex = 0;
