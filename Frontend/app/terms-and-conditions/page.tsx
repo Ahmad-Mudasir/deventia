@@ -1,11 +1,11 @@
 import React from "react";
 import Hero from "@/components/policy/Hero";
-import PrivacyPolicy from "@/components/policy/PrivacyPolicy";
+import TermsAndConditions from "@/components/policy/TermsAndConditions";
 const page = () => {
   return (
     <>
-      <Hero text={"Privacy Policy"} />
-      <PrivacyPolicy />
+      <Hero text={"Terms And Conditions"} />
+      <TermsAndConditions />
     </>
   );
 };

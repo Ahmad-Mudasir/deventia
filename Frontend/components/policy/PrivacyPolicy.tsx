@@ -51,6 +51,73 @@ const PrivacyPolicy = () => {
         />
       </div>
       {/* data collection block end */}
+      {/* data usage block */}
+      <div className="mt-6">
+        <Heading text={"How We Use the Collected Information"} />
+        <Paragraph
+          text={
+            "The information we collect is used strictly for communication, scheduling consultations, and analyzing site performance. We do not share, sell, or disclose your information to third parties for marketing purposes. Any collected data is handled with care and is only accessible to authorized personnel within DevEntia Tech for the purposes of delivering and improving our services."
+          }
+        />
+        <Heading text={"Links to Third-Party Sites"} />
+        <Paragraph
+          text={
+            "Our website may contain links to external websites. DevEntia Tech (Pvt.) Ltd is not responsible for the privacy practices or content of these third-party sites. We encourage users to review the privacy policies of each site they visit before sharing any personal information."
+          }
+        />
+        <Heading text={"Disclosure of Information"} />
+        <Paragraph
+          text={
+            "Your privacy is important to us, and we do not sell or distribute your personal information to third parties for marketing purposes. We may share information with our trusted partners, service providers, or contractors solely to fulfill your requests or process transactions. These third parties are required to adhere to our Privacy Policy’s standards in handling your information."
+          }
+        />
+        <Paragraph
+          text={
+            "In certain situations, we may need to disclose your information to comply with legal obligations, such as responding to subpoenas, court orders, or government requests. We may also disclose information to protect our rights, investigate potential security threats, or address illegal activities or fraud."
+          }
+        />
+        <Heading text={"Choice And Consent"} />
+        <Paragraph
+          text={
+            "By providing your personal information on our site and accepting cookies, you consent to our collection and use of your information as described in this Privacy Policy. If you do not agree, you may choose not to register, decline cookies, or avoid providing optional information."
+          }
+        />
+        <Heading text={"Data Security"} />
+        <Paragraph
+          text={
+            "While we use commercially reasonable measures to protect your information, please note that complete security cannot be guaranteed. We implement SSL encryption to safeguard the transmission of sensitive information through our website."
+          }
+        />
+        <Heading text={"Commitment to Children’s Privacy"} />
+        <Paragraph
+          text={
+            "DevEntia Tech is dedicated to protecting the privacy of minors. Our website is not directed toward children under the age of 13, and we do not knowingly collect any information from them. If we learn that we have received information from a user under 13, we will take steps to remove it in compliance with applicable laws, including the Children’s Online Privacy Protection Act (COPPA)."
+          }
+        />
+        <Heading text={"International Users"} />
+        <Paragraph
+          text={
+            "By using our website, you agree that we may process and store your information both inside and outside of Pakistan, in accordance with this Privacy Policy and local legal requirements."
+          }
+        />
+        <Heading text={"Access to your information"} />
+        <Paragraph
+          text={
+            "As a service-based company, DevEntia Tech (Pvt.) Ltd. does not require account registration, nor do we store personal financial information or credit card details on our website. Visitors are free to explore our portfolio of services and products without the need to create an account or log in."
+          }
+        />
+        <Paragraph
+          text={
+            "If you are interested in our services, you have the option to schedule a consultation with us through our contact form. Any information you provide in this context (such as your name and contact details) will be used solely for communication related to your inquiry. Should you need to update or correct any contact details you've shared, you may reach out to us directly through the provided contact information on our website, and we will assist you in making any necessary adjustments"
+          }
+        />
+        <Paragraph
+          text={
+            "For any questions about this Privacy Policy or to request access to your information, please contact us."
+          }
+        />
+      </div>
+      {/* data usage block end */}
     </section>
   );
 };
