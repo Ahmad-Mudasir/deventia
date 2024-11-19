@@ -4,10 +4,12 @@ import Heading from "./Heading";
 
 const TermsAndConditions = () => {
   return (
-    <section className="p-20">
+    <section className="p-6 md:p-12 lg:p-20 relative z-50">
+      <div className="absolute bg-gradient-to-tl from-purple-500 to-transparent w-[250px] h-[250px] -right-0 -bottom-0 opacity-30 blur-3xl z-0"></div>
+
       <Paragraph text={"Last Updated On: 11/05/2024"} />
       <Heading text={"Welcome to DevEntia Tech (Pvt.) Ltd"} />
-      <p className="text-[14.58px] my-4 text-[#DFDFDF] leading-6">
+      <p className="text-[14.58px] my-4 text-[#DFDFDF] leading-6 text-justify">
         <span className="text-white font-bold">DevEntia Tech (Pvt.) Ltd.</span>{" "}
         is an IT consulting company that provides Managed IT Services, IT
         Support Services, IT Outsourcing, Technical Support, and Cloud Services.
@@ -16,7 +18,6 @@ const TermsAndConditions = () => {
         read these terms carefully, as they govern your use of our website and
         services.
       </p>
-      {/* data collection block */}
       <div>
         <Heading text={"Acceptance Of Terms "} />
         <Paragraph
@@ -33,7 +34,7 @@ const TermsAndConditions = () => {
         <Heading text={"Except as explicitly permitted, you may not:"} />
         <ul
           style={{ listStyle: "disc inside", color: "white" }}
-          className="my-4"
+          className="my-4 text-justify"
         >
           <li>
             Use the site for any commercial purpose beyond evaluating our
@@ -105,7 +106,6 @@ const TermsAndConditions = () => {
           }
         />
       </div>
-      {/* data collection block end */}
     </section>
   );
 };

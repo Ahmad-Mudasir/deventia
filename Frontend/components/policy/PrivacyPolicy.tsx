@@ -4,7 +4,8 @@ import Heading from "./Heading";
 
 const PrivacyPolicy = () => {
   return (
-    <section className="p-20">
+    <section className="p-6 md:p-12 lg:p-20 relative z-50">
+      <div className="absolute bg-gradient-to-tl from-purple-500 to-transparent w-[250px] h-[250px] -right-0 -bottom-0 opacity-30 blur-3xl z-0"></div>
       <Paragraph text={"Last Updated On: 11/05/2024"} />
       <Heading text={"Welcome to DevEntia Tech (Pvt.) Ltd"} />
       <p className="text-[14.58px] my-4 text-[#DFDFDF] leading-6">
