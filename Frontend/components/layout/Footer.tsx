@@ -12,7 +12,7 @@ const Footer = () => {
   const router = useRouter();
   return (
     <footer className="p-[5%] bg-[#161616] z-10 relative">
-      <div className="absolute bottom-0 left-0 footer-bg-img -z-10"></div>
+      <div className="absolute bottom-0 left-0 footer-bg-img"></div>
       <div className="grid grid-cols-2 md:grid-cols-4 w-full">
         <div>
           <h4 className="font-semibold text-xl text-white/35 mb-4">
@@ -54,6 +54,18 @@ const Footer = () => {
               href="Contact-us"
             >
               Contacts
+            </Link>
+            <Link
+              className="text-lg font-medium hover:underline hover:text-[#7471E6]"
+              href="terms-and-conditions"
+            >
+              Terms & Conditions
+            </Link>
+            <Link
+              className="text-lg font-medium hover:underline hover:text-[#7471E6]"
+              href="privacy-policy"
+            >
+              Privacy Policy
             </Link>
           </div>
         </div>
@@ -154,7 +166,7 @@ const Footer = () => {
           className="mr-0 ml-auto"
         />
       </div>
-      <div className="mt-20 mb-8 z-50">
+      <div className="mt-20 mb-8">
         <p className="font-medium text-lg text-white/35">
           <span
             onClick={() => router.push("/terms-and-conditions")}
