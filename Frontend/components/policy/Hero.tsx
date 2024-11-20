@@ -1,11 +1,12 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import heroBgImg from "@/assets/images/services-hero-bg.webp";
+import heroBgImg from "@/assets/images/privacy-bg.png";
 
 const Hero = ({ text }: { text: String }) => {
   return (
-    <header className="relative bg-[#161616] h-[75vh]">
+    <header className="relative  h-[75vh]">
+      <div className="absolute h-full w-full top-0 left-o"></div>
       <Image
         src={heroBgImg}
         alt="people"
