@@ -17,6 +17,7 @@ const Hero = ({ text }: { text: String }) => {
           {text}
         </h1>
       </div>
+      {/* this is a comment */}
     </header>
   );
 };
