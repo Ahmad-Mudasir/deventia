@@ -137,7 +137,15 @@ const config: Config = {
     require('tailwind-scrollbar'),
   ],
   darkMode: 'class',
+
+  safelist: [
+    "bg-blue-500",
+    "bg-cyan-500",
+    "bg-purple-500", // Add any other dynamic classes you use
+  ],
 };
+
+
 
 function addVariablesForColors({ addBase, theme }: any) {
   let allColors = flattenColorPalette(theme('colors'));

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background: #141414;
+  background: #0B0B0B;
   color: white;
 }
 
@@ -418,3 +418,45 @@ body {
     transform: translate(100px, 100px) rotate(112deg);
   }
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* @layer utilities {
+  .gradient-borders {
+    border-width: 1px 1px 1px 0px;
+    border-style: solid;
+    border-image-source: linear-gradient(0deg, #4848FF 100%, #000052 100%);
+    border-image-slice: 1;
+  }
+} */
+
+.glow{
+color: transparent;
+-webkit-text-stroke: 1px #4848FF;
+font-size: 90px;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+font-weight: 700;
+}
+
+
+
+.custom-prev-btn:hover,
+.custom-next-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+

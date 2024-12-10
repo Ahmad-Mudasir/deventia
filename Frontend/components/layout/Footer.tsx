@@ -1,13 +1,15 @@
-import Image from 'next/image';
-import React from 'react';
-import logoImg from '@/assets/images/logoImg.gif';
+"use client";
+import Image from "next/image";
+import React from "react";
+import logoImg from "@/assets/images/logoImg.gif";
 // import { euroStyle } from '@/utils/fonts';
-import Link from 'next/link';
-import { FaInstagram, FaLinkedin, FaSquareFacebook } from 'react-icons/fa6';
-import { LuSlack } from 'react-icons/lu';
-import { FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
-
+import Link from "next/link";
+import { FaInstagram, FaLinkedin, FaSquareFacebook } from "react-icons/fa6";
+import { LuSlack } from "react-icons/lu";
+import { FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 const Footer = () => {
+  const router = useRouter();
   return (
     <footer className="p-[5%] bg-[#161616] z-10 relative">
       <div className="absolute bottom-0 left-0 footer-bg-img"></div>
@@ -52,6 +54,18 @@ const Footer = () => {
               href="Contact-us"
             >
               Contacts
+            </Link>
+            <Link
+              className="text-lg font-medium hover:underline hover:text-[#7471E6]"
+              href="terms-and-conditions"
+            >
+              Terms & Conditions
+            </Link>
+            <Link
+              className="text-lg font-medium hover:underline hover:text-[#7471E6]"
+              href="privacy-policy"
+            >
+              Privacy Policy
             </Link>
           </div>
         </div>
@@ -153,8 +167,22 @@ const Footer = () => {
         />
       </div>
       <div className="mt-20 mb-8">
-        <p className="font-medium text-lg text-white/35 ">Copyright</p>
-        <p className="font-medium text-lg text-white/35 ">Privacy</p>
+        <p className="font-medium text-lg text-white/35">
+          <span
+            onClick={() => router.push("/terms-and-conditions")}
+            className="hover:text-white cursor-pointer"
+          >
+            Copyright
+          </span>
+        </p>
+        <p className="font-medium text-lg text-white/35">
+          <span
+            onClick={() => router.push("/privacy-policy")}
+            className="hover:text-white cursor-pointer"
+          >
+            Privacy
+          </span>
+        </p>
         <p className="font-medium text-lg text-white/35 ">
           All rights reserved
         </p>
