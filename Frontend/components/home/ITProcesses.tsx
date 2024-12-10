@@ -109,21 +109,21 @@ export default function ITProcess() {
     activeProcess === "staff" ? staffAugmentationSteps : developmentSteps;
 
   return (
-    <div className="min-h-screen bg-[#0B0B14] text-white">
+    <div className="min-h-screen bg-[#0B0B14] px-4 md:px-12 text-white">
       {/* Top Navigation */}
       <div className="max-w-[1400px] mx-auto px-6 pt-8">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-4 md:items-center border-b border-[#404040] pb-4">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-4 lg:items-center border-b border-[#404040] pb-4">
           <div className="flex items-center gap-2">
             <span className="text-[#4848FF]">•</span>
             <span className="text-gray-400">
               {activeProcess === "staff" ? "Staff Augmentation" : "Development"}{" "}
-              Process Development Process
+               Process
             </span>
           </div>
           <div className="flex gap-4">
             <button
               onClick={() => setActiveProcess("development")}
-              className={`px-4 md:px-6 py-1 text-xs md:py-2 rounded-full transition-colors ${
+              className={`px-4 lg:px-6 py-1 text-[8px] xs:text-xs lg:py-2 rounded-full transition-colors ${
                 activeProcess === "development"
                   ? "bg-[#4848FF]"
                   : "bg-gray-800/50"
@@ -133,7 +133,7 @@ export default function ITProcess() {
             </button>
             <button
               onClick={() => setActiveProcess("staff")}
-              className={`px-4 md:px-6 py-1 text-xs md:py-2 rounded-full transition-colors ${
+              className={`px-4 lg:px-6 py-1 text-[8px] xs:text-xs lg:py-2 rounded-full transition-colors ${
                 activeProcess === "staff" ? "bg-[#4848FF]" : "bg-gray-800/50"
               }`}
             >
@@ -145,7 +145,7 @@ export default function ITProcess() {
 
       {/* Main Content */}
       <div className="max-w-[1400px] mx-auto px-6 pt-7">
-        <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-12">
+        <h1 className="text-lg xs:text-2xl md:text-4xl lg:text-5xl font-bold mb-12">
           Our IT{" "}
           {activeProcess === "staff" ? "Staff Augmentation" : "Development"}{" "}
           Process
@@ -167,7 +167,7 @@ export default function ITProcess() {
                 <h2 className="text-lg md:text-2xl lg:text-xl font-bold mb-6">
                   {currentSteps[activeIndex].title}
                 </h2>
-                <p className="text-[#CCCCCC] text-lg md:text-2xl lg:text-[12px] max-w-2xl">
+                <p className="text-[#CCCCCC]   text-[12px] md:text-lg lg:text-[12px] max-w-2xl">
                   {currentSteps[activeIndex].description}
                 </p>
               </div>
@@ -206,12 +206,12 @@ export default function ITProcess() {
           </div>
 
           {/* Right Side - Placeholder for 3D Steps */}
-          <div className=" relative border-t-[1px] lg:border-t-0 lg:border-l-[1px] border-[#404040] mx-auto w-full  md:w-[600px] mt-3 lg:mt-0 p-10 h-[281px]">
+          <div className=" relative border-t-[1px] lg:border-t-0 lg:border-l-[1px]  border-[#404040] mx-auto w-full  md:w-[600px] mt-3 lg:mt-0 pl-5 pt-12 h-[281px]">
             {/* Add 3D visuals or steps here if needed */}
             {currentSteps.map((step, index) => (
               <>
                 <div
-                  className={` flex  items-center justify-start mb-4
+                  className={` flex  items-center justify-start mb-[21px] md:mb-4
                 ${index % 2 !== 0 ? "justify-end " : "justify-start"}
                 `}
                   onClick={() => handleRightSectionClick(index)}
@@ -219,12 +219,12 @@ export default function ITProcess() {
                 >
                   {/* text and line parent div */}
                   <div
-                    className={`flex justify-center items-center
+                    className={`flex w-full overflow-hidden justify-start items-center
                    ${index % 2 !== 0 ? "flex-row-reverse" : ""}
                   `}
                   >
                     <div
-                      className={`p-1 text-[70%] rounded-lg px-1 transition-all flex  ${
+                      className={`p-1 text-[8px] md:text-[70%] rounded-lg px-1 transition-all flex  ${
                         activeIndex === index
                           ? "bg-[#4848FF] text-white"
                           : "bg-gray-700 text-[#CCCCCC]"
@@ -233,7 +233,7 @@ export default function ITProcess() {
                       {step.number}. {step.title}{" "}
                     </div>
                     <div
-                      className={`w-24 h-1  border-b-2  border-dotted
+                      className={`w-[21vw] md:w-[154px] lg:w-[11vw] h-1  border-b-2  border-dotted
                         ${
                           activeIndex === index
                             ? "border-[#4848FF]"
@@ -243,18 +243,17 @@ export default function ITProcess() {
                     ></div>
                   </div>
 
-                  {/*  <div>{step.description}</div> */}
                 </div>
-                <div className="absolute top-4 flex flex-col justify-center items-center w-[20%] h-5/6 left-[45%] mx-auto ">
+                <div className="hidden absolute top-[25px] xs:flex flex-col justify-center items-center w-[20%] h-5/6 left-[45%] mx-auto ">
                   {[...Array(5)].map((_, imgIndex) => (
                     <div
                       key={imgIndex}
-                      className={`w-40 h-[40px] rounded-full transition-all cursor-pointer `}
+                      className={`w-[100px] h-[41px]  perspective-1000   rounded-full transition-all cursor-pointer `}
                     >
                       <Image
                         width={50}
                         height={50}
-                        sizes="sm"
+                        
                         onClick={() => handleRightSectionClick(imgIndex)}
                         src={
                           activeIndex === imgIndex
@@ -262,7 +261,7 @@ export default function ITProcess() {
                             : grayimage // Default Image
                         }
                         alt={`Step ${index + 1} Image ${imgIndex + 1}`}
-                        className="w-[141px] h-[49px] object-cover rounded-full"
+                        className="w-full h-full rotate-x--30 transition-3d object-cover rounded-full "
                       />
                     </div>
                   ))}

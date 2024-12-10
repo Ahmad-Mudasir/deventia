@@ -17,6 +17,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '490px', // Define your custom breakpoint
+      },
       keyframes: {
         blob: {
           '0%': {

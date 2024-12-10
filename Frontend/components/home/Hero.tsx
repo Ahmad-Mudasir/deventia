@@ -33,13 +33,13 @@ const Hero = () => {
   };
 
   return (
-    <div className=" relative bg-[#0B0B0B] h-[650px] md:h-[800px] lg:h-[912px]">
+    <div className=" relative bg-[#0B0B0B] h-[650px] md:h-[800px]  lg:h-[912px]">
       {/* Gradient Background */}
 
       {/* lighting effect */}
       <BlueGlowEffect
         className="-top-10 -left-4  "
-        size={400}
+        size={200}
         blur={100}
         opacity={0.5}
         rotate={0}
