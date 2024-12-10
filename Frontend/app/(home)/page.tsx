@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <>
-      <TracingBeam>
+      
         <Hero />
         <WhyDeventia />
         <OurExpertise/>
@@ -49,7 +49,7 @@ const page = () => {
         {/* <Testimonial /> */}
         {/* <Portfolio /> */}
        <Faqs />
-      </TracingBeam>
+      
     </>
   );
 };
