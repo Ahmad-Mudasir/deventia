@@ -176,16 +176,19 @@ export const projects = [
     title: 'Makewell landing page design',
     subtitle: 'Web Landing page',
     image: projectdesktop1,
+    link: '/project-one',
   },
   {
     title: 'Telegram landing page design',
     subtitle: 'Web Landing page',
     image: projectdesktop2,
+    link: '/project-one',
   },
   {
     title: 'ISA landing page design',
     subtitle: 'Web Landing page',
     image: projectdesktop3,
+    link: 'https://isaconsulting.com/',
   },
 ]
 

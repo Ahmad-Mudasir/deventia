@@ -36,7 +36,21 @@ const OurExpertise: React.FC = () => {
               <div className="flex flex-col md:flex-row w-full md:w-[65vw] lg:w-[100%] border border-[#4848FF] group">
                 {/* Step Number */}
                 <div className="w-full md:w-48 border-b md:border-b-0 md:border-r border-[#000052] p-4 md:p-8 flex items-center justify-center">
-                  <span className="text-4xl md:text-5xl lg:text-7xl font-bold text-white group-hover:text-[#4848FF] transition-colors">
+                  <span
+                    className="
+                            text-4xl md:text-5xl lg:text-7xl 
+                            font-bold 
+                            text-white
+                            group-hover:text-transparent 
+                            group-hover:bg-clip-text
+                            group-hover:bg-gradient-to-b 
+                            group-hover:from-[#4848FF] 
+                            group-hover:via-[#4848FF] 
+                            group-hover:to-[#1a1a2e]
+                            transition-all 
+                            duration-500
+  "
+                  >
                     {step.number}
                   </span>
                 </div>
