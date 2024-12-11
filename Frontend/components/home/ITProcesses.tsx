@@ -117,7 +117,7 @@ export default function ITProcess() {
             <span className="text-[#4848FF]">•</span>
             <span className="text-gray-400">
               {activeProcess === "staff" ? "Staff Augmentation" : "Development"}{" "}
-               Process
+              Process
             </span>
           </div>
           <div className="flex gap-4">
@@ -211,20 +211,20 @@ export default function ITProcess() {
             {currentSteps.map((step, index) => (
               <>
                 <div
-                  className={` flex  items-center justify-start mb-[21px] md:mb-4
-                ${index % 2 !== 0 ? "justify-end " : "justify-start"}
+                  className={` flex  items-center justify-start mb-[27px] xs:mb-[21px] md:mb-4
+                ${index % 2 !== 0 ? "xs:justify-end justify-start" : " "}
                 `}
                   onClick={() => handleRightSectionClick(index)}
                   key={index}
                 >
                   {/* text and line parent div */}
                   <div
-                    className={`flex w-full overflow-hidden justify-start items-center
-                   ${index % 2 !== 0 ? "flex-row-reverse" : ""}
+                    className={`flex w-full overflow-hidden  justify-start items-center
+                   ${index % 2 !== 0 ? "xs:flex-row-reverse " : ""}
                   `}
                   >
                     <div
-                      className={`p-1 text-[8px] md:text-[70%] rounded-lg px-1 transition-all flex  ${
+                      className={`p-1  text-[5px] xs:text-[8px] md:text-[70%] rounded-lg px-1 transition-all flex  ${
                         activeIndex === index
                           ? "bg-[#4848FF] text-white"
                           : "bg-gray-700 text-[#CCCCCC]"
@@ -233,7 +233,7 @@ export default function ITProcess() {
                       {step.number}. {step.title}{" "}
                     </div>
                     <div
-                      className={`w-[21vw] md:w-[154px] lg:w-[11vw] h-1  border-b-2  border-dotted
+                      className={`w-[50%] xs:w-[21vw] md:w-[154px] lg:w-[11vw] h-1  border-b-2  border-dotted
                         ${
                           activeIndex === index
                             ? "border-[#4848FF]"
@@ -242,18 +242,16 @@ export default function ITProcess() {
                     `}
                     ></div>
                   </div>
-
                 </div>
-                <div className="hidden absolute top-[25px] xs:flex flex-col justify-center items-center w-[20%] h-5/6 left-[45%] mx-auto ">
+                <div className=" absolute top-[25px] flex flex-col justify-center items-center w-[20%] h-5/6 left-[70%] xs:left-[45%] mx-auto ">
                   {[...Array(5)].map((_, imgIndex) => (
                     <div
                       key={imgIndex}
-                      className={`w-[100px] h-[41px]  perspective-1000   rounded-full transition-all cursor-pointer `}
+                      className={`w-[100px] h-[42px] xs:h-[41px]  perspective-1000   rounded-full transition-all cursor-pointer `}
                     >
                       <Image
                         width={50}
                         height={50}
-                        
                         onClick={() => handleRightSectionClick(imgIndex)}
                         src={
                           activeIndex === imgIndex

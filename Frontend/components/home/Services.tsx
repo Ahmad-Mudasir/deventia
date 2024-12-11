@@ -56,7 +56,7 @@ export default function ServiceCards() {
                     <div className="absolute bottom-0 left-0 w-24 h-[2px] bg-white/40" />
                   </div>
 
-                  <h3 className="text-[24px]  lg:text-[23px] font-bold text-[#4848FF]">
+                  <h3 className="text.[20px] xs:text-[24px]  lg:text-[23px] font-bold text-[#4848FF]">
                     {service.title}
                   </h3>
 
@@ -75,7 +75,7 @@ export default function ServiceCards() {
                         className="flex items-center gap-3 text-white"
                       >
                         <FaRegSquareCheck className="h-5 w-5 text-[#5865F2]" />
-                        <span className="text-[13px]">{item}</span>
+                        <span className="text-[10px] xs:text-[13px]">{item}</span>
                       </li>
                     ))}
                   </ul>

@@ -153,23 +153,23 @@ const Hero = () => {
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5 }}
                   src={video}
-                  controls
+                  
                   width={400}
                   height={200}
-                  className="w-[100%] bg-white h-[90%] mx-auto rounded-xl  object-cover"
+                  className="w-[100%] bg-blue-500 h-[90%] mx-auto rounded-xl  object-cover"
                 />
               </SwiperSlide>
             ))}
              
           </Swiper>
          
-          
+          <div className="hero-pagination flex gap-2   justify-center absolute mx-auto bottom-0"></div>
         </div>
-        <div className="hero-pagination flex gap-2   justify-center absolute mx-auto bottom-20"></div>
+       
         {/* Adjust Pagination Position */}
         <style jsx global>{`
           .hero-pagination .swiper-pagination-bullet{
-            bottom: -0px !important; /* Move outside carousel */
+            bottom: 20px !important; /* Move outside carousel */
             background-color: white !important;
           }
          
