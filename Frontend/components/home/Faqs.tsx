@@ -15,8 +15,8 @@ const Faqs = () => {
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#0B0B14] text-white py-16 px-4 md:px-8 lg:px-16 ">
          <BlueGlowEffect
-        className="bottom-0 absolute   "
-        size={400}
+        className="bottom-0 absolute  "
+        size={250}
         blur={100}
         opacity={0.3}
         rotate={0}
@@ -48,7 +48,7 @@ const Faqs = () => {
                 onClick={() => toggleFAQ(index)}
                 className="w-full py-6 flex items-center justify-between border-t border-gray-800 text-left"
               >
-                <span className="text-xl font-medium pr-8">{faq.question}</span>
+                <span className="text-xl  font-medium pr-8">{faq.question}</span>
                 <span className="flex-shrink-0">
                   {openIndex === index ? (
                     <FiMinus className="w-6 h-6" />
