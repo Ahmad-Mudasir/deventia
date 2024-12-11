@@ -48,7 +48,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`navbar  lg:h-24  backdrop-blur-md sticky m-auto shadow-sm z-20 flex lg:justify-center  !p-0 w-[85%]  top-2 max-w-[1750px] ${
+      className={`navbar  lg:h-24  backdrop-blur-md sticky m-auto shadow-sm z-20 flex lg:justify-center  !p-0 w-[100%]  top-0 max-w-[1750px] ${
         inter.className
       } !font-[400] transition-transform duration-300 ${
         showNavbar ? "translate-y-0" : "!top-0 -translate-y-full "
@@ -397,7 +397,7 @@ const Navbar = () => {
         Contact Us <MdOutlineArrowOutward size={25} />
       </Link>
 
-      <hr className="bg-[#FFFFFF17] h-1 -z-10 lg:w-[98%] w-[100%] m-auto opacity-5  absolute bottom-0" />
+      <hr className="bg-[#FFFFFF17] h-1 -z-10 lg:w-[86%] w-[100%] m-auto opacity-5  absolute bottom-0" />
     </div>
   );
 };

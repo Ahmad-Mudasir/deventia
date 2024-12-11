@@ -109,7 +109,7 @@ export default function ITProcess() {
     activeProcess === "staff" ? staffAugmentationSteps : developmentSteps;
 
   return (
-    <div className="min-h-screen bg-[#0B0B14] px-4 md:px-12 text-white">
+    <div className="min-h-screen  lg:min-h-[100%]  bg-[#0B0B14] px-4 md:px-12 text-white">
       {/* Top Navigation */}
       <div className="max-w-[1400px] mx-auto px-6 pt-8">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-4 lg:items-center border-b border-[#404040] pb-4">
@@ -151,19 +151,19 @@ export default function ITProcess() {
           Process
         </h1>
 
-        <button className="bg-[#4848FF] px-3 py-1 md:px-8 md:py-3 rounded-full flex items-center gap-2 mb-12 hover:bg-[#4848FF]/90 transition-colors">
+        <button className="bg-[#4848FF] px-3 py-1 md:px-4 md:py-2  rounded-full flex items-center gap-2 mb-12 hover:bg-[#4848FF]/90 transition-colors">
           Book Consultation
           <TiArrowRight className="w-5 h-5" />
         </button>
 
         <div className=" border-t border-t-[#404040] flex flex-col lg:flex-row">
           {/* Left Side - Carousel */}
-          <div className="relative  w-full md:w-[80%] lg:w-[44%]  h-[310px]">
+          <div className="relative  w-full md:w-[80%] lg:w-[44%]  h-[310px] transition-all duration-700 ease-in-out">
             <div className="relative h-full">
               <div className="absolute top-0 right-0 text-[90px] font-bold text-[#525252] leading-none">
                 {currentSteps[activeIndex].number}.
               </div>
-              <div className="pt-28">
+              <div className="pt-28 ">
                 <h2 className="text-lg md:text-2xl lg:text-xl font-bold mb-6">
                   {currentSteps[activeIndex].title}
                 </h2>
@@ -177,7 +177,7 @@ export default function ITProcess() {
                 <div className="flex  gap-2 mt-0">
                   <button
                     onClick={goToPreviousStep}
-                    className="bg-gray-700 hover:bg-gray-600 text-white p-2 rounded-full"
+                    className="bg-gray-700 hover:bg-gray-600 text-white p-2   rounded-full"
                   >
                     <TiArrowLeft className="w-6 h-6" />
                   </button>
@@ -206,7 +206,7 @@ export default function ITProcess() {
           </div>
 
           {/* Right Side - Placeholder for 3D Steps */}
-          <div className=" relative border-t-[1px] lg:border-t-0 lg:border-l-[1px]  border-[#404040] mx-auto w-full  md:w-[600px] mt-3 lg:mt-0 pl-5 pt-12 h-[281px]">
+          <div className=" relative border-t-[1px] lg:border-t-0 lg:border-l-[1px]  border-[#404040] mx-auto w-full  md:w-[600px] mt-3 lg:mt-0 pl-0  md:pl-5 pt-12 h-[281px]">
             {/* Add 3D visuals or steps here if needed */}
             {currentSteps.map((step, index) => (
               <>
@@ -224,7 +224,7 @@ export default function ITProcess() {
                   `}
                   >
                     <div
-                      className={`p-1  text-[5px] xs:text-[8px] md:text-[70%] rounded-lg px-1 transition-all flex  ${
+                      className={`p-1  text-[5px] xs:text-[8px] md:text-[70%] rounded-lg px-1 transition-all duration-700 flex ${
                         activeIndex === index
                           ? "bg-[#4848FF] text-white"
                           : "bg-gray-700 text-[#CCCCCC]"
@@ -233,7 +233,12 @@ export default function ITProcess() {
                       {step.number}. {step.title}{" "}
                     </div>
                     <div
-                      className={`w-[50%] xs:w-[21vw] md:w-[154px] lg:w-[11vw] h-1  border-b-2  border-dotted
+                      className={`w-[50%] xs:w-[21vw] md:w-[154px] lg:w-[10vw] h-1  border-b-2 transition-all duration-500  border-dotted
+                         ${
+                           activeProcess == "staff"
+                             ? "lg:w-[10vw]"
+                             : "lg:w-[12vw]"
+                         }
                         ${
                           activeIndex === index
                             ? "border-[#4848FF]"
@@ -243,11 +248,11 @@ export default function ITProcess() {
                     ></div>
                   </div>
                 </div>
-                <div className=" absolute top-[25px] flex flex-col justify-center items-center w-[20%] h-5/6 left-[70%] xs:left-[45%] mx-auto ">
+                <div className=" absolute top-[25px] flex flex-col justify-center  items-center w-[20%] h-5/6 left-[70%] xs:left-[45%] mx-auto ">
                   {[...Array(5)].map((_, imgIndex) => (
                     <div
                       key={imgIndex}
-                      className={`w-[100px] h-[42px] xs:h-[41px]  perspective-1000   rounded-full transition-all cursor-pointer `}
+                      className={`w-[100px] h-[42px] xs:h-[41px]  perspective-1000   rounded-full  cursor-pointer `}
                     >
                       <Image
                         width={50}
@@ -259,7 +264,7 @@ export default function ITProcess() {
                             : grayimage // Default Image
                         }
                         alt={`Step ${index + 1} Image ${imgIndex + 1}`}
-                        className="w-full h-full rotate-x--30 transition-3d object-cover rounded-full "
+                        className="w-full h-full rotate-x--30 transition-3d object-cover  rounded-full "
                       />
                     </div>
                   ))}
