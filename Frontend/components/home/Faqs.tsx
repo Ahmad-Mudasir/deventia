@@ -1,7 +1,7 @@
 "use client";
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { FiPlus, FiMinus } from "react-icons/fi";
+import { motion } from "framer-motion"; // Import Framer Motion
 import { faqs, FAQItem } from "@/data/data";
 import BlueGlowEffect from "./BlueGlowEffect";
 
@@ -13,9 +13,9 @@ const Faqs = () => {
   };
 
   return (
-    <div className="relative min-h-screen lg:min-h-[600px] overflow-hidden bg-[#0B0B14] text-white py-16 lg:py-20 px-4 md:px-8 lg:px-16 ">
-         <BlueGlowEffect
-        className="bottom-0 absolute  "
+    <div className="relative min-h-screen lg:min-h-[600px] overflow-hidden bg-[#0B0B14] text-white py-16 lg:py-20 px-4 md:px-8 lg:px-16">
+      <BlueGlowEffect
+        className="bottom-0 absolute"
         size={250}
         blur={100}
         opacity={0.3}
@@ -30,25 +30,23 @@ const Faqs = () => {
             comprehensive educational resources and answering frequently asked
             questions to help our clients.
           </p>
-          <div className="flex items-center  gap-4">
+          <div className="flex items-center gap-4">
             <button className="px-6 py-3 rounded-full border border-gray-700 hover:border-[#4848FF] transition-colors">
               More Questions
             </button>
-            <button className=" h-6  border-b-[0.5px] border-white  ">
-              Contact Us
-            </button>
+            <button className="h-6 border-b-[0.5px] border-white">Contact Us</button>
           </div>
         </div>
 
         {/* Right Column */}
-        <div className="space-y-1 ">
+        <div className="space-y-1">
           {faqs.map((faq: FAQItem, index: number) => (
-            <div key={index}>
+            <div key={index} className="border-t border-gray-800">
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full py-6 flex items-center justify-between border-t border-gray-800 text-left"
+                className="w-full py-6 flex items-center justify-between text-left"
               >
-                <span className="text-xl  font-medium pr-8">{faq.question}</span>
+                <span className="text-xl font-medium pr-8">{faq.question}</span>
                 <span className="flex-shrink-0">
                   {openIndex === index ? (
                     <FiMinus className="w-6 h-6" />
@@ -57,9 +55,17 @@ const Faqs = () => {
                   )}
                 </span>
               </button>
-              {openIndex === index && (
-                <div className="pb-6 text-gray-400">{faq.answer}</div>
-              )}
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{
+                  opacity: openIndex === index ? 1 : 0,
+                  height: openIndex === index ? "auto" : 0,
+                }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="overflow-hidden"
+              >
+                <p className="text-gray-400 py-4">{faq.answer}</p>
+              </motion.div>
             </div>
           ))}
         </div>

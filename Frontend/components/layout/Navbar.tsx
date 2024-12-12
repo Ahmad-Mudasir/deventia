@@ -48,7 +48,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`navbar  lg:h-24  backdrop-blur-md sticky m-auto shadow-sm z-20 flex lg:justify-center  !p-0 w-[100%]  top-0 max-w-[1750px] ${
+      className={`navbar top-1 xs:top-0 lg:h-24  backdrop-blur-md sticky m-auto shadow-sm z-20 flex lg:justify-center  !p-0 w-[100%]   max-w-[1750px] ${
         inter.className
       } !font-[400] transition-transform duration-300 ${
         showNavbar ? "translate-y-0" : "!top-0 -translate-y-full "
