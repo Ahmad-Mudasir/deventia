@@ -131,10 +131,10 @@ const Footer = () => {
         </div>
         <div className="">
           <a
-            href="mailto:prosper@deventiateck.com"
+            href="mailto:prosper@deventiatech.com"
             className="block mt-12 hover:underline hover:text-[#7471E6]"
           >
-            prosper@deventiateck.com
+            prosper@deventiatech.com
           </a>
           <h4 className="font-semibold text-xl text-white/35 my-4 md:mt-20">
             Let’s chat

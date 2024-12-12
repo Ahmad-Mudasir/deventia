@@ -24,6 +24,7 @@ const Navbar = () => {
     setHovered({ hover: hover, name: name });
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleScroll = () => {
     if (typeof window !== "undefined") {
       const currentScrollY = window.scrollY;
@@ -44,7 +45,7 @@ const Navbar = () => {
         window.removeEventListener("scroll", handleScroll);
       };
     }
-  }, [lastScrollY]);
+  }, [handleScroll, lastScrollY]);
 
   return (
     <div

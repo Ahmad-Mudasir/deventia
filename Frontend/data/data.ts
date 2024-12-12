@@ -297,19 +297,19 @@ export const accordionData = [
 
 export const statsData = [
   {
-    value: 30,
+    value: 35,
     title: 'Projects',
   },
   {
-    value: 15,
+    value: 17,
     title: 'Employees',
   },
   {
-    value: 10,
+    value: 12,
     title: 'Clients',
   },
   {
-    value: 1,
+    value: 1.5,
     title: 'Years',
   },
 ];

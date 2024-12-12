@@ -30,24 +30,34 @@ const OurExpertise: React.FC = () => {
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
               className={`relative mb-16 md:w-[65vw] lg:w-[90%] w-full group ${
                 index % 2 === 1 ? "md:ml-32" : ""
               }`}
             >
               {/* Step Box */}
               <div
-                className="flex flex-col md:flex-row w-full md:w-[65vw] lg:w-[100%] border border-[#4848FF] group transition-all 
-    duration-200 ease-in-out  group-hover:border-b-[#000052]"
+                className="flex flex-col relative md:flex-row w-full 
+                           md:w-[65vw] lg:w-[100%] border border-t-[#000052] 
+                           border-l-0 border-r-0 beforeLeft beforeRight 
+                           border-[#4848FF] group transition-all 
+                            duration-200 ease-in-out"
               >
                 {/* Step Number */}
-                <div className="w-full md:w-48 border-b md:border-b-0   md:border-r border-[#000052] p-4 md:p-8 flex items-center justify-center">
+                <div className="relative w-full md:w-48 border-b 
+                               md:border-b-0 beforeRight  md:border-r-0  
+                               border-[#000052] p-4 md:p-8 flex 
+                               items-center justify-center">
                   <span
                     className="
                             text-4xl md:text-5xl lg:text-7xl 
-                            font-bold text-white transition-all duration-200 ease-in group-hover:bg-clip-text group-hover:bg-gradient-to-b group-hover:from-[#000052] group-hover:via-[#4848FF] group-hover:to-[#1a1a2e] group-hover:text-transparent"
+                            font-bold text-white transition-all 
+                            duration-200 ease-in group-hover:bg-clip-text 
+                            group-hover:bg-gradient-to-b group-hover:from-[#000052] 
+                            group-hover:via-[#4848FF] group-hover:to-[#1a1a2e] 
+                            group-hover:text-transparent"
                   >
                     {step.number}
                   </span>
@@ -55,7 +65,9 @@ const OurExpertise: React.FC = () => {
 
                 {/* Step Content */}
                 <div className="flex-1 p-4 md:p-8">
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2 md:mb-4 group-hover:text-[#4848FF] transition-colors duration-200 ease-in-out">
+                  <h3 className="text-xl md:text-2xl font-bold 
+                               text-white mb-2 md:mb-4 group-hover:text-[#4848FF] 
+                               transition-colors duration-200 ease-in-out">
                     {step.title}
                   </h3>
                   <p className="text-gray-300 text-sm md:text-base">

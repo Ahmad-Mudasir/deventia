@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { TiArrowRight, TiArrowLeft } from "react-icons/ti";
+
 import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -11,6 +12,7 @@ import "swiper/css/pagination";
 
 import grayimage from "../../assets/images/black3dpng.png";
 import Blueimage from "../../assets/images/blue3d.png";
+import Link from "next/link";
 interface ProcessStep {
   number: string;
   title: string;
@@ -150,12 +152,14 @@ export default function ITProcess() {
           {activeProcess === "staff" ? "Staff Augmentation" : "Development"}{" "}
           Process
         </h1>
-
+     <Link
+      href={"/Contact-us"}
+     >
         <button className="bg-[#4848FF] px-3 py-1 md:px-4 md:py-2  rounded-full flex items-center gap-2 mb-12 hover:bg-[#4848FF]/90 transition-colors">
           Book Consultation
           <TiArrowRight className="w-5 h-5" />
         </button>
-
+        </Link>
         <div className=" border-t border-t-[#404040] flex flex-col lg:flex-row">
           {/* Left Side - Carousel */}
           <div className="relative  w-full md:w-[80%] lg:w-[44%]  h-[310px] transition-all duration-700 ease-in-out">
@@ -209,7 +213,7 @@ export default function ITProcess() {
           <div className=" relative border-t-[1px] lg:border-t-0 lg:border-l-[1px]  border-[#404040] mx-auto w-full  md:w-[600px] mt-3 lg:mt-0 pl-0  md:pl-5 pt-12 h-[281px]">
             {/* Add 3D visuals or steps here if needed */}
             {currentSteps.map((step, index) => (
-              <>
+              <div key={index}>
                 <div
                   className={` flex  items-center justify-start mb-[27px] xs:mb-[21px] md:mb-4
                 ${index % 2 !== 0 ? "xs:justify-end justify-start" : " "}
@@ -269,7 +273,7 @@ export default function ITProcess() {
                     </div>
                   ))}
                 </div>
-              </>
+              </div>
             ))}
 
             {/*  <div className="absolute top-10 w-40 h-5/6 left-[40%] mx-auto bg-red-500">

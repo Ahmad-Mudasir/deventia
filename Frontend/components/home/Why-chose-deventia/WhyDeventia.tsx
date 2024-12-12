@@ -8,13 +8,13 @@ import { motion } from "framer-motion";
 
 const WhyDeventia = () => {
   return (
-    <div className="min-h-[80vh] py-4 mb-5 overflow-hidden relative">
+    <div className="min-h-[80vh] py-4 mb-5  relative">
       {/* Blue lighting */}
       <BlueGlowEffect
-        className="top-12 -right-12"
+        className="top-5 right-14 xs:right-0"
         size={400}
-        blur={100}
-        opacity={0.5}
+        blur={90}
+        opacity={0.4}
         rotate={0}
       />
 
@@ -41,8 +41,8 @@ const WhyDeventia = () => {
       </div>
 
       {/* Floating orbs */}
-      <div className="absolute top-20 right-20 w-4 h-4 rounded-full bg-purple-400/50 animate-pulse" />
-      <div className="absolute bottom-40 left-20 w-3 h-3 rounded-full bg-green-400/50 animate-pulse" />
+      <div className="absolute top-5 left-32 md:right-40 w-[25px] h-[25px] rounded-[41px] bg-gradient-to-b from-[#AD6AFF] to-[#AD6AFF00]" />
+      <div className="absolute top-12 right-[10%] lg:right-[30%]  w-[13px] h-[13px] rounded-[21px] bg-gradient-to-b from-[#7ADB78] to-[#7ADB7800]" />
     </div>
   );
 };

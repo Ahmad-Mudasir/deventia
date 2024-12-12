@@ -174,9 +174,12 @@ const Hero = () => {
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5 }}
                   src={video}
+                  controls={false} // Explicitly set to false
                   autoPlay
                   muted
                   loop={false}
+                  playsInline // Important for mobile compatibility
+                  
                   onPlay={() => {
                     if (swiperRef.current) swiperRef.current.autoplay.stop(); // Stop autoplay on video play
                   }}
