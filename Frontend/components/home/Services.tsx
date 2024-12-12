@@ -53,12 +53,7 @@ export default function ServiceCards() {
               {/* Content */}
               <div className="absolute inset-0 p-5  flex flex-col  transition-all duration-300 group-hover:justify-start">
                 <div className="space-y-2 transform transition-all duration-700 group-hover:translate-y-0 translate-y-[200px]">
-                  <div className="relative">
-                    <span className="inline-block text-gray-200 text-sm pb-1">
-                      Healthcare
-                    </span>
-                    <div className="absolute bottom-0 left-0 w-24 h-[2px] bg-white/40" />
-                  </div>
+                 
 
                   <h3 className="text.[20px] xs:text-[24px]  lg:text-[23px] font-bold text-[#4848FF]">
                     {service.title}
