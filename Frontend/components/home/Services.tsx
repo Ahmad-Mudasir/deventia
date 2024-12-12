@@ -32,8 +32,12 @@ export default function ServiceCards() {
       <div className=" mx-auto ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-3">
           {ourServiceData.map((service, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
               className="group relative  h-[300px] w-full   overflow-hidden"
             >
               {/* Background Image */}
@@ -81,7 +85,7 @@ export default function ServiceCards() {
                   </ul>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

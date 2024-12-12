@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
+import { motion } from "framer-motion";
 import { StaticImageData } from "next/image";
 import { GoArrowUpRight } from "react-icons/go";
 
@@ -12,9 +13,17 @@ interface Project {
   }
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
-    <div className="space-y-4">
+    <motion.div 
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.5 }}
+    transition={{ duration: 0.5, delay: 0.5 }}
+    className="space-y-4">
     <div className="flex  justify-between">
-      <div className='w-[200px] group'>
+      <div 
+      
+      
+      className='w-[200px] group'>
         <h3 className="text-white text-lg group-hover:text-[#4848FF] duration-700 lg:text-2xl font-semibold">{project.title}</h3>
         <p className="group-hover:text-white duration-700 text-gray-400 mt-1">{project.subtitle}</p>
       </div>
@@ -31,7 +40,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
       height={600}
       className="w-full h-auto"
     />
-  </div>
+  </motion.div>
   )
 }
 

@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
 import GlowingText from "./Why-chose-deventia/GlowingText";
 import { processSteps } from "@/data/data";
-
+import { motion } from "framer-motion";
 const OurExpertise: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#141414] py-5">
@@ -26,30 +27,27 @@ const OurExpertise: React.FC = () => {
         {/* Process Steps Section */}
         <div className="relative">
           {processSteps.map((step, index) => (
-            <div
+            <motion.div
               key={index}
-              className={`relative mb-16 md:w-[65vw] lg:w-[90%] w-full ${
+              initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+              className={`relative mb-16 md:w-[65vw] lg:w-[90%] w-full group ${
                 index % 2 === 1 ? "md:ml-32" : ""
               }`}
             >
               {/* Step Box */}
-              <div className="flex flex-col md:flex-row w-full md:w-[65vw] lg:w-[100%] border border-[#4848FF] group">
+              <div
+                className="flex flex-col md:flex-row w-full md:w-[65vw] lg:w-[100%] border border-[#4848FF] group transition-all 
+    duration-200 ease-in-out  group-hover:border-b-[#000052]"
+              >
                 {/* Step Number */}
-                <div className="w-full md:w-48 border-b md:border-b-0 md:border-r border-[#000052] p-4 md:p-8 flex items-center justify-center">
+                <div className="w-full md:w-48 border-b md:border-b-0   md:border-r border-[#000052] p-4 md:p-8 flex items-center justify-center">
                   <span
                     className="
                             text-4xl md:text-5xl lg:text-7xl 
-                            font-bold 
-                            text-white
-                            group-hover:text-transparent 
-                            group-hover:bg-clip-text
-                            group-hover:bg-gradient-to-b 
-                            group-hover:from-[#4848FF] 
-                            group-hover:via-[#4848FF] 
-                            group-hover:to-[#1a1a2e]
-                            transition-all 
-                            duration-500
-  "
+                            font-bold text-white transition-all duration-200 ease-in group-hover:bg-clip-text group-hover:bg-gradient-to-b group-hover:from-[#000052] group-hover:via-[#4848FF] group-hover:to-[#1a1a2e] group-hover:text-transparent"
                   >
                     {step.number}
                   </span>
@@ -57,7 +55,7 @@ const OurExpertise: React.FC = () => {
 
                 {/* Step Content */}
                 <div className="flex-1 p-4 md:p-8">
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2 md:mb-4 group-hover:text-[#4848FF] transition-colors">
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2 md:mb-4 group-hover:text-[#4848FF] transition-colors duration-200 ease-in-out">
                     {step.title}
                   </h3>
                   <p className="text-gray-300 text-sm md:text-base">
@@ -85,7 +83,7 @@ const OurExpertise: React.FC = () => {
                   </div>
                 </div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

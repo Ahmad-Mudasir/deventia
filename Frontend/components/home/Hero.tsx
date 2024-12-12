@@ -1,31 +1,39 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { MdPlayArrow } from "react-icons/md";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
+import { Swiper as SwiperClass } from "swiper"; // Import Swiper class for typing
 import { motion, AnimatePresence } from "framer-motion";
 
 import { carouselData } from "@/data/data";
-
+/* import video1 from "@/public/videos/video1.mp4";
+import video2 from "@/public/videos/video2"; */
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import BlueGlowEffect from "./BlueGlowEffect";
 
 const carouselVideos = [
-  "/videos/video1.mp4",
-  "/videos/video2.mp4",
-  "/videos/video3.mp4",
+  /* "/videos/video1.mp4", */
+  "https://res.cloudinary.com/difkapljf/video/upload/v1733984476/video2_cap19o.mp4",
+  "https://res.cloudinary.com/difkapljf/video/upload/v1733984540/video3_txpal0.mp4",
+  "https://res.cloudinary.com/difkapljf/video/upload/v1733984540/video3_txpal0.mp4",
 ];
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const swiperRef = useRef<SwiperClass | null>(null); // Explicitly type the Swiper instance
 
-  const handleSlideChange = (swiper: {
-    realIndex: React.SetStateAction<number>;
-  }) => {
+  const handleSlideChange = (swiper: SwiperClass) => {
     setCurrentSlide(swiper.realIndex);
+  };
+
+  const handleVideoEnd = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slideNext(); // Go to the next slide
+    }
   };
 
   const handleScroll = () => {
@@ -47,12 +55,11 @@ const Hero = () => {
 
       {/* Floating Orbs */}
       <div className="absolute top-[60px] right-10 md:right-40 w-[25px] h-[25px] rounded-[41px] bg-gradient-to-b from-[#AD6AFF] to-[#AD6AFF00]" />
-      
-      <div className="relative flex justify-center   mx-auto w-[90%] md:w-[80%] lg:w-[777px] h-[630px] md:h-[800px] lg:h-[900px]">
 
-      <div className="absolute top-[120px] md:top-[125px] left-10 md:left-0 w-4 h-4 rounded-full bg-gradient-to-b from-[#FAC977] to-[#FAC97700]" />
-      <div className="absolute top-[390px] lg:top-[420px] left-1 lg:-left-[4%] w-[13px] h-[13px] rounded-[21px] bg-gradient-to-b from-[#7ADB78] to-[#7ADB7800]" />
-      <div className="absolute top-[250px] lg:top-[261px] right-[5%] lg:-right-[14px] w-[13px] h-[13px] rounded-[21px] bg-gradient-to-b from-[#7ADB78] to-[#7ADB7800]" />
+      <div className="relative flex justify-center   mx-auto w-[90%] md:w-[80%] lg:w-[777px] h-[630px] md:h-[800px] lg:h-[900px]">
+        <div className="absolute top-[120px] md:top-[125px] left-10 md:left-0 w-4 h-4 rounded-full bg-gradient-to-b from-[#FAC977] to-[#FAC97700]" />
+        <div className="absolute top-[390px] lg:top-[420px] left-1 lg:-left-[4%] w-[13px] h-[13px] rounded-[21px] bg-gradient-to-b from-[#7ADB78] to-[#7ADB7800]" />
+        <div className="absolute top-[250px] lg:top-[261px] right-[5%] lg:-right-[14px] w-[13px] h-[13px] rounded-[21px] bg-gradient-to-b from-[#7ADB78] to-[#7ADB7800]" />
 
         {/* Circular Gradient */}
         <div className="absolute top-[300px] md:top-[385px] lg:top-[430px] flex justify-center rounded-full bg-blue-900/20 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] lg:w-[100%] h-[500px] md:h-[670px] lg:h-[775px]">
@@ -143,6 +150,20 @@ const Hero = () => {
             autoplay={{ delay: 9000, disableOnInteraction: false }}
             loop={true}
             onSlideChange={handleSlideChange}
+            /* onSlideChange={(swiper) => setCurrentSlide(swiper.realIndex)} */
+            onSwiper={(swiper) => (swiperRef.current = swiper)} // Save Swiper instance
+            onTransitionStart={() => {
+              // Reset video playback on slide change
+              const activeSlide =
+                swiperRef.current?.slides[swiperRef.current.activeIndex];
+              if (activeSlide) {
+                const video = activeSlide.querySelector("video");
+                if (video) {
+                  video.currentTime = 0; // Reset video to the start
+                  video.play(); // Play the video
+                }
+              }
+            }}
             className=" overflow-hidden rounded-xl w-[100%] h-[200px] md:h-[330px] lg:h-[400px] "
           >
             {carouselVideos.map((video, index) => (
@@ -153,28 +174,48 @@ const Hero = () => {
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5 }}
                   src={video}
-                  
+                  autoPlay
+                  muted
+                  loop={false}
+                  onPlay={() => {
+                    if (swiperRef.current) swiperRef.current.autoplay.stop(); // Stop autoplay on video play
+                  }}
+                  onEnded={handleVideoEnd} // Trigger next slide on video end
+                  /* loop */
                   width={400}
                   height={200}
                   className="w-[100%] bg-blue-500 h-[90%] mx-auto rounded-xl  object-cover"
                 />
               </SwiperSlide>
             ))}
-             
           </Swiper>
-         
-          <div className="hero-pagination flex gap-2   justify-center absolute mx-auto bottom-0"></div>
+
+          {
+            <div className="hero-pagination flex gap-4   justify-center absolute mx-auto bottom-0"></div>
+          }
         </div>
-       
+
         {/* Adjust Pagination Position */}
         <style jsx global>{`
-          .hero-pagination .swiper-pagination-bullet{
-            bottom: 20px !important; /* Move outside carousel */
+          .hero-pagination .swiper-pagination-bullet {
+            bottom: 2px !important; /* Move outside carousel */
             background-color: white !important;
+            position: relative;
           }
-         
+
           .hero-pagination .swiper-pagination-bullet-active {
             background-color: white !important; /* Set the active dot color to white */
+          }
+          .hero-pagination .swiper-pagination-bullet-active::after {
+            content: "";
+            border: 1px solid white;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            padding: 4px;
           }
         `}</style>
       </div>
