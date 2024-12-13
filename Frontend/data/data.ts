@@ -7,7 +7,10 @@ import HeroImage1 from "../assets/images/Hero-technology-innovation1.png";
 import HeroImage2 from "../assets/images/Hero-technology-innovation2.png";
 import HeroImage3 from "../assets/images/Hero-technology-innovation3.png";
 
-import { MdMessage, MdPieChart, MdRocketLaunch } from "react-icons/md";
+
+import icon1 from "../assets/images/icon1.png";
+import icon2 from "../assets/images/icon2.png";
+import icon3 from "../assets/images/icon3.png";
 
 /* projects images */
 import projectdesktop1 from "../assets/images/Desktop-project-1.png"
@@ -145,28 +148,28 @@ export const processSteps: ProcessStep[] = [
 /* why Deventia cards  data */
 export const whyDeventiaData = [
   {
-    icon: MdMessage,
+    image: icon1,
     title: "Innovative IT Solutions",
     description:
       "We drive business growth with cutting-edge technology, tailored to your needs.",
-    borderGradient: "linear-gradient(to bottom, #4848FF, transparent)",
-    iconBg: "bg-blue-500",
+    borderGradient: "linear-gradient(to bottom, #4848FF, #00000000)",
+    iconBg: "bg-[#4848FF]",
   },
   {
-    icon: MdPieChart,
+    image: icon2,
     title: "Business Growth",
     description:
       "We combine creativity and tech to unlock new opportunities and accelerate success.",
-    borderGradient: "linear-gradient(to bottom, #50B7C1, transparent)",
-    iconBg: "bg-cyan-500",
+    borderGradient: "linear-gradient(to bottom,#77DAFE, #00000000)",
+    iconBg: "bg-[#77DAFE]",
   },
   {
-    icon: MdRocketLaunch,
+    image: icon3,
     title: "Tech-Driven Success",
     description:
       "Our IT expertise helps businesses stay ahead with scalable, reliable solutions",
-    borderGradient: "linear-gradient(to bottom, #9C78DB, transparent)",
-    iconBg: "bg-purple-500",
+    borderGradient: "linear-gradient(to bottom, #9C78DB, #00000000)",
+    iconBg: "bg-[#9C78DB]",
   },
 ];
 

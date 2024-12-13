@@ -19,12 +19,12 @@ export default function ServiceCards() {
       />
 
       {/* Text div */}
-      <div className="mb-12">
-        <h1 className="font-bold mb-5 text-3xl md:text-5xl text-[#FFFFFF]">
+      <div className="mb-12 font-bai">
+        <h1 className="font-semibold mb-5 text-3xl md:text-5xl text-[#FFFFFF]">
           Our Services
         </h1>
         <p className="text-xs md:text-sm">
-          Deventia transforms ideas into digital experiences through expert
+          DeVentia transforms ideas into digital experiences through expert
           UI/UX design, web development, and motion graphics.
         </p>
       </div>

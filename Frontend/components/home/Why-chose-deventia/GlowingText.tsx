@@ -5,7 +5,7 @@ interface glowingtText {
 
 const GlowingText: React.FC<glowingtText> = ({ glowingTitle, title }) => {
   return (
-    <div className="relative min-h-[5px]   mb-12 overflow-hidden py-5">
+    <div className="relative min-h-[5px] font-bai   mb-12 overflow-hidden py-5">
       {/* Background outlined text with glow effect */}
       <div
         className="absolute top-0 left-0 w-full h-full flex items-center"
@@ -22,7 +22,7 @@ const GlowingText: React.FC<glowingtText> = ({ glowingTitle, title }) => {
 
       {/* Foreground text */}
       <div className="relative container w-[700px] lg:w-[1000px] text-center mx-auto px-4 flex items-center ">
-        <h1 className="text-xl md:text-4xl lg:text-4xl font-bold text-white ">
+        <h1 className="text-xl md:text-4xl lg:text-4xl font-medium text-white ">
           {title}
         </h1>
       </div>

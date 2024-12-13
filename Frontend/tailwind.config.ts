@@ -143,8 +143,8 @@ const config: Config = {
 
   safelist: [
     "bg-blue-500",
-    "bg-cyan-500",
-    "bg-purple-500", // Add any other dynamic classes you use
+    "bg-[#77DAFE]",
+    "bg-[#9C78DB]", // Add any other dynamic classes you use
   ],
 };
 
