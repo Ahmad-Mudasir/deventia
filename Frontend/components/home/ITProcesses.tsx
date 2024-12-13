@@ -111,7 +111,7 @@ export default function ITProcess() {
     activeProcess === "staff" ? staffAugmentationSteps : developmentSteps;
 
   return (
-    <div className="min-h-screen  lg:min-h-[100%]  bg-[#0B0B14] px-4 md:px-12 text-white">
+    <div className="min-h-screen  lg:min-h-[100%] font-bai bg-[#0B0B14] px-4 md:px-12 text-white">
       {/* Top Navigation */}
       <div className="max-w-[1400px] mx-auto px-6 pt-8">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-4 lg:items-center border-b border-[#404040] pb-4">
@@ -147,7 +147,7 @@ export default function ITProcess() {
 
       {/* Main Content */}
       <div className="max-w-[1400px] mx-auto px-6 pt-7">
-        <h1 className="text-lg xs:text-2xl md:text-4xl lg:text-5xl font-bold mb-12">
+        <h1 className="text-lg xs:text-2xl md:text-4xl lg:text-5xl font-medium mb-12">
           Our IT{" "}
           {activeProcess === "staff" ? "Staff Augmentation" : "Development"}{" "}
           Process

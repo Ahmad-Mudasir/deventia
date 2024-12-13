@@ -20,7 +20,7 @@ const WhyDeventia = () => {
 
       <GlowingText
         glowingTitle=" WHY CHOOSE SERVICES FROM DEVENTIA?"
-        title=" Why Choose Services From Deventia?"
+        title=" Why Choose Services From DeVentia?"
       />
 
       {/* Services grid */}

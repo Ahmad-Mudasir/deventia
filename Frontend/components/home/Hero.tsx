@@ -91,7 +91,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="text-2xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+              className="text-2xl md:text-5xl lg:text-6xl font-medium font-bai text-white mb-6 leading-tight"
             >
               {carouselData[currentSlide].title}
               <br />

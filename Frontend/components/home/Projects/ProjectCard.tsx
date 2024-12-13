@@ -18,13 +18,11 @@ const ProjectCard = ({ project }: { project: Project }) => {
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, amount: 0.5 }}
     transition={{ duration: 0.5, delay: 0.5 }}
-    className="space-y-4">
+    className="space-y-4 ">
     <div className="flex  justify-between">
       <div 
-      
-      
       className='w-[200px] group'>
-        <h3 className="text-white text-lg group-hover:text-[#4848FF] duration-700 lg:text-2xl font-semibold">{project.title}</h3>
+        <h3 className="text-white md:text-[16px] group-hover:text-[#4848FF] duration-700 lg:text-xl font-semibold">{project.title}</h3>
         <p className="group-hover:text-white duration-700 text-gray-400 mt-1">{project.subtitle}</p>
       </div>
       <Link href={project.link} target='blank' passHref>

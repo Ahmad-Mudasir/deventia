@@ -5,17 +5,17 @@ import { processSteps } from "@/data/data";
 import { motion } from "framer-motion";
 const OurExpertise: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#141414] py-5">
+    <div className="min-h-screen  bg-[#141414] py-5">
       {/* Header Section */}
       <GlowingText
         glowingTitle="ENHANCE EFFICIENCY, OPEN DOORS WITH OUR EXPERTISE"
         title="Enhance efficiency, open doors with our Expertise ?"
       />
 
-      <div className="container mx-auto w-[90%] py-3 px-3">
+      <div className="container font-montserrat mx-auto w-[90%] py-3 px-3">
         {/* Introduction Paragraph */}
         <div className="mb-5">
-          <p className="text-[7px] md:text-[10px] lg:text-[14px]">
+          <p className="text-[10px]  lg:text-[14px]">
             We’re a team of strategic software developers working globally with
             the largest brands. We believe that progress only happens when you
             refuse to play it safe. We combine ideas, behaviors, and insights

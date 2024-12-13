@@ -126,7 +126,7 @@ const Footer = () => {
             rel="stylesheet"
             href="Mansehra, kpk 21300, PK"
           >
-            Siran Plaza Mansehra, Khyber Pakhtunkhwa, Pakisstan
+            Siran Plaza Mansehra, Khyber Pakhtunkhwa, Pakistan
           </a>
         </div>
         <div className="">
