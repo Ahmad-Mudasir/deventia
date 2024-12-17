@@ -6,10 +6,28 @@ const StatsAndPartners = () => {
   return (
     <>
       <div className="bg-[#191919] text-white ">
-        <div className="w-full h-full bg-gradient-to-b from-[#4848ff] to-[#514f9458] justify-center  flex md:items-center flex-wrap md:justify-around lg:gap-6 gap-4">
+        
+        <div className="w-full relative h-full bg-[#141414] justify-center  flex md:items-center flex-wrap md:justify-around lg:gap-6 gap-4">
+           {/* Base dark background */}
+     
+      
+      {/* Gradient overlay */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: `linear-gradient(180deg, 
+            #141414 0%,
+            #4848FF 30%,
+            #4848FF 61%,
+            #141414 100%
+          )`,
+          opacity: '0.61' // Matching the 61% from Figma
+        }}
+      />
+
           {statsData.map((item, index) => (
             <div
-              className="flex flex-col items-center gap-1 p-4 leading-none"
+              className="flex flex-col items-center z-10 gap-1 p-4 leading-none"
               key={index + 0.05 * 2}
             >
               <ScrollCounter targetValue={item.value} />
